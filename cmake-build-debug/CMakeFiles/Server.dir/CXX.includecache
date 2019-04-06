@@ -63,6 +63,8 @@ DataInjection.h
 /mnt/d/Ubuntu/Projects/Server/data/DataInjection.h
 
 /mnt/d/Ubuntu/Projects/Server/data/GNC.cpp
+cstdlib
+-
 GNC.h
 /mnt/d/Ubuntu/Projects/Server/data/GNC.h
 
@@ -70,6 +72,8 @@ GNC.h
 ../constants.h
 /mnt/d/Ubuntu/Projects/Server/constants.h
 cstring
+-
+ctime
 -
 
 /mnt/d/Ubuntu/Projects/Server/data/INFO.cpp

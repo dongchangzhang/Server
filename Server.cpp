@@ -55,7 +55,7 @@ void Server::run() {
                 gnc.get_gnc(buffer, BUFFER_SIZE);
                 sendto(fd, buffer, BUFFER_SIZE, 0, (struct sockaddr*)&dst, len);
                 std::cout << "send gnc" << std::endl;
-                sleep(10);
+                sleep(30);
                 break;
             case SEND_IMAGE_PORT:
                 receive_photo();
@@ -101,22 +101,17 @@ void Server::receive_photo() {
         }
     }
     // get data
-    std::cout << "recv photo segments ..." << std::endl;
+    std::cout << "recv photo client ..." << std::endl;
     cv::Mat photo(PHOTO_HEIGHT, PHOTO_WIDTH, CV_8UC3, cv::Scalar::all(0));
     u_char op, id;
     short nline = 0;
     while (recv(recv_len)) {
-//        if (buffer[0] == 0x24) {
-//            break;
-//        }
         if (buffer[0] != 0xAA) {
-            std::cout << "not an image line" << std::endl;
+            std::cout << buffer[0] << "not an image line" << std::endl;
             return;
         }
         memcpy(&id, &buffer[10], sizeof(char));
         memcpy(&nline, &buffer[12], sizeof(short));
-        // 18 - recv_len;
-//        std::cout << (int)id << " " << nline << std::endl;
         memcpy(&photo.data[nline * PHOTO_WIDTH * 3], &buffer[18], PHOTO_WIDTH * sizeof(char) * 3);
         ++nline;
         memcpy(&op, &buffer[17], 1);

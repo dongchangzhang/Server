@@ -11,6 +11,7 @@
 #include "../constants.h"
 
 #include <cstring>
+#include <ctime>
 
 struct GNC {
     int year = 0;    // 时间码 北京时 - 年
@@ -37,6 +38,7 @@ struct GNC {
         }
     }
     void get_gnc(unsigned char buffer[], int max_len);
+    int i = 0;
 };
 
 
