@@ -37,7 +37,7 @@ struct GNC {
             loc[i] = l[i];
         }
     }
-    void get_gnc(unsigned char buffer[], int max_len);
+    void get_gnc(unsigned char buffer[], int &gnc_len, int max_len);
     int i = 0;
 };
 

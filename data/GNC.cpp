@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include "GNC.h"
 
-void GNC::get_gnc(unsigned char buffer[], int max_len) {
+void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     memset(buffer, 0, max_len);
     int v = 2014;
     memcpy(&buffer[0], &v, sizeof(int));
@@ -31,4 +31,5 @@ void GNC::get_gnc(unsigned char buffer[], int max_len) {
     loc[5] = 0;
     memcpy(&buffer[112], sun, sizeof(sun));
     memcpy(&buffer[184], loc, sizeof(loc));
+    gnc_len = 232;
 }

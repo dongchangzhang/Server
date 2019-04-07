@@ -28,14 +28,19 @@ public:
     void run();
     void run_test();
 
-    void receive_info();
-    void receive_photo();
+    void recv_info();
 
+    void say_hello();
+    void recv_hello();
+
+    void recv_photo();
     void send_gnc();
+
     void send_time_info();
 
-    bool send();
-    bool recv(int &recv_len);
+
+    bool send_from_buff(int send_len);
+    bool recv_into_buff(int &recv_len);
 
 
 private:

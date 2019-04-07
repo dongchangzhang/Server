@@ -45,20 +45,9 @@ void Server::run() {
             case INJECTION_POER:
                 break;
             case GNC_PORT:
-                memset(buffer, 0, BUFFER_SIZE);
-                count = recvfrom(fd, buffer, BUFFER_SIZE, 0, (struct sockaddr*)&dst, &len);
-                if (count == -1) {
-                    std::cout << "receive data fail!" << std::endl;
-                    return;
-                }
-                printf("%s\n", buffer);
-                gnc.get_gnc(buffer, BUFFER_SIZE);
-                sendto(fd, buffer, BUFFER_SIZE, 0, (struct sockaddr*)&dst, len);
-                std::cout << "send gnc" << std::endl;
-                sleep(10);
                 break;
             case SEND_IMAGE_PORT:
-                receive_photo();
+                recv_photo();
                 std::cout << std::endl;
                 break;
             default:
@@ -90,22 +79,22 @@ void Server::run_test() {
 
 }
 
-void Server::receive_photo() {
+void Server::recv_photo() {
     int recv_len = -1;
     // get photo info
-    std::cout << "recv photo info ..." << std::endl;
-    if (recv(recv_len)) {
+    std::cout << "SERVER::Photo Getting Info ..." << std::endl;
+    if (recv_into_buff(recv_len)) {
         if (buffer[0] != 0x55) {
             std::cout << "not an image info segment" << std::endl;
             return;
         }
     }
     // get data
-    std::cout << "recv photo client ..." << std::endl;
+    std::cout << "SERVER::Photo Getting content ..." << std::endl;
     cv::Mat photo(PHOTO_HEIGHT, PHOTO_WIDTH, CV_8UC3, cv::Scalar::all(0));
     u_char op, id;
     short nline = 0;
-    while (recv(recv_len)) {
+    while (recv_into_buff(recv_len)) {
         if (buffer[0] != 0xAA) {
             std::cout << buffer[0] << "not an image line" << std::endl;
             return;
@@ -117,16 +106,41 @@ void Server::receive_photo() {
         memcpy(&op, &buffer[17], 1);
         if (op == 0xAA)
             break;
+        std::cout << nline << std::endl;
     }
-    std::cout << "recv done ..." << std::endl;
+    std::cout << "SERVER::Photo Stat: y" << std::endl;
     cv::imwrite(std::to_string(photo_code++) + ".png", photo);
 }
 
-bool Server::send() {
-    return false;
+void Server::send_gnc() {
+    int gnc_len = 0;
+    memset(buffer, 0, BUFFER_SIZE);
+    gnc.get_gnc(buffer, gnc_len, BUFFER_SIZE);
+    std::cout << "SERVER::GNC sending ..." << std::endl;
+    int y = sendto(fd, buffer, gnc_len, 0, (struct sockaddr*)&dst, len);
+    std::cout << "SERVER::GNC send state: " << y << std::endl;
 }
 
-bool Server::recv(int &recv_len) {
+void Server::say_hello() {
+    memset(buffer, 0, BUFFER_SIZE);
+    buffer[0] = 'H';
+    buffer[1] = 'i';
+    buffer[2] = '!';
+    send_from_buff(3);
+}
+
+void Server::recv_hello() {
+    int recv_len = 0;
+    recv_into_buff(recv_len);
+    printf("%s\n", buffer);
+}
+
+bool Server::send_from_buff(int send_len) {
+    int y_count = sendto(fd, buffer, send_len, 0, (struct sockaddr*) &addr, sizeof(addr));
+    return y_count >= 0;
+}
+
+bool Server::recv_into_buff(int &recv_len) {
     memset(buffer, 0, BUFFER_SIZE);
     recv_len = recvfrom(fd, buffer, BUFFER_SIZE, 0, (struct sockaddr*)&dst, &len);
     if (recv_len == -1) {
@@ -135,4 +149,3 @@ bool Server::recv(int &recv_len) {
     }
     return true;
 }
-
