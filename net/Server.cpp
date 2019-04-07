@@ -12,71 +12,17 @@ bool Server::init() {
         std::cout << "create sockets fail!" << std::endl;
         return false;
     }
-    memset(&addr, 0, sizeof(addr));
-    addr.sin_family = AF_INET;
-    addr.sin_addr.s_addr = htonl(INADDR_ANY);
-    addr.sin_port = htons(port);
-    int ret = bind(fd, (struct sockaddr*)&addr, sizeof(addr));
+    memset(&server, 0, sizeof(server));
+    server.sin_family = AF_INET;
+    server.sin_addr.s_addr = htonl(INADDR_ANY);
+    server.sin_port = htons(port);
+    int ret = bind(fd, (struct sockaddr*)&server, sizeof(server));
     if (ret < 0) {
         std::cout << "sockets bind fail!" << std::endl;
         return false;
     }
     std::cout << "sockets yes!" << std::endl;
     return true;
-}
-
-void Server::run() {
-    int count = 0;
-    bool jump_out = false;
-    while (!jump_out) {
-        switch (port) {
-            case TIME_PORT:
-                memset(buffer, 0, BUFFER_SIZE);
-                count = recvfrom(fd, buffer, BUFFER_SIZE, 0, (struct sockaddr*)&dst, &len);
-                if (count == -1) {
-                    std::cout << "receive data fail!" << std::endl;
-                    return;
-                }
-                tc.update();
-                tc.get_time_info(buffer);
-                sendto(fd, buffer, BUFFER_SIZE, 0, (struct sockaddr*)&dst, len);
-                std::cout << "send time" << std::endl;
-                break;
-            case INJECTION_POER:
-                break;
-            case GNC_PORT:
-                break;
-            case SEND_IMAGE_PORT:
-                recv_photo();
-                std::cout << std::endl;
-                break;
-            default:
-                std::cout << "port error!" << std::endl;
-                jump_out = true;
-        }
-    }
-
-}
-void Server::run_test() {
-    socklen_t len;
-    int count;
-    struct sockaddr_in client_addr;
-    while (1) {
-        memset(buffer, 0, BUFFER_SIZE);
-        len = sizeof(client_addr);
-        count = recvfrom(fd, buffer, BUFFER_SIZE, 0, (struct sockaddr*)&client_addr, &len);
-        if (count == -1) {
-            std::cout << "receive data fail!" << std::endl;
-            return;
-        }
-        tc.update();
-        tc.get_time_info(buffer);
-        sendto(fd, buffer, BUFFER_SIZE, 0, (struct sockaddr*)&client_addr, len);
-        std::cout << "send time" << std::endl;
-        sleep(3);
-    }
-
-
 }
 
 void Server::recv_photo() {
@@ -112,37 +58,9 @@ void Server::recv_photo() {
     cv::imwrite(std::to_string(photo_code++) + ".png", photo);
 }
 
-void Server::send_gnc() {
-    int gnc_len = 0;
-    memset(buffer, 0, BUFFER_SIZE);
-    gnc.get_gnc(buffer, gnc_len, BUFFER_SIZE);
-    std::cout << "SERVER::GNC sending ..." << std::endl;
-    int y = sendto(fd, buffer, gnc_len, 0, (struct sockaddr*)&dst, len);
-    std::cout << "SERVER::GNC send state: " << y << std::endl;
-}
-
-void Server::say_hello() {
-    memset(buffer, 0, BUFFER_SIZE);
-    buffer[0] = 'H';
-    buffer[1] = 'i';
-    buffer[2] = '!';
-    send_from_buff(3);
-}
-
-void Server::recv_hello() {
-    int recv_len = 0;
-    recv_into_buff(recv_len);
-    printf("%s\n", buffer);
-}
-
-bool Server::send_from_buff(int send_len) {
-    int y_count = sendto(fd, buffer, send_len, 0, (struct sockaddr*) &addr, sizeof(addr));
-    return y_count >= 0;
-}
-
 bool Server::recv_into_buff(int &recv_len) {
     memset(buffer, 0, BUFFER_SIZE);
-    recv_len = recvfrom(fd, buffer, BUFFER_SIZE, 0, (struct sockaddr*)&dst, &len);
+    recv_len = recvfrom(fd, buffer, BUFFER_SIZE, 0, (struct sockaddr*)&peer, &len);
     if (recv_len == -1) {
         std::cout << "receive data fail!" << std::endl;
         return false;

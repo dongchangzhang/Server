@@ -29,8 +29,6 @@ bool Client::init() {
     return true;
 }
 
-
-
 int Client::send_gnc() {
     int gnc_len = 0;
     memset(buffer, 0, BUFFER_SIZE);
@@ -41,7 +39,7 @@ int Client::send_gnc() {
 }
 
 int Client::send_from_buff(int send_len) {
-    int count = sendto(fd, buffer, send_len, 0, (struct sockaddr*) &server, sizeof(server));
+    int count = sendto(fd, buffer, send_len, 0, (struct sockaddr*) &server, len);
     return count;
 }
 

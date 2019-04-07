@@ -8,6 +8,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <unistd.h>
 
 #include <iostream>
 #include <string>
@@ -26,40 +27,21 @@ public:
         init();
     }
     ~Server() {
-//        close(fd);
+        close(fd);
     }
-    void run();
-    void run_test();
-
-    void recv_info();
-
-    void say_hello();
-    void recv_hello();
 
     void recv_photo();
-    void send_gnc();
-
-    void send_time_info();
-
-
-    bool send_from_buff(int send_len);
     bool recv_into_buff(int &recv_len);
-
 
 private:
     bool init();
 private:
-    int port;
-    int fd;
-    std::string client_ip;
-    struct sockaddr_in addr, dst;
-    socklen_t len = sizeof(addr);
-    unsigned char buffer[BUFFER_SIZE];
-
+    int fd, port;
     int photo_code = 0;
-
-    TimeCheck tc;
-    GNC gnc;
+    std::string client_ip;
+    sockaddr_in server, peer;
+    socklen_t len = sizeof(server);
+    unsigned char buffer[BUFFER_SIZE];
 };
 
 

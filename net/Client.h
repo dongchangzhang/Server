@@ -45,10 +45,10 @@ private:
 private:
     GNC gnc;
     int fd, port;
-    unsigned char buffer[BUFFER_SIZE];
     std::string ip;
-    sockaddr_in server, peer;
+    sockaddr_in server;
     socklen_t len = sizeof(server);
+    unsigned char buffer[BUFFER_SIZE];
 };
 
 
