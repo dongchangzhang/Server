@@ -12,23 +12,18 @@
 #include <queue>
 
 
-void gnc() {
-    std::string ip = "127.0.0.1";
-    int port = GNC_PORT;
+void gnc(std::string ip, int port) {
     Server server(ip, port);
     server.run();
 }
-void photo() {
-    std::string ip = "127.0.0.1";
-    int port = SEND_IMAGE_PORT;
+void photo(std::string ip, int port) {
     Server server(ip, port);
     server.run();
 }
 int main() {
-    std::thread th1(gnc);
-    std::thread th2(photo);
+    std::thread th1(gnc,CLIENT_IP_THINKPAD, GNC_PORT);
+    std::thread th2(photo, CLIENT_IP_THINKPAD, SEND_IMAGE_PORT);
     th1.join();
     th2.join();
-    std::cout << "Hello, World!" << std::endl;
     return 0;
 }

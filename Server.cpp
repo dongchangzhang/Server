@@ -55,7 +55,7 @@ void Server::run() {
                 gnc.get_gnc(buffer, BUFFER_SIZE);
                 sendto(fd, buffer, BUFFER_SIZE, 0, (struct sockaddr*)&dst, len);
                 std::cout << "send gnc" << std::endl;
-                sleep(30);
+                sleep(10);
                 break;
             case SEND_IMAGE_PORT:
                 receive_photo();
