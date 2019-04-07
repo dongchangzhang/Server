@@ -86,12 +86,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/d/Ubuntu/Projects/Server/Server.cpp">
-			<Option target="Server"/>
-		</Unit>
-		<Unit filename="/mnt/d/Ubuntu/Projects/Server/Server.h">
-			<Option target="Server"/>
-		</Unit>
 		<Unit filename="/mnt/d/Ubuntu/Projects/Server/data/Answer.cpp">
 			<Option target="Server"/>
 		</Unit>
@@ -165,6 +159,21 @@
 			<Option target="Server"/>
 		</Unit>
 		<Unit filename="/mnt/d/Ubuntu/Projects/Server/main.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/mnt/d/Ubuntu/Projects/Server/net/Client.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/mnt/d/Ubuntu/Projects/Server/net/Client.h">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/mnt/d/Ubuntu/Projects/Server/net/Server.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/mnt/d/Ubuntu/Projects/Server/net/Server.h">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/mnt/d/Ubuntu/Projects/Server/utils/Log.h">
 			<Option target="Server"/>
 		</Unit>
 		<Unit filename="/mnt/d/Ubuntu/Projects/Server/CMakeLists.txt">

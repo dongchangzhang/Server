@@ -12,10 +12,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dae6de3d-490b-4140-aa4b-27d2f64dce6a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Server.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Server.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server.h" beforeDir="false" afterPath="$PROJECT_DIR$/Server.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/GNC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/data/GNC.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/GNC.h" beforeDir="false" afterPath="$PROJECT_DIR$/data/GNC.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/net/Client.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/net/Client.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/Log.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/net/Server.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server.h" beforeDir="false" afterPath="$PROJECT_DIR$/net/Server.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Server.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Server.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Server.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Server.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Server.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Server.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Server.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Server.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Server.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Server.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Server" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Server.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Server.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/constants.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -32,10 +46,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server.cpp">
+        <entry file="file://$PROJECT_DIR$/net/Server.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="119" column="37" selection-start-line="119" selection-start-column="37" selection-end-line="119" selection-end-column="37" />
+            <state relative-caret-position="456">
+              <caret line="114" column="24" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
               <folding>
                 <element signature="e#38#56#0" expanded="true" />
               </folding>
@@ -44,57 +58,39 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/GNC.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="39" column="54" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
-              <folding>
-                <element signature="e#143#168#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/utils/Log.h">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/GNC.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-              <folding>
-                <element signature="e#35#53#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/TimeCheck.h">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+              <caret line="6" column="112" selection-start-line="6" selection-start-column="112" selection-end-line="6" selection-end-column="112" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/TimeCheck.cpp">
+        <entry file="file://$PROJECT_DIR$/net/Client.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="416">
+              <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
               <folding>
-                <element signature="e#39#61#0" expanded="true" />
+                <element signature="e#38#56#0" expanded="true" />
+                <element signature="e#564#675#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server.h">
+        <entry file="file://$PROJECT_DIR$/net/Client.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="155">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
               <folding>
-                <element signature="e#87#109#0" expanded="true" />
+                <element signature="e#102#119#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,8 +99,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/constants.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="294">
+              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/net/Server.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
+              <folding>
+                <element signature="e#87#109#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,20 +120,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+            <state relative-caret-position="330">
+              <caret line="53" column="13" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -141,21 +140,24 @@
         <option value="$PROJECT_DIR$/data/DATA_SEG.h" />
         <option value="$PROJECT_DIR$/data/TimeCheck.h" />
         <option value="$PROJECT_DIR$/data/TimeCheck.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/constants.h" />
         <option value="$PROJECT_DIR$/Server.h" />
         <option value="$PROJECT_DIR$/data/GNC.h" />
         <option value="$PROJECT_DIR$/Server.cpp" />
         <option value="$PROJECT_DIR$/data/GNC.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/net/Server.h" />
+        <option value="$PROJECT_DIR$/constants.h" />
+        <option value="$PROJECT_DIR$/net/Client.h" />
+        <option value="$PROJECT_DIR$/net/Client.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="805" />
-    <option name="y" value="40" />
-    <option name="width" value="1764" />
-    <option name="height" value="1392" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="1302" />
+    <option name="height" value="1403" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -170,6 +172,11 @@
               <item name="Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="Server" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -180,13 +187,17 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/utils" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Ubuntu\Projects\Server\net" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Ubuntu\Projects\Server\utils" />
       <recent name="D:\Ubuntu\Projects\Server" />
     </key>
   </component>
@@ -225,29 +236,31 @@
       <workItem from="1554303274695" duration="4815000" />
       <workItem from="1554470489736" duration="24975000" />
       <workItem from="1554534217957" duration="10435000" />
-      <workItem from="1554615132976" duration="4604000" />
+      <workItem from="1554615132976" duration="7081000" />
+      <workItem from="1554633966876" duration="1433000" />
+      <workItem from="1554648892168" duration="6080000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54153000" />
+    <option name="totallyTimeSpent" value="64143000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1721" height="935" extended-state="6" />
+    <frame x="-7" y="-7" width="868" height="935" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16336337" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23783784" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.45972738" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3804213" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39924905" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.47211897" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.4708798" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
@@ -318,6 +331,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/GNC.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="54" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
+          <folding>
+            <element signature="e#143#168#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/GNC.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+          <folding>
+            <element signature="e#35#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data/TimeCheck.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -335,64 +368,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/utils/Log.h">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/constants.h">
+    <entry file="file://$PROJECT_DIR$/net/Server.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="570">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
           <folding>
             <element signature="e#87#109#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/GNC.h">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="39" column="54" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
-          <folding>
-            <element signature="e#143#168#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="6" column="112" selection-start-line="6" selection-start-column="112" selection-end-line="6" selection-end-column="112" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server.cpp">
+    <entry file="file://$PROJECT_DIR$/constants.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="119" column="37" selection-start-line="119" selection-start-column="37" selection-end-line="119" selection-end-column="37" />
+        <state relative-caret-position="294">
+          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/net/Server.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="114" column="24" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
           <folding>
             <element signature="e#38#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/GNC.cpp">
+    <entry file="file://$PROJECT_DIR$/net/Client.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+        <state relative-caret-position="155">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
           <folding>
-            <element signature="e#35#53#0" expanded="true" />
+            <element signature="e#102#119#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/net/Client.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+          <folding>
+            <element signature="e#38#56#0" expanded="true" />
+            <element signature="e#564#675#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        <state relative-caret-position="330">
+          <caret line="53" column="13" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

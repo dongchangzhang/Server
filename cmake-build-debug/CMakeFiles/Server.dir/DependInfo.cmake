@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/d/Ubuntu/Projects/Server/Server.cpp" "/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles/Server.dir/Server.cpp.o"
   "/mnt/d/Ubuntu/Projects/Server/data/Answer.cpp" "/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles/Server.dir/data/Answer.cpp.o"
   "/mnt/d/Ubuntu/Projects/Server/data/DATA_SEG.cpp" "/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles/Server.dir/data/DATA_SEG.cpp.o"
   "/mnt/d/Ubuntu/Projects/Server/data/Data.cpp" "/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles/Server.dir/data/Data.cpp.o"
@@ -18,6 +17,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/mnt/d/Ubuntu/Projects/Server/data/RS422.cpp" "/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles/Server.dir/data/RS422.cpp.o"
   "/mnt/d/Ubuntu/Projects/Server/data/TimeCheck.cpp" "/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles/Server.dir/data/TimeCheck.cpp.o"
   "/mnt/d/Ubuntu/Projects/Server/main.cpp" "/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles/Server.dir/main.cpp.o"
+  "/mnt/d/Ubuntu/Projects/Server/net/Client.cpp" "/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles/Server.dir/net/Client.cpp.o"
+  "/mnt/d/Ubuntu/Projects/Server/net/Server.cpp" "/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles/Server.dir/net/Server.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

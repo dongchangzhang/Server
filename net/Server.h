@@ -13,9 +13,12 @@
 #include <string>
 #include <cstring>
 
-#include "constants.h"
-#include "data/TimeCheck.h"
-#include "data/GNC.h"
+#include "../constants.h"
+#include "../data/TimeCheck.h"
+#include "../data/GNC.h"
+
+// As a server
+// recv photo
 
 class Server {
 public:

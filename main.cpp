@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
 
-#include "Server.h"
+#include "net/Server.h"
 #include "constants.h"
+#include "net/Client.h"
 
 
 #include <thread>
@@ -14,14 +15,27 @@
 
 void gnc(std::string ip, int port) {
     bool stop = false;
-    Server server(ip, port);
-    std::chrono::milliseconds dura(15000);
-    server.recv_hello();
+    Client client(ip, port);
+    std::chrono::milliseconds dura(2500);
+    std::chrono::milliseconds dura_long(5000);
     while (!stop) {
-        server.send_gnc();
+        while (client.send_gnc() == -1) {
+            std::this_thread::sleep_for(dura);
+        }
         std::this_thread::sleep_for(dura);
     }
 }
+//void gnc(std::string ip, int port) {
+//    bool stop = false;
+//    Server client(ip, port);
+//    std::chrono::milliseconds dura(2500);
+//    std::chrono::milliseconds dura_long(5000);
+//    client.recv_hello();
+//    while (!stop) {
+//        client.send_gnc();
+//        std::this_thread::sleep_for(dura);
+//    }
+//}
 void photo(std::string ip, int port) {
     bool stop = false;
     Server server(ip, port);

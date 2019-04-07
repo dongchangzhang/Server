@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Server.dir/main.cpp.o"
-  "CMakeFiles/Server.dir/Server.cpp.o"
+  "CMakeFiles/Server.dir/net/Server.cpp.o"
+  "CMakeFiles/Server.dir/net/Client.cpp.o"
   "CMakeFiles/Server.dir/data/RS422.cpp.o"
   "CMakeFiles/Server.dir/data/Parser.cpp.o"
   "CMakeFiles/Server.dir/data/Data.cpp.o"

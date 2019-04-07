@@ -123,33 +123,6 @@ Server/fast:
 	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/build
 .PHONY : Server/fast
 
-Server.o: Server.cpp.o
-
-.PHONY : Server.o
-
-# target to build an object file
-Server.cpp.o:
-	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server.cpp.o
-.PHONY : Server.cpp.o
-
-Server.i: Server.cpp.i
-
-.PHONY : Server.i
-
-# target to preprocess a source file
-Server.cpp.i:
-	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server.cpp.i
-.PHONY : Server.cpp.i
-
-Server.s: Server.cpp.s
-
-.PHONY : Server.s
-
-# target to generate assembly for a file
-Server.cpp.s:
-	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server.cpp.s
-.PHONY : Server.cpp.s
-
 data/Answer.o: data/Answer.cpp.o
 
 .PHONY : data/Answer.o
@@ -501,6 +474,60 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+net/Client.o: net/Client.cpp.o
+
+.PHONY : net/Client.o
+
+# target to build an object file
+net/Client.cpp.o:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/net/Client.cpp.o
+.PHONY : net/Client.cpp.o
+
+net/Client.i: net/Client.cpp.i
+
+.PHONY : net/Client.i
+
+# target to preprocess a source file
+net/Client.cpp.i:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/net/Client.cpp.i
+.PHONY : net/Client.cpp.i
+
+net/Client.s: net/Client.cpp.s
+
+.PHONY : net/Client.s
+
+# target to generate assembly for a file
+net/Client.cpp.s:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/net/Client.cpp.s
+.PHONY : net/Client.cpp.s
+
+net/Server.o: net/Server.cpp.o
+
+.PHONY : net/Server.o
+
+# target to build an object file
+net/Server.cpp.o:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/net/Server.cpp.o
+.PHONY : net/Server.cpp.o
+
+net/Server.i: net/Server.cpp.i
+
+.PHONY : net/Server.i
+
+# target to preprocess a source file
+net/Server.cpp.i:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/net/Server.cpp.i
+.PHONY : net/Server.cpp.i
+
+net/Server.s: net/Server.cpp.s
+
+.PHONY : net/Server.s
+
+# target to generate assembly for a file
+net/Server.cpp.s:
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/net/Server.cpp.s
+.PHONY : net/Server.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -510,9 +537,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Server"
 	@echo "... edit_cache"
-	@echo "... Server.o"
-	@echo "... Server.i"
-	@echo "... Server.s"
 	@echo "... data/Answer.o"
 	@echo "... data/Answer.i"
 	@echo "... data/Answer.s"
@@ -552,6 +576,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... net/Client.o"
+	@echo "... net/Client.i"
+	@echo "... net/Client.s"
+	@echo "... net/Server.o"
+	@echo "... net/Server.i"
+	@echo "... net/Server.s"
 .PHONY : help
 
 
