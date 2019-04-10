@@ -169,6 +169,8 @@ opencv2/opencv.hpp
 -
 Server.h
 /mnt/d/Ubuntu/Projects/Server/net/Server.h
+../utils/utils.h
+/mnt/d/Ubuntu/Projects/Server/utils/utils.h
 
 /mnt/d/Ubuntu/Projects/Server/net/Server.h
 sys/types.h
@@ -193,6 +195,16 @@ cstring
 /mnt/d/Ubuntu/Projects/Server/data/GNC.h
 
 /mnt/d/Ubuntu/Projects/Server/utils/Log.h
+../constants.h
+/mnt/d/Ubuntu/Projects/Server/constants.h
+
+/mnt/d/Ubuntu/Projects/Server/utils/utils.cpp
+utils.h
+/mnt/d/Ubuntu/Projects/Server/utils/utils.h
+
+/mnt/d/Ubuntu/Projects/Server/utils/utils.h
+zconf.h
+-
 ../constants.h
 /mnt/d/Ubuntu/Projects/Server/constants.h
 

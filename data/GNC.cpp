@@ -17,10 +17,10 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     memcpy(&buffer[12], &v, sizeof(int));
     v = 13;
     memcpy(&buffer[16], &v, sizeof(int));
-    v = 59;
+    v = (i += 10);
     memcpy(&buffer[20], &v, sizeof(int));
     srand(time(0));
-    sun[0] = i++;
+    sun[0] = 0;
     sun[1] = 0;
     sun[2] = 0;
     loc[0] = 7 * RADIUS;

@@ -176,6 +176,12 @@
 		<Unit filename="/mnt/d/Ubuntu/Projects/Server/utils/Log.h">
 			<Option target="Server"/>
 		</Unit>
+		<Unit filename="/mnt/d/Ubuntu/Projects/Server/utils/utils.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/mnt/d/Ubuntu/Projects/Server/utils/utils.h">
+			<Option target="Server"/>
+		</Unit>
 		<Unit filename="/mnt/d/Ubuntu/Projects/Server/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

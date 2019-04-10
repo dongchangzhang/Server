@@ -25,8 +25,7 @@
 
 #define TEST_ON_LOCALHOST
 
-#define CLIENT_IP "172.20.76.216"
-#define SERVER_IP "172.20.76.216"
+#define IP "192.168.0.5"
 
 #define CLIENT_IP_SHIT "172.20.58.75"
 #define CLIENT_IP_THINKPAD "172.20.76.216"

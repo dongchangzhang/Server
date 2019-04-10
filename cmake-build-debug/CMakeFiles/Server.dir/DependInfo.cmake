@@ -19,6 +19,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/mnt/d/Ubuntu/Projects/Server/main.cpp" "/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles/Server.dir/main.cpp.o"
   "/mnt/d/Ubuntu/Projects/Server/net/Client.cpp" "/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles/Server.dir/net/Client.cpp.o"
   "/mnt/d/Ubuntu/Projects/Server/net/Server.cpp" "/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles/Server.dir/net/Server.cpp.o"
+  "/mnt/d/Ubuntu/Projects/Server/utils/utils.cpp" "/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles/Server.dir/utils/utils.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

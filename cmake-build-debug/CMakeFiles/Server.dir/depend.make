@@ -61,4 +61,9 @@ CMakeFiles/Server.dir/net/Server.cpp.o: ../data/GNC.h
 CMakeFiles/Server.dir/net/Server.cpp.o: ../data/TimeCheck.h
 CMakeFiles/Server.dir/net/Server.cpp.o: ../net/Server.cpp
 CMakeFiles/Server.dir/net/Server.cpp.o: ../net/Server.h
+CMakeFiles/Server.dir/net/Server.cpp.o: ../utils/utils.h
+
+CMakeFiles/Server.dir/utils/utils.cpp.o: ../constants.h
+CMakeFiles/Server.dir/utils/utils.cpp.o: ../utils/utils.cpp
+CMakeFiles/Server.dir/utils/utils.cpp.o: ../utils/utils.h
 

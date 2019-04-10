@@ -23,13 +23,12 @@
 
 class Server {
 public:
-    Server(std::string _ip, int _port) : client_ip(_ip), port(_port) {
+    Server(int _port) : port(_port) {
         init();
     }
     ~Server() {
         close(fd);
     }
-
     void recv_photo();
     bool recv_into_buff(int &recv_len);
 
@@ -37,8 +36,8 @@ private:
     bool init();
 private:
     int fd, port;
+    int height, width;
     int photo_code = 0;
-    std::string client_ip;
     sockaddr_in server, peer;
     socklen_t len = sizeof(server);
     unsigned char buffer[BUFFER_SIZE];

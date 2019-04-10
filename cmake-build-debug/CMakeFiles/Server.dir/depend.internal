@@ -62,3 +62,8 @@ CMakeFiles/Server.dir/net/Server.cpp.o
  /mnt/d/Ubuntu/Projects/Server/data/TimeCheck.h
  /mnt/d/Ubuntu/Projects/Server/net/Server.cpp
  /mnt/d/Ubuntu/Projects/Server/net/Server.h
+ /mnt/d/Ubuntu/Projects/Server/utils/utils.h
+CMakeFiles/Server.dir/utils/utils.cpp.o
+ /mnt/d/Ubuntu/Projects/Server/constants.h
+ /mnt/d/Ubuntu/Projects/Server/utils/utils.cpp
+ /mnt/d/Ubuntu/Projects/Server/utils/utils.h

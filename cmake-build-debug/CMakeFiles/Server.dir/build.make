@@ -153,9 +153,33 @@ CMakeFiles/Server.dir/data/RS422.cpp.o.provides: CMakeFiles/Server.dir/data/RS42
 CMakeFiles/Server.dir/data/RS422.cpp.o.provides.build: CMakeFiles/Server.dir/data/RS422.cpp.o
 
 
+CMakeFiles/Server.dir/utils/utils.cpp.o: CMakeFiles/Server.dir/flags.make
+CMakeFiles/Server.dir/utils/utils.cpp.o: ../utils/utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Server.dir/utils/utils.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/utils/utils.cpp.o -c /mnt/d/Ubuntu/Projects/Server/utils/utils.cpp
+
+CMakeFiles/Server.dir/utils/utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/utils/utils.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Ubuntu/Projects/Server/utils/utils.cpp > CMakeFiles/Server.dir/utils/utils.cpp.i
+
+CMakeFiles/Server.dir/utils/utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/utils/utils.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Ubuntu/Projects/Server/utils/utils.cpp -o CMakeFiles/Server.dir/utils/utils.cpp.s
+
+CMakeFiles/Server.dir/utils/utils.cpp.o.requires:
+
+.PHONY : CMakeFiles/Server.dir/utils/utils.cpp.o.requires
+
+CMakeFiles/Server.dir/utils/utils.cpp.o.provides: CMakeFiles/Server.dir/utils/utils.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/utils/utils.cpp.o.provides.build
+.PHONY : CMakeFiles/Server.dir/utils/utils.cpp.o.provides
+
+CMakeFiles/Server.dir/utils/utils.cpp.o.provides.build: CMakeFiles/Server.dir/utils/utils.cpp.o
+
+
 CMakeFiles/Server.dir/data/Parser.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/data/Parser.cpp.o: ../data/Parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Server.dir/data/Parser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Server.dir/data/Parser.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/data/Parser.cpp.o -c /mnt/d/Ubuntu/Projects/Server/data/Parser.cpp
 
 CMakeFiles/Server.dir/data/Parser.cpp.i: cmake_force
@@ -179,7 +203,7 @@ CMakeFiles/Server.dir/data/Parser.cpp.o.provides.build: CMakeFiles/Server.dir/da
 
 CMakeFiles/Server.dir/data/Data.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/data/Data.cpp.o: ../data/Data.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Server.dir/data/Data.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Server.dir/data/Data.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/data/Data.cpp.o -c /mnt/d/Ubuntu/Projects/Server/data/Data.cpp
 
 CMakeFiles/Server.dir/data/Data.cpp.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/Server.dir/data/Data.cpp.o.provides.build: CMakeFiles/Server.dir/data
 
 CMakeFiles/Server.dir/data/GNC.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/data/GNC.cpp.o: ../data/GNC.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Server.dir/data/GNC.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Server.dir/data/GNC.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/data/GNC.cpp.o -c /mnt/d/Ubuntu/Projects/Server/data/GNC.cpp
 
 CMakeFiles/Server.dir/data/GNC.cpp.i: cmake_force
@@ -227,7 +251,7 @@ CMakeFiles/Server.dir/data/GNC.cpp.o.provides.build: CMakeFiles/Server.dir/data/
 
 CMakeFiles/Server.dir/data/LAN.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/data/LAN.cpp.o: ../data/LAN.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Server.dir/data/LAN.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Server.dir/data/LAN.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/data/LAN.cpp.o -c /mnt/d/Ubuntu/Projects/Server/data/LAN.cpp
 
 CMakeFiles/Server.dir/data/LAN.cpp.i: cmake_force
@@ -251,7 +275,7 @@ CMakeFiles/Server.dir/data/LAN.cpp.o.provides.build: CMakeFiles/Server.dir/data/
 
 CMakeFiles/Server.dir/data/ImageToSend.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/data/ImageToSend.cpp.o: ../data/ImageToSend.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Server.dir/data/ImageToSend.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Server.dir/data/ImageToSend.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/data/ImageToSend.cpp.o -c /mnt/d/Ubuntu/Projects/Server/data/ImageToSend.cpp
 
 CMakeFiles/Server.dir/data/ImageToSend.cpp.i: cmake_force
@@ -275,7 +299,7 @@ CMakeFiles/Server.dir/data/ImageToSend.cpp.o.provides.build: CMakeFiles/Server.d
 
 CMakeFiles/Server.dir/data/INFO.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/data/INFO.cpp.o: ../data/INFO.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Server.dir/data/INFO.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Server.dir/data/INFO.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/data/INFO.cpp.o -c /mnt/d/Ubuntu/Projects/Server/data/INFO.cpp
 
 CMakeFiles/Server.dir/data/INFO.cpp.i: cmake_force
@@ -299,7 +323,7 @@ CMakeFiles/Server.dir/data/INFO.cpp.o.provides.build: CMakeFiles/Server.dir/data
 
 CMakeFiles/Server.dir/data/DATA_SEG.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/data/DATA_SEG.cpp.o: ../data/DATA_SEG.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Server.dir/data/DATA_SEG.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Server.dir/data/DATA_SEG.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/data/DATA_SEG.cpp.o -c /mnt/d/Ubuntu/Projects/Server/data/DATA_SEG.cpp
 
 CMakeFiles/Server.dir/data/DATA_SEG.cpp.i: cmake_force
@@ -323,7 +347,7 @@ CMakeFiles/Server.dir/data/DATA_SEG.cpp.o.provides.build: CMakeFiles/Server.dir/
 
 CMakeFiles/Server.dir/data/TimeCheck.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/data/TimeCheck.cpp.o: ../data/TimeCheck.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Server.dir/data/TimeCheck.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Server.dir/data/TimeCheck.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/data/TimeCheck.cpp.o -c /mnt/d/Ubuntu/Projects/Server/data/TimeCheck.cpp
 
 CMakeFiles/Server.dir/data/TimeCheck.cpp.i: cmake_force
@@ -347,7 +371,7 @@ CMakeFiles/Server.dir/data/TimeCheck.cpp.o.provides.build: CMakeFiles/Server.dir
 
 CMakeFiles/Server.dir/data/Pooling.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/data/Pooling.cpp.o: ../data/Pooling.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Server.dir/data/Pooling.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Server.dir/data/Pooling.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/data/Pooling.cpp.o -c /mnt/d/Ubuntu/Projects/Server/data/Pooling.cpp
 
 CMakeFiles/Server.dir/data/Pooling.cpp.i: cmake_force
@@ -371,7 +395,7 @@ CMakeFiles/Server.dir/data/Pooling.cpp.o.provides.build: CMakeFiles/Server.dir/d
 
 CMakeFiles/Server.dir/data/Answer.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/data/Answer.cpp.o: ../data/Answer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Server.dir/data/Answer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Server.dir/data/Answer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/data/Answer.cpp.o -c /mnt/d/Ubuntu/Projects/Server/data/Answer.cpp
 
 CMakeFiles/Server.dir/data/Answer.cpp.i: cmake_force
@@ -395,7 +419,7 @@ CMakeFiles/Server.dir/data/Answer.cpp.o.provides.build: CMakeFiles/Server.dir/da
 
 CMakeFiles/Server.dir/data/DataInjection.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/data/DataInjection.cpp.o: ../data/DataInjection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Server.dir/data/DataInjection.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Server.dir/data/DataInjection.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/data/DataInjection.cpp.o -c /mnt/d/Ubuntu/Projects/Server/data/DataInjection.cpp
 
 CMakeFiles/Server.dir/data/DataInjection.cpp.i: cmake_force
@@ -423,6 +447,7 @@ Server_OBJECTS = \
 "CMakeFiles/Server.dir/net/Server.cpp.o" \
 "CMakeFiles/Server.dir/net/Client.cpp.o" \
 "CMakeFiles/Server.dir/data/RS422.cpp.o" \
+"CMakeFiles/Server.dir/utils/utils.cpp.o" \
 "CMakeFiles/Server.dir/data/Parser.cpp.o" \
 "CMakeFiles/Server.dir/data/Data.cpp.o" \
 "CMakeFiles/Server.dir/data/GNC.cpp.o" \
@@ -442,6 +467,7 @@ Server: CMakeFiles/Server.dir/main.cpp.o
 Server: CMakeFiles/Server.dir/net/Server.cpp.o
 Server: CMakeFiles/Server.dir/net/Client.cpp.o
 Server: CMakeFiles/Server.dir/data/RS422.cpp.o
+Server: CMakeFiles/Server.dir/utils/utils.cpp.o
 Server: CMakeFiles/Server.dir/data/Parser.cpp.o
 Server: CMakeFiles/Server.dir/data/Data.cpp.o
 Server: CMakeFiles/Server.dir/data/GNC.cpp.o
@@ -496,7 +522,7 @@ Server: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0
 Server: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0
 Server: /usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0
 Server: CMakeFiles/Server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable Server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/Ubuntu/Projects/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable Server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -508,6 +534,7 @@ CMakeFiles/Server.dir/requires: CMakeFiles/Server.dir/main.cpp.o.requires
 CMakeFiles/Server.dir/requires: CMakeFiles/Server.dir/net/Server.cpp.o.requires
 CMakeFiles/Server.dir/requires: CMakeFiles/Server.dir/net/Client.cpp.o.requires
 CMakeFiles/Server.dir/requires: CMakeFiles/Server.dir/data/RS422.cpp.o.requires
+CMakeFiles/Server.dir/requires: CMakeFiles/Server.dir/utils/utils.cpp.o.requires
 CMakeFiles/Server.dir/requires: CMakeFiles/Server.dir/data/Parser.cpp.o.requires
 CMakeFiles/Server.dir/requires: CMakeFiles/Server.dir/data/Data.cpp.o.requires
 CMakeFiles/Server.dir/requires: CMakeFiles/Server.dir/data/GNC.cpp.o.requires
