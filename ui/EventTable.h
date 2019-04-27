@@ -1,0 +1,8 @@
+//
+// Created by z on 19-4-27.
+//
+
+#ifndef SERVERGUI_EVENTTABLE_H
+#define SERVERGUI_EVENTTABLE_H
+
+#endif //SERVERGUI_EVENTTABLE_H

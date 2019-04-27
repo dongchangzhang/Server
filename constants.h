@@ -5,8 +5,14 @@
 #ifndef SERVER_CONSTANTS_H
 #define SERVER_CONSTANTS_H
 
+// time
+
 // radius of mars - measurement is meters
 #define RADIUS 3396190
+
+// mars
+#define SPEED  7.08821766e-5
+
 
 // photo
 #define PHOTO_WIDTH 4096

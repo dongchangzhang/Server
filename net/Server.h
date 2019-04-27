@@ -13,10 +13,12 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <opencv2/opencv.hpp>
 
 #include "../constants.h"
 #include "../data/TimeCheck.h"
 #include "../data/GNC.h"
+#include "../ui/MyFrame.h"
 
 // As a server
 // recv photo
@@ -30,10 +32,15 @@ public:
         close(fd);
     }
     void recv_photo();
+    void recv_photo(MyFrame *frame);
     bool recv_into_buff(int &recv_len);
+
+public:
+    static cv::Mat photo;
 
 private:
     bool init();
+
 private:
     int fd, port;
     int height, width;
@@ -41,7 +48,9 @@ private:
     sockaddr_in server, peer;
     socklen_t len = sizeof(server);
     unsigned char buffer[BUFFER_SIZE];
-};
 
+    // image to show
+    std::string window_name = " - mars - camera - ";
+};
 
 #endif //SERVER_SERVER_H
