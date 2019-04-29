@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ServerGUI"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\..\usr\local\share\OpenCV\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ServerGUI">
+				<Option output="/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/ServerGUI" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_FILE_OFFSET_BITS=64"/>
+					<Add option="-D__WXGTK__"/>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/local/lib/wx/include/gtk2-unicode-static-3.1"/>
+					<Add directory="/usr/local/include/wx-3.1"/>
+					<Add directory="."/>
+					<Add directory="/usr/lib/glibmm-2.4/include/"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 ServerGUI"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ServerGUI/fast">
+				<Option output="/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/ServerGUI" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_FILE_OFFSET_BITS=64"/>
+					<Add option="-D__WXGTK__"/>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/local/lib/wx/include/gtk2-unicode-static-3.1"/>
+					<Add directory="/usr/local/include/wx-3.1"/>
+					<Add directory="."/>
+					<Add directory="/usr/lib/glibmm-2.4/include/"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 ServerGUI/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/Answer.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/Answer.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/DATA_SEG.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/DATA_SEG.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/Data.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/Data.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/DataInjection.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/DataInjection.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/GNC.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/GNC.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/INFO.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/INFO.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/ImageToSend.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/ImageToSend.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/LAN.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/LAN.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/Parser.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/Parser.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/Pooling.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/Pooling.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/RS422.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/RS422.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/TimeCheck.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/data/TimeCheck.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/main.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/net/Client.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/net/Client.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/net/Server.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/net/Server.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/ui/MyApp.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/ui/MyApp.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/ui/MyFrame.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/ui/MyFrame.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/ui/MyGNCThread.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/ui/MyGNCThread.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/ui/MyImgPanel.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/ui/MyImgPanel.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/ui/MyRecvThread.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/ui/MyRecvThread.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/utils/Log.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/utils/utils.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/utils/utils.h">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/../../../../../usr/local/share/OpenCV/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/../../../../../usr/local/share/OpenCV/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/../../../../../usr/local/share/OpenCV/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/../../../../../usr/local/share/OpenCV/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

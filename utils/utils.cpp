@@ -2,6 +2,7 @@
 // Created by idz on 2019/4/9.
 //
 
+#include <ctime>
 #include "utils.h"
 
 float get_scale(u_char image_mode) {
@@ -33,4 +34,16 @@ void get_height_width(u_char image_mode, int &height, int &width) {
 
     width = PHOTO_WIDTH * scale;
     height = PHOTO_HEIGHT * scale;
+}
+void get_time(short &y, short &m, short &d, short &hh, short &mm, short &ss) {
+    time_t rawtime;
+    struct tm *ptminfo;
+    time(&rawtime);
+    ptminfo = localtime(&rawtime);
+    y = ptminfo->tm_year + 1900;
+    m = ptminfo->tm_mon;
+    d = ptminfo->tm_mday;
+    hh = ptminfo->tm_hour;
+    mm = ptminfo->tm_min;
+    ss = ptminfo->tm_sec;
 }

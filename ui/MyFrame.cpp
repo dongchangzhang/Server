@@ -5,78 +5,15 @@
 #include "MyFrame.h"
 #include "../net/Server.h"
 #include "../net/Client.h"
+#include "MyRecvThread.h"
+#include "MyGNCThread.h"
+#include "../utils/utils.h"
 #include <iostream>
 
-MyImgPanel *MyFrame::img;
-wxTextCtrl *MyFrame::tc1, *MyFrame::tc2, *MyFrame::tc3;
-
-static void get_time(short &y, short &m, short &d, short &hh, short &mm, short &ss) {
-    time_t rawtime;
-    struct tm *ptminfo;
-    time(&rawtime);
-    ptminfo = localtime(&rawtime);
-    y = ptminfo->tm_year + 1900;
-    m = ptminfo->tm_mon;
-    d = ptminfo->tm_mday;
-    hh = ptminfo->tm_hour;
-    mm = ptminfo->tm_min;
-    ss = ptminfo->tm_sec;
-}
-
-static void gnc(MyFrame *frame, std::string ip, int port) {
-    int count = 0, id = 0;
-    bool stop = false;
-    short y, m, d, hh, mm, ss;
-    Client client(ip, port);
-    std::chrono::milliseconds dura(2500);
-    std::chrono::milliseconds dura_long(500);
-    char infobuf[128];
-    while (!stop) {
-        ++id;
-        while ((count = client.send_gnc()) == -1) {
-            std::this_thread::sleep_for(dura);
-        }
-
-        get_time(y, m, d, hh, mm, ss);
-        snprintf(infobuf, 128, "%4d/%2d/%2d %2d:%2d:%2d -> send gnc %5d, %4d bits\n", y, m, d, hh, mm, ss, id, count);
-        frame->tc1->WriteText(infobuf);
-        std::this_thread::sleep_for(dura_long);
-    }
-}
-
-static void photo(MyFrame *frame, int port) {
-    int id = 0, count = 0;
-    bool stop = false;
-    short y, m, d, hh, mm, ss;
-    char infobuf[128];
-    Server server(port);
-    std::chrono::milliseconds dura(500);
-    while (!stop) {
-        ++id;
-        server.recv_photo();
-//        if (id % 5 == 0)
-//        frame->img->update(wxT("1.png"), wxBITMAP_TYPE_PNG);
-//        if (id % 5 == 1)
-//            frame->img->update(wxT("2.png"), wxBITMAP_TYPE_PNG);
-//
-//        if (id % 5 == 2)
-//            frame->img->update(wxT("3.png"), wxBITMAP_TYPE_PNG);
-//        if (id % 5 == 3)
-//            frame->img->update(wxT("4.png"), wxBITMAP_TYPE_PNG);
-//        if (id % 5 == 4)
-//            frame->img->update(wxT("5.png"), wxBITMAP_TYPE_PNG);
-
-        get_time(y, m, d, hh, mm, ss);
-        snprintf(infobuf, 128, "%4d/%2d/%2d %2d:%2d:%2d -> starting to recv photo\n", y, m, d, hh, mm, ss);
-        frame->tc2->WriteText(infobuf);
-        std::this_thread::sleep_for(dura);
-    }
-}
 
 BEGIN_EVENT_TABLE(MyFrame, wxFrame)
-                EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
-                EVT_MENU(wxID_EXIT, MyFrame::OnQuit)
                 EVT_BUTTON(Btn_Start, MyFrame::OnStart)
+                EVT_THREAD(kThreadUpdateId, MyFrame::ThreadUpdate)
 END_EVENT_TABLE()
 
 MyFrame::MyFrame(const wxString &title, const wxPoint &pos, const wxSize &size)
@@ -87,16 +24,11 @@ MyFrame::MyFrame(const wxString &title, const wxPoint &pos, const wxSize &size)
                      wxT("Show about dialog"));
     fileMenu->Append(wxID_EXIT, wxT("E&xit\tAlt-X"),
                      wxT("Quit this program"));
-    menuBar = new wxMenuBar();
-    menuBar->Append(fileMenu, wxT("&File"));
-    menuBar->Append(helpMenu, wxT("&Help"));
-    SetMenuBar(menuBar);
+
     CreateStatusBar(2);
     SetStatusText(wxT("Mars Server"));
-
     init_variables();
     add_wins_into_sizer();
-
 }
 
 void MyFrame::init_variables() {
@@ -134,15 +66,6 @@ void MyFrame::add_wins_into_sizer() {
     sizerAll->Add(sizerImg, 2, wxEXPAND | wxALL, 10);
     this->SetSizer(sizerAll);
 }
-void MyFrame::OnAbout(wxCommandEvent &event) {
-    wxString msg;
-    msg.Printf(wxT("hello"));
-    wxMessageBox(msg, wxT("About"), wxOK | wxICON_INFORMATION, this);
-}
-
-void MyFrame::OnQuit(wxCommandEvent &event) {
-    Close();
-}
 
 void MyFrame::OnStart(wxCommandEvent &event) {
     if (threadRunning) {
@@ -150,11 +73,36 @@ void MyFrame::OnStart(wxCommandEvent &event) {
         return;
     }
     threadRunning = true;
-    std::thread th1(gnc, this, IP, GNC_PORT);
-    std::thread th2(photo, this, SEND_IMAGE_PORT);
-    th1.detach();
-    th2.detach();
+    auto *th1 = new MyGNCThread(this, IP, GNC_PORT);
+    auto *th2 = new MyRecvThread(this, SEND_IMAGE_PORT);
+    th1->start_thread();
+    th2->start_thread();
     SetStatusText(wxT("Server Started"));
 }
 
+void MyFrame::ThreadUpdate(wxThreadEvent &event) {
+    int id = event.GetInt();
+    if (id == IMG_ID)
+        photo_update();
+    else if (id == GNC_ID)
+        gnc_update();
+}
+
+void MyFrame::photo_update() {
+    char buf[128];
+    snprintf(buf, 128, "HAHA %d", haha++);
+    this->img->update(mphoto);
+    SetStatusText(buf);
+    Refresh();
+}
+
+void MyFrame::gnc_update() {
+    int id = 0, count = 0;
+    char infobuf[128];
+    short y, m, d, hh, mm, ss;
+    get_time(y, m, d, hh, mm, ss);
+    snprintf(infobuf, 128, "%4d/%2d/%2d %2d:%2d:%2d -> send gnc %5d, %4d bits\n", y, m, d, hh, mm, ss, id, count);
+    this->tc1->WriteText(infobuf);
+    Refresh();
+}
 

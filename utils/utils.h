@@ -12,4 +12,6 @@ float get_scale(u_char image_mode);
 
 void get_height_width(u_char image_mode, int &height, int &width);
 
+void get_time(short &y, short &m, short &d, short &hh, short &mm, short &ss);
+
 #endif //MARSSIMULATOR_UTILS_H

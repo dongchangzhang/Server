@@ -40,9 +40,8 @@ END_EVENT_TABLE()
  void wxImagePanel::keyReleased(wxKeyEvent& event) {}
  */
 
-MyImgPanel::MyImgPanel(wxFrame* parent, wxString file, wxBitmapType format) :
-        wxPanel(parent)
-{
+MyImgPanel::MyImgPanel(wxFrame *parent, wxString file, wxBitmapType format) :
+        wxPanel(parent) {
     // load the file... ideally add a check to see if loading was successful
     image.LoadFile(file, format);
     w = -1;
@@ -55,8 +54,7 @@ MyImgPanel::MyImgPanel(wxFrame* parent, wxString file, wxBitmapType format) :
  * calling Refresh()/Update().
  */
 
-void MyImgPanel::paintEvent(wxPaintEvent & evt)
-{
+void MyImgPanel::paintEvent(wxPaintEvent &evt) {
     // depending on your system you may need to look at double-buffered dcs
     wxPaintDC dc(this);
     render(dc);
@@ -70,8 +68,7 @@ void MyImgPanel::paintEvent(wxPaintEvent & evt)
  * background, and expects you will redraw it when the window comes
  * back (by sending a paint event).
  */
-void MyImgPanel::paintNow()
-{
+void MyImgPanel::paintNow() {
     // depending on your system you may need to look at double-buffered dcs
     wxClientDC dc(this);
     render(dc);
@@ -82,26 +79,24 @@ void MyImgPanel::paintNow()
  * method so that it can work no matter what type of DC
  * (e.g. wxPaintDC or wxClientDC) is used.
  */
-void MyImgPanel::render(wxDC&  dc)
-{
+void MyImgPanel::render(wxDC &dc) {
     mtx.lock();
     int neww, newh;
-    dc.GetSize( &neww, &newh );
+    dc.GetSize(&neww, &newh);
     const float c = 0.75;
-    if( neww != w || newh != h )
-    {
+    if (neww != w || newh != h) {
         if (neww >= newh * 1.25) {
             neww = newh * 1.25;
         } else {
             newh = neww * 0.75;
         }
 
-        resized = wxBitmap( image.Scale( neww, newh /*, wxIMAGE_QUALITY_HIGH*/ ) );
+        resized = wxBitmap(image.Scale(neww, newh /*, wxIMAGE_QUALITY_HIGH*/ ));
         w = neww;
         h = newh;
-        dc.DrawBitmap( resized, 0, 0, false );
-    }else{
-        dc.DrawBitmap( resized, 0, 0, false );
+        dc.DrawBitmap(resized, 0, 0, false);
+    } else {
+        dc.DrawBitmap(resized, 0, 0, false);
     }
     mtx.unlock();
 }
@@ -110,15 +105,15 @@ void MyImgPanel::render(wxDC&  dc)
  * Here we call refresh to tell the panel to draw itself again.
  * So when the user resizes the image panel the image should be resized too.
  */
-void MyImgPanel::OnSize(wxSizeEvent& event){
+void MyImgPanel::OnSize(wxSizeEvent &event) {
     Refresh();
     //skip the event.
     event.Skip();
 }
 
 void MyImgPanel::update(cv::Mat &CVImg) {
-    wxClientDC dc(this);
-    render(dc);
+    image = wx_from_mat(CVImg);
+    Refresh();
 }
 
 void MyImgPanel::update(wxString file, wxBitmapType format) {
@@ -128,3 +123,16 @@ void MyImgPanel::update(wxString file, wxBitmapType format) {
     Refresh();
 }
 
+
+wxImage MyImgPanel::wx_from_mat(cv::Mat &img) {
+    cv::Mat im2;
+    if (img.channels() == 1) { cvtColor(img, im2, CV_GRAY2RGB); }
+    else if (img.channels() == 4) { cvtColor(img, im2, CV_BGRA2RGB); }
+    else { cvtColor(img, im2, CV_BGR2RGB); }
+    long imsize = im2.rows * im2.cols * im2.channels();
+    wxImage wxImg(im2.cols, im2.rows, (unsigned char *) malloc(imsize), false);
+    unsigned char *s = im2.data;
+    unsigned char *d = wxImg.GetData();
+    for (long i = 0; i < imsize; i++) { d[i] = s[i]; }
+    return wxImg;
+}

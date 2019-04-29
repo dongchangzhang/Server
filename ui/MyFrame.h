@@ -21,37 +21,35 @@ class MyFrame : public wxFrame {
 public:
     MyFrame(const wxString &title, const wxPoint &pos, const wxSize &size);
 
-    void OnQuit(wxCommandEvent &event);
-
-    void OnAbout(wxCommandEvent &event);
-
     void OnStart(wxCommandEvent &event);
+    void ThreadUpdate(wxThreadEvent& event);
 
-    void OnStop(wxCommandEvent &event);
+    void photo_update();
+    void gnc_update();
 
     void init_variables();
     void add_wins_into_sizer();
 
 public:
-    static MyImgPanel *img;
-    static wxTextCtrl *tc1, *tc2, *tc3;
+    enum {
+        Btn_Start,
+    };
+    cv::Mat mphoto;
 
 private:
+    int haha = 0;
     bool threadRunning = false;
 
-    wxMenuBar *menuBar;
+    MyImgPanel *img;
+    wxTextCtrl *tc1, *tc2, *tc3;
+
     wxButton *start;
     wxMenu *fileMenu, *helpMenu;
     wxBoxSizer *sizerAll, *sizerLog, *sizerBtn, *sizerImg;
     wxStaticText *gncLogTitle, *imgLogTitle, *cmdLogTitle;
 
 private:
-    enum {
-        Btn_Stop,
-        Btn_Start,
-    };
     DECLARE_EVENT_TABLE()
 };
-
 
 #endif //SERVERGUI_MYFRAME_H

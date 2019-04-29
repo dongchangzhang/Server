@@ -582,6 +582,33 @@ ui/MyFrame.cpp.s:
 	$(MAKE) -f CMakeFiles/ServerGUI.dir/build.make CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.s
 .PHONY : ui/MyFrame.cpp.s
 
+ui/MyGNCThread.o: ui/MyGNCThread.cpp.o
+
+.PHONY : ui/MyGNCThread.o
+
+# target to build an object file
+ui/MyGNCThread.cpp.o:
+	$(MAKE) -f CMakeFiles/ServerGUI.dir/build.make CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.o
+.PHONY : ui/MyGNCThread.cpp.o
+
+ui/MyGNCThread.i: ui/MyGNCThread.cpp.i
+
+.PHONY : ui/MyGNCThread.i
+
+# target to preprocess a source file
+ui/MyGNCThread.cpp.i:
+	$(MAKE) -f CMakeFiles/ServerGUI.dir/build.make CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.i
+.PHONY : ui/MyGNCThread.cpp.i
+
+ui/MyGNCThread.s: ui/MyGNCThread.cpp.s
+
+.PHONY : ui/MyGNCThread.s
+
+# target to generate assembly for a file
+ui/MyGNCThread.cpp.s:
+	$(MAKE) -f CMakeFiles/ServerGUI.dir/build.make CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.s
+.PHONY : ui/MyGNCThread.cpp.s
+
 ui/MyImgPanel.o: ui/MyImgPanel.cpp.o
 
 .PHONY : ui/MyImgPanel.o
@@ -608,6 +635,33 @@ ui/MyImgPanel.s: ui/MyImgPanel.cpp.s
 ui/MyImgPanel.cpp.s:
 	$(MAKE) -f CMakeFiles/ServerGUI.dir/build.make CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.s
 .PHONY : ui/MyImgPanel.cpp.s
+
+ui/MyRecvThread.o: ui/MyRecvThread.cpp.o
+
+.PHONY : ui/MyRecvThread.o
+
+# target to build an object file
+ui/MyRecvThread.cpp.o:
+	$(MAKE) -f CMakeFiles/ServerGUI.dir/build.make CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.o
+.PHONY : ui/MyRecvThread.cpp.o
+
+ui/MyRecvThread.i: ui/MyRecvThread.cpp.i
+
+.PHONY : ui/MyRecvThread.i
+
+# target to preprocess a source file
+ui/MyRecvThread.cpp.i:
+	$(MAKE) -f CMakeFiles/ServerGUI.dir/build.make CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.i
+.PHONY : ui/MyRecvThread.cpp.i
+
+ui/MyRecvThread.s: ui/MyRecvThread.cpp.s
+
+.PHONY : ui/MyRecvThread.s
+
+# target to generate assembly for a file
+ui/MyRecvThread.cpp.s:
+	$(MAKE) -f CMakeFiles/ServerGUI.dir/build.make CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.s
+.PHONY : ui/MyRecvThread.cpp.s
 
 utils/utils.o: utils/utils.cpp.o
 
@@ -696,9 +750,15 @@ help:
 	@echo "... ui/MyFrame.o"
 	@echo "... ui/MyFrame.i"
 	@echo "... ui/MyFrame.s"
+	@echo "... ui/MyGNCThread.o"
+	@echo "... ui/MyGNCThread.i"
+	@echo "... ui/MyGNCThread.s"
 	@echo "... ui/MyImgPanel.o"
 	@echo "... ui/MyImgPanel.i"
 	@echo "... ui/MyImgPanel.s"
+	@echo "... ui/MyRecvThread.o"
+	@echo "... ui/MyRecvThread.i"
+	@echo "... ui/MyRecvThread.s"
 	@echo "... utils/utils.o"
 	@echo "... utils/utils.i"
 	@echo "... utils/utils.s"

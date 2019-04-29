@@ -28,6 +28,9 @@ public:
     void OnSize(wxSizeEvent& event);
     void render(wxDC& dc);
 
+    wxImage wx_from_mat(cv::Mat &img);
+
+
     void update(cv::Mat &CVImg);
 
     void update(wxString file, wxBitmapType format);

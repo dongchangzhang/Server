@@ -25,6 +25,7 @@
 
 class Server {
 public:
+    Server() {}
     Server(int _port) : port(_port) {
         init();
     }
@@ -34,6 +35,7 @@ public:
     void recv_photo();
     void recv_photo(MyFrame *frame);
     bool recv_into_buff(int &recv_len);
+    bool recv_into_buff(int &recv_len, uchar _buffer[]);
 
 public:
     static cv::Mat photo;

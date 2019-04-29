@@ -5,7 +5,12 @@
 #ifndef SERVER_CONSTANTS_H
 #define SERVER_CONSTANTS_H
 
-// time
+#define GNC_ID 1
+#define IMG_ID 2
+enum {
+    kThreadUpdateId,
+    WORKER_EVENT,
+};
 
 // radius of mars - measurement is meters
 #define RADIUS 3396190

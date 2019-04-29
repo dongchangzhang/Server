@@ -9,7 +9,11 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     memset(buffer, 0, max_len);
     int start_addr = 0;
 
-    hour += 1;
+    minute += 20;
+    if (minute >= 60) {
+        minute = 0;
+        hour += 1;
+    }
     if (hour == 24) {
         day += 1;
         hour = 0;
@@ -56,7 +60,7 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     memcpy(&buffer[start_addr], &orbit, sizeof(orbit));
     start_addr += sizeof(orbit);
 
-    loc[0] = 6 * RADIUS;
+    loc[0] = 1.3 * RADIUS;
     loc[1] = 0;
     loc[2] = 0;
 

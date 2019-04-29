@@ -18,6 +18,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ServerGUI.dir/data/Pooling.cpp.o"
   "CMakeFiles/ServerGUI.dir/data/Answer.cpp.o"
   "CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.o"
+  "CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.o"
+  "CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.o"
   "ServerGUI.pdb"
   "ServerGUI"
 )
