@@ -16,6 +16,8 @@ BEGIN_EVENT_TABLE(MyFrame, wxFrame)
                 EVT_THREAD(kThreadUpdateId, MyFrame::ThreadUpdate)
 END_EVENT_TABLE()
 
+
+
 MyFrame::MyFrame(const wxString &title, const wxPoint &pos, const wxSize &size)
         : wxFrame(NULL, wxID_ANY, title, pos, size) {
     fileMenu = new wxMenu;
@@ -25,7 +27,7 @@ MyFrame::MyFrame(const wxString &title, const wxPoint &pos, const wxSize &size)
     fileMenu->Append(wxID_EXIT, wxT("E&xit\tAlt-X"),
                      wxT("Quit this program"));
 
-    CreateStatusBar(2);
+    CreateStatusBar(1);
     SetStatusText(wxT("Mars Server"));
     init_variables();
     add_wins_into_sizer();
@@ -92,17 +94,12 @@ void MyFrame::photo_update() {
     char buf[128];
     snprintf(buf, 128, "HAHA %d", haha++);
     this->img->update(mphoto);
+    this->tc2->WriteText(photoinfo);
     SetStatusText(buf);
     Refresh();
 }
 
 void MyFrame::gnc_update() {
-    int id = 0, count = 0;
-    char infobuf[128];
-    short y, m, d, hh, mm, ss;
-    get_time(y, m, d, hh, mm, ss);
-    snprintf(infobuf, 128, "%4d/%2d/%2d %2d:%2d:%2d -> send gnc %5d, %4d bits\n", y, m, d, hh, mm, ss, id, count);
-    this->tc1->WriteText(infobuf);
+    this->tc1->WriteText(gncinfo);
     Refresh();
 }
-

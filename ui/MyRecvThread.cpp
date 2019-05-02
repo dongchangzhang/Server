@@ -14,22 +14,37 @@ MyRecvThread::MyRecvThread(MyFrame *_handler, int _port) : port(_port), handler(
 void *MyRecvThread::Entry() {
     int recv_len, count = 0;
     bool stop = false;
+    short y, m, d, hh, mm, ss;
     Server server(port);
     while (!stop) {
         count = 0;
         while (!recv_photo_info(server, recv_len)) std::cout << "error info" << std::endl;
+
+        get_time(y, m, d, hh, mm, ss);
+        snprintf(handler->photoinfo, 128, "%4d/%2d/%2d %2d:%2d:%2d -> recv photo %4d : %4d/%4d\n", y, m, d, hh, mm, ss, photo_id, count / 2, h);
+        auto *start_recv = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
+        start_recv->SetInt(IMG_ID);
+        wxQueueEvent(handler->GetEventHandler(), start_recv);
+        start_recv->UnRef();
+
         init_for_recv_photo_segment();
+
         Status s = S;
         while (s != E) {
             ++count;
             recv_photo_segment(server, recv_len, s);
-            if (count % NITERS_TO_UPDATE_UI == 0) {
+            if (count % (NITERS_TO_UPDATE_UI) == 0) {
+                std::cout << count << std::endl;
                 handler->mphoto = photo;
-                auto *event = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
-                event->SetInt(IMG_ID);
-                wxQueueEvent(handler->GetEventHandler(), event);
+                auto *seg_sended = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
+                get_time(y, m, d, hh, mm, ss);
+                snprintf(handler->photoinfo, 128, "%4d/%2d/%2d %2d:%2d:%2d -> recv photo %4d : %4d/%4d\n", y, m, d, hh, mm, ss, photo_id, count / 2, h);
+                seg_sended->SetInt(IMG_ID);
+                wxQueueEvent(handler->GetEventHandler(), seg_sended);
+                seg_sended->UnRef();
             }
         }
+        std::cout << "ok" << std::endl;
     }
     return nullptr;
 }
@@ -63,8 +78,8 @@ bool MyRecvThread::init_for_recv_photo_segment() {
         std::cout << "Image Mode Set Error, Need 0x00, 0x11, 0x22, 0x33 or 0x44!" << std::endl;
         return false;
     }
+    memcpy(&photo_id, &buffer[26], 2);
     // get data
-    std::cout << "SERVER::Photo Getting content ..." << std::endl;
     photo = cv::Mat(h, w, CV_8UC3, cv::Scalar::all(0));
     return true;
 }
@@ -104,8 +119,9 @@ bool MyRecvThread::recv_photo_segment(Server &server, int &recv_len, Status &s) 
     s = M;
     label:
     memcpy(&where, &buffer[17], 1);
-    if (where == 0xAA)
+    if (where == 0xAA) {
         s = E;
+    }
     return true;
 }
 

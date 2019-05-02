@@ -17,9 +17,7 @@ using uchar = unsigned char;
 class MyRecvThread : public wxThread {
 public:
     enum Status {
-        S,
-        M,
-        E
+        S, M, E
     };
 public:
     MyRecvThread(MyFrame *_handler, int _port);
@@ -31,6 +29,7 @@ public:
 
     bool start_thread();
 private:
+    int photo_id = 0;
     cv::Mat photo;
     MyFrame *handler;
     int w, h, copy_len, nline, port;

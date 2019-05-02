@@ -35,6 +35,7 @@ public:
         Btn_Start,
     };
     cv::Mat mphoto;
+    char gncinfo[128], photoinfo[128];
 
 private:
     int haha = 0;

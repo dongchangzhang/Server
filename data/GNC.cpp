@@ -9,7 +9,7 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     memset(buffer, 0, max_len);
     int start_addr = 0;
 
-    minute += 20;
+    minute += 1;
     if (minute >= 60) {
         minute = 0;
         hour += 1;
@@ -43,7 +43,9 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
 
     memcpy(&buffer[start_addr], &quaternion, sizeof(quaternion));
     start_addr += sizeof(quaternion);
-
+    posture[0] = 10;
+    posture[1] = 10;
+    posture[2] = 10;
     memcpy(&buffer[start_addr], &posture, sizeof(posture));
     start_addr += sizeof(posture);
 
@@ -60,7 +62,7 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     memcpy(&buffer[start_addr], &orbit, sizeof(orbit));
     start_addr += sizeof(orbit);
 
-    loc[0] = 1.3 * RADIUS;
+    loc[0] = RADIUS + 260000;
     loc[1] = 0;
     loc[2] = 0;
 
