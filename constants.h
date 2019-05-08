@@ -7,6 +7,7 @@
 
 #define GNC_ID 1
 #define IMG_ID 2
+#define LOAD_ID 3
 enum {
     kThreadUpdateId,
     WORKER_EVENT,
@@ -32,6 +33,8 @@ enum {
 #define TIME_PORT 5001
 #define INJECTION_POER 5002
 #define GNC_PORT 5003
+#define CMD_PORT 5024
+#define INFO_PORT 5072
 #define SEND_IMAGE_PORT 6000
 
 #define TEST_ON_LOCALHOST
@@ -41,6 +44,6 @@ enum {
 #define CLIENT_IP_SHIT "172.20.58.75"
 #define CLIENT_IP_THINKPAD "172.20.76.216"
 
-#define PRINT_LOG_YES
+//#define PRINT_LOG_YES
 
 #endif //SERVER_CONSTANTS_H

@@ -21,7 +21,7 @@ public:
     wxImage image;
 
 public:
-    MyImgPanel(wxFrame* parent, wxString file, wxBitmapType format);
+    MyImgPanel(wxFrame* parent);
 
     void paintEvent(wxPaintEvent & evt);
     void paintNow();

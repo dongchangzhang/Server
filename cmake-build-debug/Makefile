@@ -555,6 +555,33 @@ ui/MyApp.cpp.s:
 	$(MAKE) -f CMakeFiles/ServerGUI.dir/build.make CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.s
 .PHONY : ui/MyApp.cpp.s
 
+ui/MyCmdThread.o: ui/MyCmdThread.cpp.o
+
+.PHONY : ui/MyCmdThread.o
+
+# target to build an object file
+ui/MyCmdThread.cpp.o:
+	$(MAKE) -f CMakeFiles/ServerGUI.dir/build.make CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.o
+.PHONY : ui/MyCmdThread.cpp.o
+
+ui/MyCmdThread.i: ui/MyCmdThread.cpp.i
+
+.PHONY : ui/MyCmdThread.i
+
+# target to preprocess a source file
+ui/MyCmdThread.cpp.i:
+	$(MAKE) -f CMakeFiles/ServerGUI.dir/build.make CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.i
+.PHONY : ui/MyCmdThread.cpp.i
+
+ui/MyCmdThread.s: ui/MyCmdThread.cpp.s
+
+.PHONY : ui/MyCmdThread.s
+
+# target to generate assembly for a file
+ui/MyCmdThread.cpp.s:
+	$(MAKE) -f CMakeFiles/ServerGUI.dir/build.make CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.s
+.PHONY : ui/MyCmdThread.cpp.s
+
 ui/MyFrame.o: ui/MyFrame.cpp.o
 
 .PHONY : ui/MyFrame.o
@@ -747,6 +774,9 @@ help:
 	@echo "... ui/MyApp.o"
 	@echo "... ui/MyApp.i"
 	@echo "... ui/MyApp.s"
+	@echo "... ui/MyCmdThread.o"
+	@echo "... ui/MyCmdThread.i"
+	@echo "... ui/MyCmdThread.s"
 	@echo "... ui/MyFrame.o"
 	@echo "... ui/MyFrame.i"
 	@echo "... ui/MyFrame.s"

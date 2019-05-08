@@ -19,6 +19,9 @@ void *MyGNCThread::Entry() {
     short id, count, y, m, d, hh, mm, ss;
     Client client(ip, port);
     while (!stop) {
+        while (!handler->dataLoad) {
+            wxMilliSleep(100);
+        }
         while ((count = client.send_gnc()) == -1) {
             wxMilliSleep(100);
         }

@@ -96,6 +96,15 @@ void Server::recv_photo() {
     cv::imwrite(std::to_string(photo_code++) + ".png", photo);
 }
 
+bool Server::recv(u_char *info, int max_len) {
+    memset(info, 0, max_len);
+    int recv_len = recvfrom(fd, info, BUFFER_SIZE, 0, (struct sockaddr*)&peer, &len);
+    if (recv_len == -1) {
+        return false;
+    }
+    return true;
+}
+
 bool Server::recv_into_buff(int &recv_len) {
     memset(buffer, 0, BUFFER_SIZE);
     recv_len = recvfrom(fd, buffer, BUFFER_SIZE, 0, (struct sockaddr*)&peer, &len);

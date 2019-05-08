@@ -40,10 +40,11 @@ END_EVENT_TABLE()
  void wxImagePanel::keyReleased(wxKeyEvent& event) {}
  */
 
-MyImgPanel::MyImgPanel(wxFrame *parent, wxString file, wxBitmapType format) :
-        wxPanel(parent) {
+MyImgPanel::MyImgPanel(wxFrame *parent) : wxPanel(parent) {
     // load the file... ideally add a check to see if loading was successful
-    image.LoadFile(file, format);
+    cv::Mat tmp(768, 1024, CV_8UC3, cv::Scalar::all(0));
+    image = wx_from_mat(tmp);
+//    image.LoadFile(file, format);
     w = -1;
     h = -1;
 }

@@ -38,6 +38,7 @@ public:
         close(fd);
     }
 
+    int send(char buf[], int send_len);
     int send_gnc();
     int send_from_buff(int send_len);
 private:

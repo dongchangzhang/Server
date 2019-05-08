@@ -20,6 +20,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/z/Ubuntu/Projects/ServerGUI/net/Client.cpp" "/home/z/Ubuntu/Projects/ServerGUI/cmake-build-debug/CMakeFiles/ServerGUI.dir/net/Client.cpp.o"
   "/home/z/Ubuntu/Projects/ServerGUI/net/Server.cpp" "/home/z/Ubuntu/Projects/ServerGUI/cmake-build-debug/CMakeFiles/ServerGUI.dir/net/Server.cpp.o"
   "/home/z/Ubuntu/Projects/ServerGUI/ui/MyApp.cpp" "/home/z/Ubuntu/Projects/ServerGUI/cmake-build-debug/CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.o"
+  "/home/z/Ubuntu/Projects/ServerGUI/ui/MyCmdThread.cpp" "/home/z/Ubuntu/Projects/ServerGUI/cmake-build-debug/CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.o"
   "/home/z/Ubuntu/Projects/ServerGUI/ui/MyFrame.cpp" "/home/z/Ubuntu/Projects/ServerGUI/cmake-build-debug/CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.o"
   "/home/z/Ubuntu/Projects/ServerGUI/ui/MyGNCThread.cpp" "/home/z/Ubuntu/Projects/ServerGUI/cmake-build-debug/CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.o"
   "/home/z/Ubuntu/Projects/ServerGUI/ui/MyImgPanel.cpp" "/home/z/Ubuntu/Projects/ServerGUI/cmake-build-debug/CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.o"

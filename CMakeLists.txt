@@ -16,7 +16,7 @@ add_executable(ServerGUI main.cpp
         data/RS422.cpp utils/Log.h utils/utils.h utils/utils.cpp  data/RS422.h data/Parser.cpp data/Parser.h
         data/Data.cpp data/Data.h data/GNC.cpp data/GNC.h data/LAN.cpp data/LAN.h  data/ImageToSend.cpp
         data/ImageToSend.h data/INFO.cpp data/INFO.h data/DATA_SEG.cpp data/DATA_SEG.h data/TimeCheck.cpp
-        data/TimeCheck.h data/Pooling.cpp data/Pooling.h data/Answer.cpp data/Answer.h data/DataInjection.cpp data/DataInjection.h ui/MyRecvThread.cpp ui/MyRecvThread.h ui/MyGNCThread.cpp ui/MyGNCThread.h)
+        data/TimeCheck.h data/Pooling.cpp data/Pooling.h data/Answer.cpp data/Answer.h data/DataInjection.cpp data/DataInjection.h ui/MyRecvThread.cpp ui/MyRecvThread.h ui/MyGNCThread.cpp ui/MyGNCThread.h ui/MyCmdThread.cpp ui/MyCmdThread.h)
 
 target_link_libraries(ServerGUI ${OpenCV_LIBS})
 target_link_libraries(ServerGUI ${wxWidgets_LIBRARIES})

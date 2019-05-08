@@ -189,6 +189,12 @@
 		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/ui/MyApp.h">
 			<Option target="ServerGUI"/>
 		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/ui/MyCmdThread.cpp">
+			<Option target="ServerGUI"/>
+		</Unit>
+		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/ui/MyCmdThread.h">
+			<Option target="ServerGUI"/>
+		</Unit>
 		<Unit filename="/home/z/Ubuntu/Projects/ServerGUI/ui/MyFrame.cpp">
 			<Option target="ServerGUI"/>
 		</Unit>

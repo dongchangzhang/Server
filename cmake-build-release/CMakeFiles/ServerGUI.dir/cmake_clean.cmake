@@ -20,6 +20,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.o"
   "CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.o"
   "CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.o"
+  "CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.o"
   "ServerGUI.pdb"
   "ServerGUI"
 )

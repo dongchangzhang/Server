@@ -20,8 +20,7 @@ void *MyRecvThread::Entry() {
         count = 0;
         while (!recv_photo_info(server, recv_len)) std::cout << "error info" << std::endl;
 
-        get_time(y, m, d, hh, mm, ss);
-        snprintf(handler->photoinfo, 128, "%4d/%2d/%2d %2d:%2d:%2d -> recv photo %4d : %4d/%4d\n", y, m, d, hh, mm, ss, photo_id, count / 2, h);
+        handler->ratio = 0;
         auto *start_recv = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
         start_recv->SetInt(IMG_ID);
         wxQueueEvent(handler->GetEventHandler(), start_recv);
@@ -34,16 +33,19 @@ void *MyRecvThread::Entry() {
             ++count;
             recv_photo_segment(server, recv_len, s);
             if (count % (NITERS_TO_UPDATE_UI) == 0) {
-                std::cout << count << std::endl;
                 handler->mphoto = photo;
+                handler->ratio = float(count / 2) / h;
                 auto *seg_sended = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
-                get_time(y, m, d, hh, mm, ss);
-                snprintf(handler->photoinfo, 128, "%4d/%2d/%2d %2d:%2d:%2d -> recv photo %4d : %4d/%4d\n", y, m, d, hh, mm, ss, photo_id, count / 2, h);
                 seg_sended->SetInt(IMG_ID);
                 wxQueueEvent(handler->GetEventHandler(), seg_sended);
                 seg_sended->UnRef();
             }
         }
+        handler->ratio = 1;
+        auto *end = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
+        end->SetInt(IMG_ID);
+        wxQueueEvent(handler->GetEventHandler(), end);
+        end->UnRef();
         std::cout << "ok" << std::endl;
     }
     return nullptr;
@@ -52,6 +54,7 @@ void *MyRecvThread::Entry() {
 bool MyRecvThread::recv_photo_info(Server &server, int &recv_len) {
     if (server.recv_into_buff(recv_len, buffer)) {
         std::cout << "SERVER::Photo Getting Info ..." << std::endl;
+        memcpy(&handler->nframe, &buffer[26], 1);
         if (buffer[0] != 0x55) {
             std::cout << "not an image info segment" << std::endl;
             return false;
@@ -90,15 +93,14 @@ bool MyRecvThread::recv_photo_segment(Server &server, int &recv_len, Status &s) 
     if (!server.recv_into_buff(recv_len, buffer)) {
         return false;
     }
+    memcpy(&nline, &buffer[14], sizeof(short));
     if (buffer[0] != 0xAA) {
-        std::cout << buffer[0] << "not an image line" << std::endl;
         return false;
     }
     memcpy(&photo_id, &buffer[10], sizeof(char));
     // open window
     if (mode == 0x44) {
         memcpy(&photo.data[nline * w * 3], &buffer[18], w * sizeof(char) * 3);
-        ++nline;
         goto label;
     }
     // else
@@ -109,12 +111,10 @@ bool MyRecvThread::recv_photo_segment(Server &server, int &recv_len, Status &s) 
             memcpy(&photo.data[nline * w * 3], &buffer[18], copy_len);
         } else {
             memcpy(&photo.data[nline * w * 3 + copy_len], &buffer[18], copy_len);
-            ++nline;
         }
 
     } else {
         memcpy(&photo.data[nline * w * 3], &buffer[18], w * sizeof(char) * 3);
-        ++nline;
     }
     s = M;
     label:

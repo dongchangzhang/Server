@@ -9,6 +9,7 @@
 #include "MyFrame.h"
 
 const int millis_per_gnc = 1000;
+
 class MyGNCThread : public wxThread {
 public:
     MyGNCThread(MyFrame *_handler, std::string _ip, int _port);

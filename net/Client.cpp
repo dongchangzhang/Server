@@ -43,6 +43,11 @@ int Client::send_from_buff(int send_len) {
     return count;
 }
 
+int Client::send(char *buf, int send_len) {
+    int count = sendto(fd, buf, send_len, 0, (struct sockaddr*) &server, len);
+    return count;
+}
+
 
 
 

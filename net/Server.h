@@ -32,8 +32,8 @@ public:
     ~Server() {
         close(fd);
     }
+    bool recv(u_char *info, int max_len);
     void recv_photo();
-    void recv_photo(MyFrame *frame);
     bool recv_into_buff(int &recv_len);
     bool recv_into_buff(int &recv_len, uchar _buffer[]);
 

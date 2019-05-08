@@ -10,7 +10,7 @@
 #include "../constants.h"
 #include "../net/Server.h"
 
-const int NITERS_TO_UPDATE_UI = 500;
+const int NITERS_TO_UPDATE_UI = 512;
 using uchar = unsigned char;
 
 

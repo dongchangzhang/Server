@@ -43,9 +43,9 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
 
     memcpy(&buffer[start_addr], &quaternion, sizeof(quaternion));
     start_addr += sizeof(quaternion);
-    posture[0] = 10;
-    posture[1] = 10;
-    posture[2] = 10;
+    posture[0] = 0;
+    posture[1] = 0;
+    posture[2] = 0;
     memcpy(&buffer[start_addr], &posture, sizeof(posture));
     start_addr += sizeof(posture);
 
@@ -62,9 +62,9 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     memcpy(&buffer[start_addr], &orbit, sizeof(orbit));
     start_addr += sizeof(orbit);
 
-    loc[0] = RADIUS + 260000;
-    loc[1] = 0;
-    loc[2] = 0;
+    loc[0] =  RADIUS + 260000;
+    loc[1] =  RADIUS + 260000;
+    loc[2] =  RADIUS + 260000;
 
     memcpy(&buffer[start_addr], &loc, sizeof(loc));
     start_addr += sizeof(loc);
@@ -74,4 +74,8 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
 
 double GNC::get_angle() {
     return 0;
+}
+
+void GNC::update_gnc() {
+
 }
