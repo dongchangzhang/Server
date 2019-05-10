@@ -16,6 +16,7 @@ CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.o: ../data/DataInjection.h
 CMakeFiles/ServerGUI.dir/data/GNC.cpp.o: ../constants.h
 CMakeFiles/ServerGUI.dir/data/GNC.cpp.o: ../data/GNC.cpp
 CMakeFiles/ServerGUI.dir/data/GNC.cpp.o: ../data/GNC.h
+CMakeFiles/ServerGUI.dir/data/GNC.cpp.o: ../utils/utils.h
 
 CMakeFiles/ServerGUI.dir/data/INFO.cpp.o: ../data/INFO.cpp
 CMakeFiles/ServerGUI.dir/data/INFO.cpp.o: ../data/INFO.h

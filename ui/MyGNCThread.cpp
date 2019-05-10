@@ -16,18 +16,28 @@ MyGNCThread::MyGNCThread(MyFrame *_handler, std::string _ip, int _port) :
 
 void *MyGNCThread::Entry() {
     bool stop = false;
-    short id, count, y, m, d, hh, mm, ss;
+    int count;
     Client client(ip, port);
+    GNC gnc;
     while (!stop) {
         while (!handler->dataLoad) {
             wxMilliSleep(100);
         }
-        while ((count = client.send_gnc()) == -1) {
+        while ((count = client.send_gnc(gnc)) == -1) {
             wxMilliSleep(100);
         }
-        get_time(y, m, d, hh, mm, ss);
-        snprintf(handler->gncinfo, 128, "%4d/%2d/%2d %2d:%2d:%2d -> send gnc %5d, %4d bits\n", y, m, d, hh, mm, ss, id,
-                 count);
+        snprintf(handler->gncinfo, 512,
+                 "GNC ID (%% 255):\n -> %d\n"
+                 "Sending Time:\n -> %4d/%2d/%2d %2d:%2d:%2d\n"
+                 "Sun Direction:\n -> (%6.1lf, %6.1lf, %6.1lf)\n"
+                 "Camera Location:\n -> (%6.1lf, %6.1lf, %6.1lf)\n"
+                 "Roll Pitch Yaw:\n ->  (%6.1lf, %6.1lf, %6.1lf)\n",
+                 ++photo_id % 255,
+                 gnc.year + 1900, gnc.month, gnc.day, gnc.hour, gnc.minute, gnc.second,
+                 -gnc.sun[0], -gnc.sun[1], -gnc.sun[2],
+                 gnc.loc[0], gnc.loc[1], gnc.loc[2],
+                 gnc.posture[0], gnc.posture[1], gnc.posture[2]
+        );
         auto *event = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
         event->SetInt(GNC_ID);
         wxQueueEvent(handler->GetEventHandler(), event);

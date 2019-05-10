@@ -3,21 +3,32 @@
 //
 
 #include <cstdlib>
+#include <cmath>
+#include <iostream>
 #include "GNC.h"
+#include "../utils/utils.h"
 
+GNC::GNC() {
+    nsec_now = time(nullptr);
+    loc[0] = RADIUS;
+    loc[1] = RADIUS;
+    loc[2] = RADIUS;
+}
 void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
+    struct tm *tm_now;
+    tm_now = localtime(&nsec_now);
+    year = tm_now->tm_year;
+    month = tm_now->tm_mon;
+    day = tm_now->tm_mday;
+    hour = tm_now->tm_hour;
+    minute = tm_now->tm_min;
+    second = tm_now->tm_sec;
+
+    update_gnc();
+
     memset(buffer, 0, max_len);
     int start_addr = 0;
 
-    minute += 1;
-    if (minute >= 60) {
-        minute = 0;
-        hour += 1;
-    }
-    if (hour == 24) {
-        day += 1;
-        hour = 0;
-    }
     memcpy(&buffer[start_addr], &year, sizeof(year));
     start_addr += sizeof(year);
 
@@ -36,13 +47,15 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     memcpy(&buffer[start_addr], &second, sizeof(second));
     start_addr += sizeof(second);
 
-    quaternion[0] = 1;
+    quaternion[0] = 0;
     quaternion[1] = 0;
     quaternion[2] = 0;
-    quaternion[3] = 0;
+    quaternion[3] = 1;
 
     memcpy(&buffer[start_addr], &quaternion, sizeof(quaternion));
     start_addr += sizeof(quaternion);
+
+    // euler
     posture[0] = 0;
     posture[1] = 0;
     posture[2] = 0;
@@ -52,8 +65,8 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     memcpy(&buffer[start_addr], &dist, sizeof(dist));
     start_addr += sizeof(dist);
 
-    sun[0] = 1;
-    sun[1] = 1;
+    sun[0] = -100;
+    sun[1] = 0;
     sun[2] = 1;
 
     memcpy(&buffer[start_addr], &sun, sizeof(sun));
@@ -62,14 +75,12 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     memcpy(&buffer[start_addr], &orbit, sizeof(orbit));
     start_addr += sizeof(orbit);
 
-    loc[0] =  RADIUS + 260000;
-    loc[1] =  RADIUS + 260000;
-    loc[2] =  RADIUS + 260000;
 
     memcpy(&buffer[start_addr], &loc, sizeof(loc));
     start_addr += sizeof(loc);
 
     gnc_len = start_addr;
+
 }
 
 double GNC::get_angle() {
@@ -77,5 +88,13 @@ double GNC::get_angle() {
 }
 
 void GNC::update_gnc() {
-
+    const int N = 360, D = 3656;
+    double d = sqrt(loc[1] / 1000 * loc[0]/1000 + loc[1] / 1000 * loc[1]/1000 + loc[2]/1000 * loc[2]/1000) / D;
+    nsec_now += (86400 / N);
+    float dangle = 4 * 2 * M_PI / N;
+    angle += (dangle / d);
+    loc[0] =  316500 + 513000 * cos(angle);
+    loc[1] =  -5004000 * sin(angle);
+    loc[2] =  5843900 + 10473000 * cos(angle);
 }
+

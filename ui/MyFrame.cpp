@@ -153,7 +153,7 @@ void MyFrame::photo_update() {
         gaugeTitle->SetLabelText(_T("正在接收图片数据..."));
         char info[128];
         this->tc2->Clear();
-        snprintf(info, 128, "The photo code (N%%255) is %d", nframe);
+        snprintf(info, 128, "The photo code (N %% 255) is %d", nframe);
         this->tc2->WriteText(info);
     } else if (ratio == 1) {
         gaugeTitle->SetLabelText(_T("图片数据接收完成!"));
@@ -163,7 +163,8 @@ void MyFrame::photo_update() {
 
 void MyFrame::gnc_update() {
     this->tc1->Clear();
-    this->tc1->WriteText(gncinfo);
+    printf("%s\n", gncinfo);
+    tc1->WriteText(gncinfo);
     Refresh();
 }
 

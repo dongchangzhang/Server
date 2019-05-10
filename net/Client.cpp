@@ -29,12 +29,13 @@ bool Client::init() {
     return true;
 }
 
-int Client::send_gnc() {
+int Client::send_gnc(GNC &_gnc) {
     int gnc_len = 0;
     memset(buffer, 0, BUFFER_SIZE);
     gnc.get_gnc(buffer, gnc_len, BUFFER_SIZE);
     int count = send_from_buff(gnc_len);
     PRINT_LOG("CLIENT", "GNC", "LEN-SEND ", std::to_string(count))
+    _gnc = gnc;
     return count;
 }
 

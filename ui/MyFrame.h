@@ -45,7 +45,7 @@ public:
     };
     cv::Mat mphoto;
     int nframe = 0;
-    char gncinfo[128], photoinfo[128];
+    char gncinfo[512], photoinfo[128];
     wxGauge *gauge;
     wxStaticText *gaugeTitle;
     bool dataLoad = true;

@@ -17,6 +17,7 @@ CMakeFiles/ServerGUI.dir/data/GNC.cpp.o
  /home/z/Ubuntu/Projects/ServerGUI/constants.h
  /home/z/Ubuntu/Projects/ServerGUI/data/GNC.cpp
  /home/z/Ubuntu/Projects/ServerGUI/data/GNC.h
+ /home/z/Ubuntu/Projects/ServerGUI/utils/utils.h
 CMakeFiles/ServerGUI.dir/data/INFO.cpp.o
  /home/z/Ubuntu/Projects/ServerGUI/data/INFO.cpp
  /home/z/Ubuntu/Projects/ServerGUI/data/INFO.h

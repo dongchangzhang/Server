@@ -17,6 +17,7 @@ public:
 
     bool start_thread();
 private:
+    int photo_id = 0;
     MyFrame *handler;
     std::string ip;
     int port;

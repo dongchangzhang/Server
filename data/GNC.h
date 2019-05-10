@@ -26,8 +26,10 @@ struct GNC {
     double sun[3];    // 探测器轨道坐标系 下太阳方位矢量
     double orbit[6];    // 轨道六根数（半长 轴、偏心率、轨道 倾角、升交点赤经、 近地点幅角、真近 点角）
     double loc[6]; // 火星惯性系下探测 器位置（X、Y、Z、 Vx、Vy、Vz）
-    int i = 0;
-    GNC() {};
+
+    time_t nsec_now;
+    float angle = 0;
+    GNC();
     void get_gnc(unsigned char buffer[], int &gnc_len, int max_len);
     double get_angle();
     void update_gnc();
