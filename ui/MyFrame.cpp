@@ -66,10 +66,12 @@ MyFrame::MyFrame(const wxString &title, const wxPoint &pos, const wxSize &size)
 
 void MyFrame::init_variables() {
     img = new MyImgPanel(this);
+    img2 = new MyImgPanel(this, 255);
     staticLine1 = new wxStaticLine(this, wxID_STATIC, wxDefaultPosition, wxSize(150, -1), wxLI_HORIZONTAL);
     staticLine2 = new wxStaticLine(this, wxID_STATIC, wxDefaultPosition, wxSize(150, -1), wxLI_HORIZONTAL);
     staticLine3 = new wxStaticLine(this, wxID_STATIC, wxDefaultPosition, wxSize(150, -1), wxLI_HORIZONTAL);
     staticLine4 = new wxStaticLine(this, wxID_STATIC, wxDefaultPosition, wxSize(150, -1), wxLI_HORIZONTAL);
+    staticLine5 = new wxStaticLine(this, wxID_STATIC, wxDefaultPosition, wxSize(150, -1), wxLI_HORIZONTAL);
 
 //    sizerLog = new wxBoxSizer(wxVERTICAL);
     sizerCmd = new wxBoxSizer(wxVERTICAL);
@@ -77,6 +79,7 @@ void MyFrame::init_variables() {
     modeTitle = new wxStaticText(this, wxID_ANY, _T("切换图片传输方式"));
     photoTitle = new wxStaticText(this, wxID_ANY, _T("图片信息"));
     gncTitle = new wxStaticText(this, wxID_ANY, _T("GNC轨道信息"));
+    gncImgTitle = new wxStaticText(this, wxID_ANY, _T("相机位置实时状态图"));
     gaugeTitle = new wxStaticText(this, wxID_ANY, _T("信息条"));
     tc1 = new wxTextCtrl(this, wxID_ANY, "",
                          wxDefaultPosition, wxDefaultSize,
@@ -96,8 +99,8 @@ void MyFrame::init_variables() {
 }
 
 void MyFrame::add_wins_into_sizer() {
-    short ww = 8;
-    sizerAll->Add(img, 2, wxEXPAND | wxALL, ww);
+    short ww = 2;
+    sizerAll->Add(img, 8, wxEXPAND | wxALL, ww);
     sizerCmd->Add(start, 0, wxEXPAND | wxALL, ww);
     sizerCmd->Add(staticLine1, 0, wxEXPAND | wxALL, ww);
     sizerCmd->Add(gaugeTitle, 0, wxEXPAND | wxALL, ww);
@@ -113,8 +116,11 @@ void MyFrame::add_wins_into_sizer() {
     sizerCmd->Add(staticLine4, 0, wxEXPAND | wxALL, ww);
     sizerCmd->Add(gncTitle, 0, wxEXPAND | wxALL, ww);
     sizerCmd->Add(tc1, 1, wxEXPAND | wxALL, ww);
+    sizerCmd->Add(staticLine5, 0, wxEXPAND | wxALL, ww);
+    sizerCmd->Add(gncImgTitle, 0, wxEXPAND | wxALL, ww);
+    sizerCmd->Add(img2, 2, wxEXPAND | wxALL, ww);
 
-    sizerAll->Add(sizerCmd, 1, wxEXPAND | wxALL, ww);
+    sizerAll->Add(sizerCmd, 3, wxEXPAND | wxALL, ww);
     this->SetSizer(sizerAll);
 }
 
@@ -153,8 +159,7 @@ void MyFrame::photo_update() {
         gaugeTitle->SetLabelText(_T("正在接收图片数据..."));
         char info[128];
         this->tc2->Clear();
-        snprintf(info, 128, "The photo code (N %% 255) is %d", nframe);
-        this->tc2->WriteText(info);
+        this->tc2->WriteText(wxString::Format(_T("图像编号（模255后）: %d"), nframe));
     } else if (ratio == 1) {
         gaugeTitle->SetLabelText(_T("图片数据接收完成!"));
     }
@@ -163,8 +168,8 @@ void MyFrame::photo_update() {
 
 void MyFrame::gnc_update() {
     this->tc1->Clear();
-    printf("%s\n", gncinfo);
-    tc1->WriteText(gncinfo);
+    tc1->WriteText(gncInfo);
+    img2->draw(yy, zz);
     Refresh();
 }
 

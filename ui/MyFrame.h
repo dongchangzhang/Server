@@ -46,9 +46,12 @@ public:
     cv::Mat mphoto;
     int nframe = 0;
     char gncinfo[512], photoinfo[128];
+    wxString gncInfo;
     wxGauge *gauge;
     wxStaticText *gaugeTitle;
     bool dataLoad = true;
+
+    double yy, zz;
 
     // photo gauge
     float ratio = 0;
@@ -58,14 +61,14 @@ private:
     int haha = 0;
     bool threadRunning = false;
 
-    MyImgPanel *img;
+    MyImgPanel *img, *img2;
     wxTextCtrl *tc1, *tc2;
 
     wxButton *start, *sendGnc;
     wxRadioButton *autoMode, *manualMode;
     wxBoxSizer *sizerAll, *sizerCmd;
-    wxStaticText *cmdTitle, *photoTitle, *modeTitle, *gncTitle;
-    wxStaticLine* staticLine1, * staticLine2, *staticLine3, *staticLine4;
+    wxStaticText *gncImgTitle, *photoTitle, *modeTitle, *gncTitle;
+    wxStaticLine* staticLine1, * staticLine2, *staticLine3, *staticLine4, *staticLine5;
 
 private:
     DECLARE_EVENT_TABLE()

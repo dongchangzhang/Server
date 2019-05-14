@@ -20,18 +20,20 @@ void *MyGNCThread::Entry() {
     Client client(ip, port);
     GNC gnc;
     while (!stop) {
-        while (!handler->dataLoad) {
+        while (!handler->dataLoad && !handler->dataLoad) {
             wxMilliSleep(100);
         }
         while ((count = client.send_gnc(gnc)) == -1) {
             wxMilliSleep(100);
         }
-        snprintf(handler->gncinfo, 512,
-                 "GNC ID (%% 255):\n -> %d\n"
-                 "Sending Time:\n -> %4d/%2d/%2d %2d:%2d:%2d\n"
-                 "Sun Direction:\n -> (%6.1lf, %6.1lf, %6.1lf)\n"
-                 "Camera Location:\n -> (%6.1lf, %6.1lf, %6.1lf)\n"
-                 "Roll Pitch Yaw:\n ->  (%6.1lf, %6.1lf, %6.1lf)\n",
+        handler->yy = gnc.loc[1];
+        handler->zz = gnc.loc[2];
+        handler->gncInfo = wxString::Format(
+                 _T("轨道编号 (模255)----- { %d }\n"
+                    "发送轨道信息实时时间 { %4d/%2d/%2d %2d:%2d:%2d }\n"
+                    "太阳方向------------- { x = %.1lf, y = %.1lf, z = %.1lf }\n"
+                    "相机位置(单位米)----- { x = %.1lf; y = %.1lf, z = %.1lf }\n"
+                    "相机欧拉角度(单位度) { 俯仰角 = %.1lf; 偏航角 = %.1lf; 滚动角 = %.1lf }\n"),
                  ++photo_id % 255,
                  gnc.year + 1900, gnc.month, gnc.day, gnc.hour, gnc.minute, gnc.second,
                  -gnc.sun[0], -gnc.sun[1], -gnc.sun[2],

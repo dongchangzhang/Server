@@ -65,9 +65,6 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     memcpy(&buffer[start_addr], &dist, sizeof(dist));
     start_addr += sizeof(dist);
 
-    sun[0] = -100;
-    sun[1] = 0;
-    sun[2] = 1;
 
     memcpy(&buffer[start_addr], &sun, sizeof(sun));
     start_addr += sizeof(sun);
@@ -94,7 +91,11 @@ void GNC::update_gnc() {
     float dangle = 4 * 2 * M_PI / N;
     angle += (dangle / d);
     loc[0] =  316500 + 513000 * cos(angle);
-    loc[1] =  -5004000 * sin(angle);
+    loc[1] =  -8004000 * sin(angle);
     loc[2] =  5843900 + 10473000 * cos(angle);
+    sun[0] = loc[0] * 2;
+    sun[1] = loc[1] * 2;
+    sun[2] = loc[2] * 2;
+
 }
 

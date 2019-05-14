@@ -42,11 +42,24 @@ END_EVENT_TABLE()
 
 MyImgPanel::MyImgPanel(wxFrame *parent) : wxPanel(parent) {
     // load the file... ideally add a check to see if loading was successful
-    cv::Mat tmp(768, 1024, CV_8UC3, cv::Scalar::all(0));
+    cv::Mat tmp(3072, 4096, CV_8UC3, cv::Scalar::all(0));
     image = wx_from_mat(tmp);
 //    image.LoadFile(file, format);
     w = -1;
     h = -1;
+    c1 = 4.0 / 3.0;
+    c2 = 3.0 / 4.0;
+}
+MyImgPanel::MyImgPanel(wxFrame *parent, int c) : wxPanel(parent) {
+    // load the file... ideally add a check to see if loading was successful
+    image_route = cv::Mat(2000, 2600, CV_8UC3, cv::Scalar::all(0));
+    init_mars();
+    image = wx_from_mat(image_route);
+//    image.LoadFile(file, format);
+    w = -1;
+    h = -1;
+    c1 = double(image_route.cols) / double(image_route.rows);
+    c2 = double(image_route.rows) / double(image_route.cols);
 }
 
 /*
@@ -84,12 +97,11 @@ void MyImgPanel::render(wxDC &dc) {
     mtx.lock();
     int neww, newh;
     dc.GetSize(&neww, &newh);
-    const float c = 0.75;
     if (neww != w || newh != h) {
-        if (neww >= newh * 1.25) {
-            neww = newh * 1.25;
+        if (neww >= newh * c1) {
+            neww = newh * c1;
         } else {
-            newh = neww * 0.75;
+            newh = neww * c2;
         }
 
         resized = wxBitmap(image.Scale(neww, newh /*, wxIMAGE_QUALITY_HIGH*/ ));
@@ -136,4 +148,37 @@ wxImage MyImgPanel::wx_from_mat(cv::Mat &img) {
     unsigned char *d = wxImg.GetData();
     for (long i = 0; i < imsize; i++) { d[i] = s[i]; }
     return wxImg;
+}
+
+
+void MyImgPanel::init_mars() {
+    double angle = 0, dangle = 0.001;
+    int j = 0, k = 0;
+    double y = 0, z = 0;
+    yz2jk(y, z, j, k);
+
+    while (angle < 2 * M_PI) {
+        angle += dangle;
+        y =  -8004 * sin(angle);
+        z =  5843.9 + 10473 * cos(angle);
+        yz2jk(y, z, j, k);
+        cv::circle(image_route, cv::Point(k, j), 2, cv::Scalar(255, 255, 255));
+    }
+    //center
+    int oy, oz, yy, zz;
+    yz2jk(0, 0, oy, oz);
+    // radius
+    yz2jk(0, 3396, yy, zz);
+    cv::circle(image_route, cv::Point(oz, oy), zz - oz, cv::Scalar(123, 130, 161), -1, 8);
+    y =  -8004 * sin(1);
+    z =  5843.9 + 10473 * cos(1);
+}
+
+void MyImgPanel::draw(double y, double z) {
+    int j, k;
+    yz2jk(y / 1000, z / 1000, j, k);
+    auto tmp = image_route.clone();
+    cv::circle(tmp, cv::Point(k, j), 30, cv::Scalar(0, 0, 255), -1, 8);
+    image = wx_from_mat(tmp);
+    Refresh();
 }
