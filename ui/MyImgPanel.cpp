@@ -125,6 +125,8 @@ void MyImgPanel::OnSize(wxSizeEvent &event) {
 }
 
 void MyImgPanel::update(cv::Mat &CVImg) {
+    c1 = double(CVImg.cols) / double(CVImg.rows);
+    c2 = double(CVImg.rows) / double(CVImg.cols);
     image = wx_from_mat(CVImg);
     Refresh();
 }
@@ -138,15 +140,31 @@ void MyImgPanel::update(wxString file, wxBitmapType format) {
 
 
 wxImage MyImgPanel::wx_from_mat(cv::Mat &img) {
+    int code1 = 0, code4 = 0, code = 0;
     cv::Mat im2;
-    if (img.channels() == 1) { cvtColor(img, im2, CV_GRAY2RGB); }
-    else if (img.channels() == 4) { cvtColor(img, im2, CV_BGRA2RGB); }
-    else { cvtColor(img, im2, CV_BGR2RGB); }
+#ifdef CV_GRAY2RGB
+    code1 = CV_GRAY2RGB;
+    code4 = CV_BGRA2RGB;
+    code = CV_BGR2RGB;
+#else
+    code1 = cv::COLOR_GRAY2RGB;
+    code4 = cv::COLOR_BGRA2RGB;
+    code = cv::COLOR_BGR2RGB;
+#endif
+    if (img.channels() == 1) {
+        cvtColor(img, im2, code1);
+    } else if (img.channels() == 4) {
+        cvtColor(img, im2, code4);
+    } else {
+        cvtColor(img, im2, code);
+    }
     long imsize = im2.rows * im2.cols * im2.channels();
     wxImage wxImg(im2.cols, im2.rows, (unsigned char *) malloc(imsize), false);
     unsigned char *s = im2.data;
     unsigned char *d = wxImg.GetData();
-    for (long i = 0; i < imsize; i++) { d[i] = s[i]; }
+    for (long i = 0; i < imsize; i++) {
+        d[i] = s[i];
+    }
     return wxImg;
 }
 

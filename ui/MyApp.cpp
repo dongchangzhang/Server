@@ -6,7 +6,7 @@
 
 bool MyApp::OnInit() {
     wxInitAllImageHandlers();
-    frame = new MyFrame(wxT("Mars Server!"), wxPoint(50, 50), wxSize(1920, 1080));
+    frame = new MyFrame(wxT("Mars Server!"), wxPoint(50, 50), wxSize(1280, 720));
     frame->Show(true);
     return true;
 }

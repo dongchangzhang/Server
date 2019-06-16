@@ -59,7 +59,7 @@ public:
 
 private:
     int haha = 0;
-    bool threadRunning = false;
+    bool threadRunning = false, autoModeFlag = true;
 
     MyImgPanel *img, *img2;
     wxTextCtrl *tc1, *tc2;

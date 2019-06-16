@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/z/Ubuntu/Projects/ServerGUI
+CMAKE_SOURCE_DIR = /Users/vhdsih/Codes/LabProjects/ServerGUI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/z/Ubuntu/Projects/ServerGUI/cmake-build-release
+CMAKE_BINARY_DIR = /Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ServerGUI.dir/depend.make
@@ -59,289 +59,289 @@ include CMakeFiles/ServerGUI.dir/flags.make
 
 CMakeFiles/ServerGUI.dir/main.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
 CMakeFiles/ServerGUI.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ServerGUI.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/main.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ServerGUI.dir/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/main.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/main.cpp
 
 CMakeFiles/ServerGUI.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/main.cpp > CMakeFiles/ServerGUI.dir/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/main.cpp > CMakeFiles/ServerGUI.dir/main.cpp.i
 
 CMakeFiles/ServerGUI.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/main.cpp -o CMakeFiles/ServerGUI.dir/main.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/main.cpp -o CMakeFiles/ServerGUI.dir/main.cpp.s
 
 CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
 CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.o: ../ui/MyApp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/ui/MyApp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyApp.cpp
 
 CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/ui/MyApp.cpp > CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyApp.cpp > CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.i
 
 CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/ui/MyApp.cpp -o CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyApp.cpp -o CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.s
 
 CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
 CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.o: ../ui/MyFrame.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/ui/MyFrame.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyFrame.cpp
 
 CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/ui/MyFrame.cpp > CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyFrame.cpp > CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.i
 
 CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/ui/MyFrame.cpp -o CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyFrame.cpp -o CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.s
 
 CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
 CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.o: ../ui/MyImgPanel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/ui/MyImgPanel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyImgPanel.cpp
 
 CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/ui/MyImgPanel.cpp > CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyImgPanel.cpp > CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.i
 
 CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/ui/MyImgPanel.cpp -o CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.s
-
-CMakeFiles/ServerGUI.dir/net/Server.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
-CMakeFiles/ServerGUI.dir/net/Server.cpp.o: ../net/Server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ServerGUI.dir/net/Server.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/net/Server.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/net/Server.cpp
-
-CMakeFiles/ServerGUI.dir/net/Server.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/net/Server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/net/Server.cpp > CMakeFiles/ServerGUI.dir/net/Server.cpp.i
-
-CMakeFiles/ServerGUI.dir/net/Server.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/net/Server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/net/Server.cpp -o CMakeFiles/ServerGUI.dir/net/Server.cpp.s
-
-CMakeFiles/ServerGUI.dir/net/Client.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
-CMakeFiles/ServerGUI.dir/net/Client.cpp.o: ../net/Client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ServerGUI.dir/net/Client.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/net/Client.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/net/Client.cpp
-
-CMakeFiles/ServerGUI.dir/net/Client.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/net/Client.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/net/Client.cpp > CMakeFiles/ServerGUI.dir/net/Client.cpp.i
-
-CMakeFiles/ServerGUI.dir/net/Client.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/net/Client.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/net/Client.cpp -o CMakeFiles/ServerGUI.dir/net/Client.cpp.s
-
-CMakeFiles/ServerGUI.dir/data/RS422.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
-CMakeFiles/ServerGUI.dir/data/RS422.cpp.o: ../data/RS422.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ServerGUI.dir/data/RS422.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/RS422.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/data/RS422.cpp
-
-CMakeFiles/ServerGUI.dir/data/RS422.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/RS422.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/data/RS422.cpp > CMakeFiles/ServerGUI.dir/data/RS422.cpp.i
-
-CMakeFiles/ServerGUI.dir/data/RS422.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/RS422.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/data/RS422.cpp -o CMakeFiles/ServerGUI.dir/data/RS422.cpp.s
-
-CMakeFiles/ServerGUI.dir/utils/utils.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
-CMakeFiles/ServerGUI.dir/utils/utils.cpp.o: ../utils/utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ServerGUI.dir/utils/utils.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/utils/utils.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/utils/utils.cpp
-
-CMakeFiles/ServerGUI.dir/utils/utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/utils/utils.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/utils/utils.cpp > CMakeFiles/ServerGUI.dir/utils/utils.cpp.i
-
-CMakeFiles/ServerGUI.dir/utils/utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/utils/utils.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/utils/utils.cpp -o CMakeFiles/ServerGUI.dir/utils/utils.cpp.s
-
-CMakeFiles/ServerGUI.dir/data/Parser.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
-CMakeFiles/ServerGUI.dir/data/Parser.cpp.o: ../data/Parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ServerGUI.dir/data/Parser.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/Parser.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/data/Parser.cpp
-
-CMakeFiles/ServerGUI.dir/data/Parser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/Parser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/data/Parser.cpp > CMakeFiles/ServerGUI.dir/data/Parser.cpp.i
-
-CMakeFiles/ServerGUI.dir/data/Parser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/Parser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/data/Parser.cpp -o CMakeFiles/ServerGUI.dir/data/Parser.cpp.s
-
-CMakeFiles/ServerGUI.dir/data/Data.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
-CMakeFiles/ServerGUI.dir/data/Data.cpp.o: ../data/Data.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ServerGUI.dir/data/Data.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/Data.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/data/Data.cpp
-
-CMakeFiles/ServerGUI.dir/data/Data.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/Data.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/data/Data.cpp > CMakeFiles/ServerGUI.dir/data/Data.cpp.i
-
-CMakeFiles/ServerGUI.dir/data/Data.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/Data.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/data/Data.cpp -o CMakeFiles/ServerGUI.dir/data/Data.cpp.s
-
-CMakeFiles/ServerGUI.dir/data/GNC.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
-CMakeFiles/ServerGUI.dir/data/GNC.cpp.o: ../data/GNC.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ServerGUI.dir/data/GNC.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/GNC.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/data/GNC.cpp
-
-CMakeFiles/ServerGUI.dir/data/GNC.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/GNC.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/data/GNC.cpp > CMakeFiles/ServerGUI.dir/data/GNC.cpp.i
-
-CMakeFiles/ServerGUI.dir/data/GNC.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/GNC.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/data/GNC.cpp -o CMakeFiles/ServerGUI.dir/data/GNC.cpp.s
-
-CMakeFiles/ServerGUI.dir/data/LAN.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
-CMakeFiles/ServerGUI.dir/data/LAN.cpp.o: ../data/LAN.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ServerGUI.dir/data/LAN.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/LAN.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/data/LAN.cpp
-
-CMakeFiles/ServerGUI.dir/data/LAN.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/LAN.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/data/LAN.cpp > CMakeFiles/ServerGUI.dir/data/LAN.cpp.i
-
-CMakeFiles/ServerGUI.dir/data/LAN.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/LAN.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/data/LAN.cpp -o CMakeFiles/ServerGUI.dir/data/LAN.cpp.s
-
-CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
-CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.o: ../data/ImageToSend.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/data/ImageToSend.cpp
-
-CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/data/ImageToSend.cpp > CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.i
-
-CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/data/ImageToSend.cpp -o CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.s
-
-CMakeFiles/ServerGUI.dir/data/INFO.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
-CMakeFiles/ServerGUI.dir/data/INFO.cpp.o: ../data/INFO.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/ServerGUI.dir/data/INFO.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/INFO.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/data/INFO.cpp
-
-CMakeFiles/ServerGUI.dir/data/INFO.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/INFO.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/data/INFO.cpp > CMakeFiles/ServerGUI.dir/data/INFO.cpp.i
-
-CMakeFiles/ServerGUI.dir/data/INFO.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/INFO.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/data/INFO.cpp -o CMakeFiles/ServerGUI.dir/data/INFO.cpp.s
-
-CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
-CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.o: ../data/DATA_SEG.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/data/DATA_SEG.cpp
-
-CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/data/DATA_SEG.cpp > CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.i
-
-CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/data/DATA_SEG.cpp -o CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.s
-
-CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
-CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.o: ../data/TimeCheck.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/data/TimeCheck.cpp
-
-CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/data/TimeCheck.cpp > CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.i
-
-CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/data/TimeCheck.cpp -o CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.s
-
-CMakeFiles/ServerGUI.dir/data/Pooling.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
-CMakeFiles/ServerGUI.dir/data/Pooling.cpp.o: ../data/Pooling.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/ServerGUI.dir/data/Pooling.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/Pooling.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/data/Pooling.cpp
-
-CMakeFiles/ServerGUI.dir/data/Pooling.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/Pooling.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/data/Pooling.cpp > CMakeFiles/ServerGUI.dir/data/Pooling.cpp.i
-
-CMakeFiles/ServerGUI.dir/data/Pooling.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/Pooling.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/data/Pooling.cpp -o CMakeFiles/ServerGUI.dir/data/Pooling.cpp.s
-
-CMakeFiles/ServerGUI.dir/data/Answer.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
-CMakeFiles/ServerGUI.dir/data/Answer.cpp.o: ../data/Answer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/ServerGUI.dir/data/Answer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/Answer.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/data/Answer.cpp
-
-CMakeFiles/ServerGUI.dir/data/Answer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/Answer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/data/Answer.cpp > CMakeFiles/ServerGUI.dir/data/Answer.cpp.i
-
-CMakeFiles/ServerGUI.dir/data/Answer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/Answer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/data/Answer.cpp -o CMakeFiles/ServerGUI.dir/data/Answer.cpp.s
-
-CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
-CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.o: ../data/DataInjection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/data/DataInjection.cpp
-
-CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/data/DataInjection.cpp > CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.i
-
-CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/data/DataInjection.cpp -o CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyImgPanel.cpp -o CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.s
 
 CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
 CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.o: ../ui/MyRecvThread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/ui/MyRecvThread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyRecvThread.cpp
 
 CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/ui/MyRecvThread.cpp > CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyRecvThread.cpp > CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.i
 
 CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/ui/MyRecvThread.cpp -o CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyRecvThread.cpp -o CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.s
 
 CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
 CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.o: ../ui/MyGNCThread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/ui/MyGNCThread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyGNCThread.cpp
 
 CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/ui/MyGNCThread.cpp > CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyGNCThread.cpp > CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.i
 
 CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/ui/MyGNCThread.cpp -o CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyGNCThread.cpp -o CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.s
 
 CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
 CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.o: ../ui/MyCmdThread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.o -c /home/z/Ubuntu/Projects/ServerGUI/ui/MyCmdThread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyCmdThread.cpp
 
 CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/Ubuntu/Projects/ServerGUI/ui/MyCmdThread.cpp > CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyCmdThread.cpp > CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.i
 
 CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/Ubuntu/Projects/ServerGUI/ui/MyCmdThread.cpp -o CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/ui/MyCmdThread.cpp -o CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.s
+
+CMakeFiles/ServerGUI.dir/net/Server.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
+CMakeFiles/ServerGUI.dir/net/Server.cpp.o: ../net/Server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ServerGUI.dir/net/Server.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/net/Server.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/net/Server.cpp
+
+CMakeFiles/ServerGUI.dir/net/Server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/net/Server.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/net/Server.cpp > CMakeFiles/ServerGUI.dir/net/Server.cpp.i
+
+CMakeFiles/ServerGUI.dir/net/Server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/net/Server.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/net/Server.cpp -o CMakeFiles/ServerGUI.dir/net/Server.cpp.s
+
+CMakeFiles/ServerGUI.dir/net/Client.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
+CMakeFiles/ServerGUI.dir/net/Client.cpp.o: ../net/Client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ServerGUI.dir/net/Client.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/net/Client.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/net/Client.cpp
+
+CMakeFiles/ServerGUI.dir/net/Client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/net/Client.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/net/Client.cpp > CMakeFiles/ServerGUI.dir/net/Client.cpp.i
+
+CMakeFiles/ServerGUI.dir/net/Client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/net/Client.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/net/Client.cpp -o CMakeFiles/ServerGUI.dir/net/Client.cpp.s
+
+CMakeFiles/ServerGUI.dir/utils/utils.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
+CMakeFiles/ServerGUI.dir/utils/utils.cpp.o: ../utils/utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ServerGUI.dir/utils/utils.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/utils/utils.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/utils/utils.cpp
+
+CMakeFiles/ServerGUI.dir/utils/utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/utils/utils.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/utils/utils.cpp > CMakeFiles/ServerGUI.dir/utils/utils.cpp.i
+
+CMakeFiles/ServerGUI.dir/utils/utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/utils/utils.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/utils/utils.cpp -o CMakeFiles/ServerGUI.dir/utils/utils.cpp.s
+
+CMakeFiles/ServerGUI.dir/data/RS422.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
+CMakeFiles/ServerGUI.dir/data/RS422.cpp.o: ../data/RS422.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ServerGUI.dir/data/RS422.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/RS422.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/data/RS422.cpp
+
+CMakeFiles/ServerGUI.dir/data/RS422.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/RS422.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/data/RS422.cpp > CMakeFiles/ServerGUI.dir/data/RS422.cpp.i
+
+CMakeFiles/ServerGUI.dir/data/RS422.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/RS422.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/data/RS422.cpp -o CMakeFiles/ServerGUI.dir/data/RS422.cpp.s
+
+CMakeFiles/ServerGUI.dir/data/Parser.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
+CMakeFiles/ServerGUI.dir/data/Parser.cpp.o: ../data/Parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ServerGUI.dir/data/Parser.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/Parser.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/data/Parser.cpp
+
+CMakeFiles/ServerGUI.dir/data/Parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/Parser.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/data/Parser.cpp > CMakeFiles/ServerGUI.dir/data/Parser.cpp.i
+
+CMakeFiles/ServerGUI.dir/data/Parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/Parser.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/data/Parser.cpp -o CMakeFiles/ServerGUI.dir/data/Parser.cpp.s
+
+CMakeFiles/ServerGUI.dir/data/Data.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
+CMakeFiles/ServerGUI.dir/data/Data.cpp.o: ../data/Data.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ServerGUI.dir/data/Data.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/Data.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/data/Data.cpp
+
+CMakeFiles/ServerGUI.dir/data/Data.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/Data.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/data/Data.cpp > CMakeFiles/ServerGUI.dir/data/Data.cpp.i
+
+CMakeFiles/ServerGUI.dir/data/Data.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/Data.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/data/Data.cpp -o CMakeFiles/ServerGUI.dir/data/Data.cpp.s
+
+CMakeFiles/ServerGUI.dir/data/GNC.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
+CMakeFiles/ServerGUI.dir/data/GNC.cpp.o: ../data/GNC.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/ServerGUI.dir/data/GNC.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/GNC.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/data/GNC.cpp
+
+CMakeFiles/ServerGUI.dir/data/GNC.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/GNC.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/data/GNC.cpp > CMakeFiles/ServerGUI.dir/data/GNC.cpp.i
+
+CMakeFiles/ServerGUI.dir/data/GNC.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/GNC.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/data/GNC.cpp -o CMakeFiles/ServerGUI.dir/data/GNC.cpp.s
+
+CMakeFiles/ServerGUI.dir/data/LAN.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
+CMakeFiles/ServerGUI.dir/data/LAN.cpp.o: ../data/LAN.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/ServerGUI.dir/data/LAN.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/LAN.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/data/LAN.cpp
+
+CMakeFiles/ServerGUI.dir/data/LAN.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/LAN.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/data/LAN.cpp > CMakeFiles/ServerGUI.dir/data/LAN.cpp.i
+
+CMakeFiles/ServerGUI.dir/data/LAN.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/LAN.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/data/LAN.cpp -o CMakeFiles/ServerGUI.dir/data/LAN.cpp.s
+
+CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
+CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.o: ../data/ImageToSend.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/data/ImageToSend.cpp
+
+CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/data/ImageToSend.cpp > CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.i
+
+CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/data/ImageToSend.cpp -o CMakeFiles/ServerGUI.dir/data/ImageToSend.cpp.s
+
+CMakeFiles/ServerGUI.dir/data/INFO.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
+CMakeFiles/ServerGUI.dir/data/INFO.cpp.o: ../data/INFO.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/ServerGUI.dir/data/INFO.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/INFO.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/data/INFO.cpp
+
+CMakeFiles/ServerGUI.dir/data/INFO.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/INFO.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/data/INFO.cpp > CMakeFiles/ServerGUI.dir/data/INFO.cpp.i
+
+CMakeFiles/ServerGUI.dir/data/INFO.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/INFO.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/data/INFO.cpp -o CMakeFiles/ServerGUI.dir/data/INFO.cpp.s
+
+CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
+CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.o: ../data/DATA_SEG.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/data/DATA_SEG.cpp
+
+CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/data/DATA_SEG.cpp > CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.i
+
+CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/data/DATA_SEG.cpp -o CMakeFiles/ServerGUI.dir/data/DATA_SEG.cpp.s
+
+CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
+CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.o: ../data/TimeCheck.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/data/TimeCheck.cpp
+
+CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/data/TimeCheck.cpp > CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.i
+
+CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/data/TimeCheck.cpp -o CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.s
+
+CMakeFiles/ServerGUI.dir/data/Pooling.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
+CMakeFiles/ServerGUI.dir/data/Pooling.cpp.o: ../data/Pooling.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/ServerGUI.dir/data/Pooling.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/Pooling.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/data/Pooling.cpp
+
+CMakeFiles/ServerGUI.dir/data/Pooling.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/Pooling.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/data/Pooling.cpp > CMakeFiles/ServerGUI.dir/data/Pooling.cpp.i
+
+CMakeFiles/ServerGUI.dir/data/Pooling.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/Pooling.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/data/Pooling.cpp -o CMakeFiles/ServerGUI.dir/data/Pooling.cpp.s
+
+CMakeFiles/ServerGUI.dir/data/Answer.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
+CMakeFiles/ServerGUI.dir/data/Answer.cpp.o: ../data/Answer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/ServerGUI.dir/data/Answer.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/Answer.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/data/Answer.cpp
+
+CMakeFiles/ServerGUI.dir/data/Answer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/Answer.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/data/Answer.cpp > CMakeFiles/ServerGUI.dir/data/Answer.cpp.i
+
+CMakeFiles/ServerGUI.dir/data/Answer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/Answer.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/data/Answer.cpp -o CMakeFiles/ServerGUI.dir/data/Answer.cpp.s
+
+CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.o: CMakeFiles/ServerGUI.dir/flags.make
+CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.o: ../data/DataInjection.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.o -c /Users/vhdsih/Codes/LabProjects/ServerGUI/data/DataInjection.cpp
+
+CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vhdsih/Codes/LabProjects/ServerGUI/data/DataInjection.cpp > CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.i
+
+CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vhdsih/Codes/LabProjects/ServerGUI/data/DataInjection.cpp -o CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.s
 
 # Object files for target ServerGUI
 ServerGUI_OBJECTS = \
@@ -349,10 +349,13 @@ ServerGUI_OBJECTS = \
 "CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.o" \
 "CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.o" \
 "CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.o" \
+"CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.o" \
+"CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.o" \
+"CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.o" \
 "CMakeFiles/ServerGUI.dir/net/Server.cpp.o" \
 "CMakeFiles/ServerGUI.dir/net/Client.cpp.o" \
-"CMakeFiles/ServerGUI.dir/data/RS422.cpp.o" \
 "CMakeFiles/ServerGUI.dir/utils/utils.cpp.o" \
+"CMakeFiles/ServerGUI.dir/data/RS422.cpp.o" \
 "CMakeFiles/ServerGUI.dir/data/Parser.cpp.o" \
 "CMakeFiles/ServerGUI.dir/data/Data.cpp.o" \
 "CMakeFiles/ServerGUI.dir/data/GNC.cpp.o" \
@@ -363,10 +366,7 @@ ServerGUI_OBJECTS = \
 "CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.o" \
 "CMakeFiles/ServerGUI.dir/data/Pooling.cpp.o" \
 "CMakeFiles/ServerGUI.dir/data/Answer.cpp.o" \
-"CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.o" \
-"CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.o" \
-"CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.o" \
-"CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.o"
+"CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.o"
 
 # External object files for target ServerGUI
 ServerGUI_EXTERNAL_OBJECTS =
@@ -375,10 +375,13 @@ ServerGUI: CMakeFiles/ServerGUI.dir/main.cpp.o
 ServerGUI: CMakeFiles/ServerGUI.dir/ui/MyApp.cpp.o
 ServerGUI: CMakeFiles/ServerGUI.dir/ui/MyFrame.cpp.o
 ServerGUI: CMakeFiles/ServerGUI.dir/ui/MyImgPanel.cpp.o
+ServerGUI: CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.o
+ServerGUI: CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.o
+ServerGUI: CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.o
 ServerGUI: CMakeFiles/ServerGUI.dir/net/Server.cpp.o
 ServerGUI: CMakeFiles/ServerGUI.dir/net/Client.cpp.o
-ServerGUI: CMakeFiles/ServerGUI.dir/data/RS422.cpp.o
 ServerGUI: CMakeFiles/ServerGUI.dir/utils/utils.cpp.o
+ServerGUI: CMakeFiles/ServerGUI.dir/data/RS422.cpp.o
 ServerGUI: CMakeFiles/ServerGUI.dir/data/Parser.cpp.o
 ServerGUI: CMakeFiles/ServerGUI.dir/data/Data.cpp.o
 ServerGUI: CMakeFiles/ServerGUI.dir/data/GNC.cpp.o
@@ -390,33 +393,57 @@ ServerGUI: CMakeFiles/ServerGUI.dir/data/TimeCheck.cpp.o
 ServerGUI: CMakeFiles/ServerGUI.dir/data/Pooling.cpp.o
 ServerGUI: CMakeFiles/ServerGUI.dir/data/Answer.cpp.o
 ServerGUI: CMakeFiles/ServerGUI.dir/data/DataInjection.cpp.o
-ServerGUI: CMakeFiles/ServerGUI.dir/ui/MyRecvThread.cpp.o
-ServerGUI: CMakeFiles/ServerGUI.dir/ui/MyGNCThread.cpp.o
-ServerGUI: CMakeFiles/ServerGUI.dir/ui/MyCmdThread.cpp.o
 ServerGUI: CMakeFiles/ServerGUI.dir/build.make
-ServerGUI: /usr/local/lib/libopencv_videostab.so.2.4.13
-ServerGUI: /usr/local/lib/libopencv_ts.a
-ServerGUI: /usr/local/lib/libopencv_superres.so.2.4.13
-ServerGUI: /usr/local/lib/libopencv_stitching.so.2.4.13
-ServerGUI: /usr/local/lib/libopencv_contrib.so.2.4.13
-ServerGUI: /usr/local/lib/libwx_gtk2u_core-3.1.a
-ServerGUI: /usr/local/lib/libwx_baseu-3.1.a
-ServerGUI: /usr/local/lib/libopencv_nonfree.so.2.4.13
-ServerGUI: /usr/local/lib/libopencv_ocl.so.2.4.13
-ServerGUI: /usr/local/lib/libopencv_gpu.so.2.4.13
-ServerGUI: /usr/local/lib/libopencv_photo.so.2.4.13
-ServerGUI: /usr/local/lib/libopencv_objdetect.so.2.4.13
-ServerGUI: /usr/local/lib/libopencv_legacy.so.2.4.13
-ServerGUI: /usr/local/lib/libopencv_video.so.2.4.13
-ServerGUI: /usr/local/lib/libopencv_ml.so.2.4.13
-ServerGUI: /usr/local/lib/libopencv_calib3d.so.2.4.13
-ServerGUI: /usr/local/lib/libopencv_features2d.so.2.4.13
-ServerGUI: /usr/local/lib/libopencv_highgui.so.2.4.13
-ServerGUI: /usr/local/lib/libopencv_imgproc.so.2.4.13
-ServerGUI: /usr/local/lib/libopencv_flann.so.2.4.13
-ServerGUI: /usr/local/lib/libopencv_core.so.2.4.13
+ServerGUI: /usr/local/lib/libopencv_gapi.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_stitching.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_aruco.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_bgsegm.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_bioinspired.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_ccalib.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_dnn_objdetect.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_dpm.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_face.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_freetype.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_fuzzy.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_hfs.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_img_hash.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_line_descriptor.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_quality.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_reg.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_rgbd.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_saliency.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_sfm.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_stereo.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_structured_light.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_superres.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_surface_matching.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_tracking.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_videostab.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_xfeatures2d.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_xobjdetect.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_xphoto.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_shape.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_datasets.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_plot.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_text.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_dnn.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_ml.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_phase_unwrapping.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_optflow.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_ximgproc.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_video.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_objdetect.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_calib3d.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_features2d.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_flann.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_highgui.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_videoio.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_imgcodecs.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_photo.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_imgproc.4.1.0.dylib
+ServerGUI: /usr/local/lib/libopencv_core.4.1.0.dylib
 ServerGUI: CMakeFiles/ServerGUI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable ServerGUI"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable ServerGUI"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ServerGUI.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -429,6 +456,6 @@ CMakeFiles/ServerGUI.dir/clean:
 .PHONY : CMakeFiles/ServerGUI.dir/clean
 
 CMakeFiles/ServerGUI.dir/depend:
-	cd /home/z/Ubuntu/Projects/ServerGUI/cmake-build-release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/z/Ubuntu/Projects/ServerGUI /home/z/Ubuntu/Projects/ServerGUI /home/z/Ubuntu/Projects/ServerGUI/cmake-build-release /home/z/Ubuntu/Projects/ServerGUI/cmake-build-release /home/z/Ubuntu/Projects/ServerGUI/cmake-build-release/CMakeFiles/ServerGUI.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/vhdsih/Codes/LabProjects/ServerGUI /Users/vhdsih/Codes/LabProjects/ServerGUI /Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release /Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release /Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release/CMakeFiles/ServerGUI.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ServerGUI.dir/depend
 

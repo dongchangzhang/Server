@@ -1,3 +1,3 @@
-/home/z/Ubuntu/Projects/ServerGUI/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/z/Ubuntu/Projects/ServerGUI/cmake-build-debug/CMakeFiles/ServerGUI.dir
-/home/z/Ubuntu/Projects/ServerGUI/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-debug/CMakeFiles/ServerGUI.dir

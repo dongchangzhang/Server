@@ -1,4 +1,4 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /home/z/Ubuntu/Projects/ServerGUI
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /Users/vhdsih/Codes/LabProjects/ServerGUI
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/z/Ubuntu/Projects/ServerGUI/cmake-build-release
+-- Build files have been written to: /Users/vhdsih/Codes/LabProjects/ServerGUI/cmake-build-release

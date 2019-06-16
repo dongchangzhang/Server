@@ -10,7 +10,6 @@
 #define LOAD_ID 3
 enum {
     kThreadUpdateId,
-    WORKER_EVENT,
 };
 
 // radius of mars - measurement is meters
@@ -40,9 +39,6 @@ enum {
 #define TEST_ON_LOCALHOST
 
 #define IP "192.168.0.5"
-
-#define CLIENT_IP_SHIT "172.20.58.75"
-#define CLIENT_IP_THINKPAD "172.20.76.216"
 
 //#define PRINT_LOG_YES
 

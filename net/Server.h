@@ -37,6 +37,8 @@ public:
     bool recv_into_buff(int &recv_len);
     bool recv_into_buff(int &recv_len, uchar _buffer[]);
 
+    inline int test_server() { return 1; }
+
 public:
     static cv::Mat photo;
 

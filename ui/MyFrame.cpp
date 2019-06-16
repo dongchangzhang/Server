@@ -144,23 +144,28 @@ void MyFrame::OnStart(wxCommandEvent &event) {
 
 void MyFrame::ThreadUpdate(wxThreadEvent &event) {
     int id = event.GetInt();
-    if (id == IMG_ID)
+    if (id == IMG_ID) {
         photo_update();
-    else if (id == GNC_ID)
+    } else if (id == GNC_ID) {
         gnc_update();
-    else if (id == LOAD_ID)
+    } else if (id == LOAD_ID) {
         load_data();
+    }
 }
 
 void MyFrame::photo_update() {
-    this->img->update(mphoto);
-    gauge->SetValue(ratio * 100);
+    if (mphoto.cols == 0 && mphoto.rows == 0) {
+        mphoto = cv::Mat(3072, 4096, CV_8UC3, cv::Scalar::all(0));
+    }
+    gauge->SetValue(ratio * 100 > 100 ? 100 : ratio * 100);
+
     if (ratio == 0) {
         gaugeTitle->SetLabelText(_T("正在接收图片数据..."));
         char info[128];
         this->tc2->Clear();
-        this->tc2->WriteText(wxString::Format(_T("图像编号（模255后）: %d"), nframe));
+        this->tc2->SetValue(wxString::Format(_T("图像编号（模255后）: %d"), nframe));
     } else if (ratio == 1) {
+        this->img->update(mphoto);
         gaugeTitle->SetLabelText(_T("图片数据接收完成!"));
     }
     Refresh();
@@ -184,6 +189,8 @@ void MyFrame::load_data() {
 }
 
 void MyFrame::OnRecv(wxCommandEvent &event) {
+    if (autoModeFlag)
+        return;
     char cmd = 0x00;
     std::thread th = std::thread(cmd_helper, cmd);
     th.detach();
@@ -192,15 +199,26 @@ void MyFrame::OnRecv(wxCommandEvent &event) {
 }
 
 void MyFrame::OnAutoMode(wxCommandEvent &event) {
+    std::cout << "auto mode" << std::endl;
     char cmd = 0x11;
+    autoModeFlag = true;
     std::thread th = std::thread(cmd_helper, cmd);
     th.detach();
-    SetStatusText(wxT("设置为手动模式，此时相机自动发送图片！"));
+    std::thread th1 = std::thread(cmd_helper, cmd);
+    th1.detach();
+
+    SetStatusText(wxT("设置为自动模式，此时相机自动发送图片！"));
 }
 
 void MyFrame::OnManualMode(wxCommandEvent &event) {
+    std::cout << "manual mode" << std::endl;
     char cmd = 0x22;
+    autoModeFlag = false;
+
     std::thread th = std::thread(cmd_helper, cmd);
     th.detach();
+
+    std::thread th1 = std::thread(cmd_helper, cmd);
+    th1.detach();
     SetStatusText(wxT("设置为手动模式，需要手动点击按钮才能接收图片！"));
 }
