@@ -12,9 +12,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8d7ad52-616c-4064-a79c-319d7bb935c5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="b8d7ad52-616c-4064-a79c-319d7bb935c5" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-release/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ui/MyRecvThread.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+            <state relative-caret-position="53">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="e#35#60#0" expanded="true" />
               </folding>
@@ -313,12 +311,12 @@
       <workItem from="1560569026008" duration="585000" />
       <workItem from="1560578314943" duration="5839000" />
       <workItem from="1560615794720" duration="2909000" />
-      <workItem from="1560700687571" duration="4342000" />
+      <workItem from="1560700687571" duration="4604000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183041000" />
+    <option name="totallyTimeSpent" value="183303000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -337,14 +335,14 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33229813" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33229813" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.38819876" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32955465" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.3121118" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.7484472" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.7468944" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.32837838" />
@@ -576,8 +574,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/MyRecvThread.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+        <state relative-caret-position="53">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="e#35#60#0" expanded="true" />
           </folding>
