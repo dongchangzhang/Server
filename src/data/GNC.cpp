@@ -93,9 +93,9 @@ void GNC::update_gnc() {
     loc[0] =  316500 + 513000 * cos(angle);
     loc[1] =  -8004000 * sin(angle);
     loc[2] =  5843900 + 10473000 * cos(angle);
-    sun[0] = 0;
-    sun[1] = 1;
-    sun[2] = -1;
+    sun[0] = loc[0];
+    sun[1] = loc[1];
+    sun[2] = loc[2];
 
 }
 

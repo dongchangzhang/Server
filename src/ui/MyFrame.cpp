@@ -26,7 +26,6 @@ void start_info_helper(MyFrame *frame) {
     auto *e0 = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
     e0->SetInt(LOAD_ID);
     wxQueueEvent(frame->GetEventHandler(), e0);
-    e0->UnRef();
     frame->dataLoad = true;
     while (ratio < 1) {
         server.recv(buf, 4);
@@ -36,14 +35,13 @@ void start_info_helper(MyFrame *frame) {
         auto *e_tmp = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
         e_tmp->SetInt(LOAD_ID);
         wxQueueEvent(frame->GetEventHandler(), e_tmp);
-        e_tmp->UnRef();
     }
     frame->ratio = 1;
     frame->dataLoad = true;
+
     auto *e1 = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
     e1->SetInt(LOAD_ID);
     wxQueueEvent(frame->GetEventHandler(), e1);
-    e1->UnRef();
 }
 
 void cmd_helper(char mode) {
@@ -173,7 +171,7 @@ void MyFrame::photo_update() {
 
 void MyFrame::gnc_update() {
     this->tc1->Clear();
-    tc1->WriteText(gncInfo);
+    tc1->SetValue(gncInfo);
     img2->draw(yy, zz);
     Refresh();
 }

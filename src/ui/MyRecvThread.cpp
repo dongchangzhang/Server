@@ -13,19 +13,16 @@ MyRecvThread::MyRecvThread(MyFrame *_handler, int _port) : port(_port), handler(
 
 void *MyRecvThread::Entry() {
     int recv_len, count = 0;
-    bool stop = false;
     Server server(port);
-    while (!stop) {
+    while (!TestDestroy()) {
         count = 0;
         while (!recv_photo_info(server, recv_len)) std::cout << "error info" << std::endl;
-
 
         init_for_recv_photo_segment();
         handler->ratio = 0;
         auto *start_recv = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
         start_recv->SetInt(IMG_ID);
         wxQueueEvent(handler->GetEventHandler(), start_recv);
-        start_recv->UnRef();
 
         Status s = S;
         while (s != E) {
@@ -36,7 +33,6 @@ void *MyRecvThread::Entry() {
                 auto *seg_sended = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
                 seg_sended->SetInt(IMG_ID);
                 wxQueueEvent(handler->GetEventHandler(), seg_sended);
-                seg_sended->UnRef();
             }
         }
         handler->ratio = 1;
@@ -44,7 +40,6 @@ void *MyRecvThread::Entry() {
         auto *end = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
         end->SetInt(IMG_ID);
         wxQueueEvent(handler->GetEventHandler(), end);
-        end->UnRef();
         std::cout << "ok" << std::endl;
     }
     return nullptr;

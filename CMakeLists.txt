@@ -14,20 +14,20 @@ find_package(wxWidgets COMPONENTS core base REQUIRED)
 
 include(${wxWidgets_USE_FILE})
 
-add_executable(ServerGUI main.cpp
-        // ui
-        ui/MyApp.cpp ui/MyApp.h ui/MyFrame.cpp ui/MyFrame.h ui/MyImgPanel.cpp ui/MyImgPanel.h
-        ui/MyRecvThread.cpp ui/MyRecvThread.h ui/MyGNCThread.cpp ui/MyGNCThread.h ui/MyCmdThread.cpp ui/MyCmdThread.h
-        // net
-        net/Server.cpp net/Server.h net/Client.cpp net/Client.h
-        // utils
-        utils/Log.h utils/utils.h utils/utils.cpp
-        // data
-        data/RS422.cpp data/RS422.h data/Parser.cpp data/Parser.h
-        data/Data.cpp data/Data.h data/GNC.cpp data/GNC.h data/LAN.cpp data/LAN.h  data/ImageToSend.cpp
-        data/ImageToSend.h data/INFO.cpp data/INFO.h data/DATA_SEG.cpp data/DATA_SEG.h data/TimeCheck.cpp
-        data/TimeCheck.h data/Pooling.cpp data/Pooling.h data/Answer.cpp data/Answer.h
-        data/DataInjection.cpp data/DataInjection.h
+add_executable(ServerGUI src/main.cpp
+        // src/ui
+        src/ui/MyApp.cpp src/ui/MyApp.h src/ui/MyFrame.cpp src/ui/MyFrame.h src/ui/MyImgPanel.cpp src/ui/MyImgPanel.h
+        src/ui/MyRecvThread.cpp src/ui/MyRecvThread.h src/ui/MyGNCThread.cpp src/ui/MyGNCThread.h src/ui/MyCmdThread.cpp src/ui/MyCmdThread.h
+        // src/net
+        src/net/Server.cpp src/net/Server.h src/net/Client.cpp src/net/Client.h
+        // src/utils
+        src/utils/Log.h src/utils/utils.h src/utils/utils.cpp
+        // src/data
+        src/data/RS422.cpp src/data/RS422.h src/data/Parser.cpp src/data/Parser.h
+        src/data/Data.cpp src/data/Data.h src/data/GNC.cpp src/data/GNC.h src/data/LAN.cpp src/data/LAN.h src/data/ImageToSend.cpp
+        src/data/ImageToSend.h src/data/INFO.cpp src/data/INFO.h src/data/DATA_SEG.cpp src/data/DATA_SEG.h src/data/TimeCheck.cpp
+        src/data/TimeCheck.h src/data/Pooling.cpp src/data/Pooling.h src/data/Answer.cpp src/data/Answer.h
+        src/data/DataInjection.cpp src/data/DataInjection.h
         )
 
 target_link_libraries(ServerGUI ${OpenCV_LIBS})

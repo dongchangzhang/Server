@@ -15,11 +15,10 @@ MyGNCThread::MyGNCThread(MyFrame *_handler, std::string _ip, int _port) :
 }
 
 void *MyGNCThread::Entry() {
-    bool stop = false;
     int count;
     Client client(ip, port);
     GNC gnc;
-    while (!stop) {
+    while (!TestDestroy()) {
         while (!handler->dataLoad && !handler->dataLoad) {
             wxMilliSleep(100);
         }
