@@ -4,11 +4,25 @@
 
 #include "MyRecvThread.h"
 #include "../utils/utils.h"
+#include <thread>
 
+void save_image(cv::Mat &img, std::string output_dir, int photo_save_id) {
+    std::string image_path = output_dir + "/" + std::to_string(photo_save_id) + ".png";
+    cv::imwrite(image_path, img);
+}
 
-MyRecvThread::MyRecvThread(MyFrame *_handler, int _port) : port(_port), handler(_handler), wxThread(wxTHREAD_DETACHED),
-                                                           w(0), h(0), copy_len(0), nline(0) {
+MyRecvThread::MyRecvThread(MyFrame *_handler, int _port,
+                           std::string _output_dir, int _base) :
+        port(_port),
+        output_dir(_output_dir),
+        base(_base),
+        handler(_handler),
+        photo_save_id(base),
+        wxThread(wxTHREAD_DETACHED),
+        w(0), h(0), copy_len(0), nline(0) {
+
     memset(buffer, 0, sizeof(buffer));
+    init();
 }
 
 void *MyRecvThread::Entry() {
@@ -40,6 +54,11 @@ void *MyRecvThread::Entry() {
         auto *end = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
         end->SetInt(IMG_ID);
         wxQueueEvent(handler->GetEventHandler(), end);
+
+        std::thread th(save_image, std::ref(photo), output_dir, photo_save_id);
+        th.detach();
+
+        ++photo_save_id;
         std::cout << "ok" << std::endl;
     }
     return nullptr;
@@ -78,6 +97,10 @@ bool MyRecvThread::init_for_recv_photo_segment() {
     memcpy(&photo_id, &buffer[26], 2);
     // get data
     photo = cv::Mat(h, w, CV_8UC3, cv::Scalar::all(0));
+
+    // for another app
+    write_info(buffer, 28, 232);
+
     return true;
 }
 
@@ -125,3 +148,17 @@ bool MyRecvThread::start_thread() {
     return true;
 }
 
+bool MyRecvThread::init() {
+    if (output_dir.empty()) {
+        return false;
+    }
+    return false;
+}
+
+void MyRecvThread::write_info(u_char my_buffer[], int from, int len) {
+    std::string info_path = output_dir + "/" + std::to_string(photo_save_id) + ".dat";
+    std::ofstream of(info_path, std::ios::out | std::ios::binary | std::ios::trunc);
+    of.write((char*)&photo_save_id, sizeof(photo_save_id));
+    of.write((char*)&my_buffer[from], len);
+    of.close();
+}
