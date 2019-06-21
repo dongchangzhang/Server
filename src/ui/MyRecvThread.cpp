@@ -77,7 +77,7 @@ bool MyRecvThread::recv_photo_info(Server &server, int &recv_len) {
 }
 
 bool MyRecvThread::init_for_recv_photo_segment() {
-    int ni, nj;
+    short ni, nj;
     nline = 0;
     // image mode
     memcpy(&mode, &buffer[4], 1);
@@ -115,12 +115,7 @@ bool MyRecvThread::recv_photo_segment(Server &server, int &recv_len, Status &s) 
         return false;
     }
     memcpy(&photo_id, &buffer[10], sizeof(char));
-    // open window
-    if (mode == 0x44) {
-        memcpy(&photo.data[nline * w * 3], &buffer[18], w * sizeof(char) * 3);
-        goto label;
-    }
-    // else
+
     memcpy(&nline, &buffer[12], sizeof(short));
     if (mode == 0x00) { /* full image */
         memcpy(&where, &buffer[16], 1);
@@ -129,12 +124,10 @@ bool MyRecvThread::recv_photo_segment(Server &server, int &recv_len, Status &s) 
         } else {
             memcpy(&photo.data[nline * w * 3 + copy_len], &buffer[18], copy_len);
         }
-
     } else {
         memcpy(&photo.data[nline * w * 3], &buffer[18], w * sizeof(char) * 3);
     }
     s = M;
-    label:
     memcpy(&where, &buffer[17], 1);
     if (where == 0xAA) {
         s = E;
