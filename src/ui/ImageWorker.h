@@ -2,8 +2,8 @@
 // Created by z on 19-4-29.
 //
 
-#ifndef SERVERGUI_MYRECVTHREAD_H
-#define SERVERGUI_MYRECVTHREAD_H
+#ifndef SERVERGUI_IMAGEWORKER_H
+#define SERVERGUI_IMAGEWORKER_H
 
 #include <wx/wx.h>
 #include <string>
@@ -16,13 +16,13 @@ const int NITERS_TO_UPDATE_UI = 512;
 using uchar = unsigned char;
 
 
-class MyRecvThread : public wxThread {
+class ImageWorker : public wxThread {
 public:
     enum Status {
         S, M, E
     };
 public:
-    MyRecvThread(MyFrame *_handler, int _port, std::string _output_dir="./output", int base=10000);
+    ImageWorker(MainFrame *_handler, int _port, std::string _output_dir="./output", int base=10000);
 
 
     void *Entry() override;
@@ -41,7 +41,7 @@ private:
     int base = 0;
     int photo_id = 0, photo_save_id = 0;
     cv::Mat photo;
-    MyFrame *handler;
+    MainFrame *handler;
     int w, h, copy_len, nline, port;
     uchar mode;
     uchar buffer[BUFFER_SIZE];
@@ -50,4 +50,4 @@ private:
     std::string output_dir;
 };
 
-#endif //SERVERGUI_MYRECVTHREAD_H
+#endif //SERVERGUI_IMAGEWORKER_H

@@ -2,7 +2,7 @@
 // Created by z on 19-4-29.
 //
 
-#include "MyRecvThread.h"
+#include "ImageWorker.h"
 #include "../utils/utils.h"
 #include <thread>
 
@@ -11,7 +11,7 @@ void save_image(cv::Mat &img, std::string output_dir, int photo_save_id) {
     cv::imwrite(image_path, img);
 }
 
-MyRecvThread::MyRecvThread(MyFrame *_handler, int _port,
+ImageWorker::ImageWorker(MainFrame *_handler, int _port,
                            std::string _output_dir, int _base) :
         port(_port),
         output_dir(_output_dir),
@@ -25,7 +25,7 @@ MyRecvThread::MyRecvThread(MyFrame *_handler, int _port,
     init();
 }
 
-void *MyRecvThread::Entry() {
+void *ImageWorker::Entry() {
     int recv_len, count = 0;
     Server server(port);
     while (!TestDestroy()) {
@@ -41,7 +41,9 @@ void *MyRecvThread::Entry() {
         Status s = S;
         while (s != E) {
             ++count;
+            std::cout << "+ 1" << std::endl;
             recv_photo_segment(server, recv_len, s);
+            std::cout << "- 1" << std::endl;
             if (count % (NITERS_TO_UPDATE_UI) == 0) {
                 handler->ratio = float(count / 2) / h;
                 auto *seg_sended = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
@@ -64,7 +66,7 @@ void *MyRecvThread::Entry() {
     return nullptr;
 }
 
-bool MyRecvThread::recv_photo_info(Server &server, int &recv_len) {
+bool ImageWorker::recv_photo_info(Server &server, int &recv_len) {
     if (server.recv_into_buff(recv_len, buffer)) {
         std::cout << "SERVER::Photo Getting Info ..." << std::endl;
         memcpy(&handler->nframe, &buffer[26], 1);
@@ -76,7 +78,7 @@ bool MyRecvThread::recv_photo_info(Server &server, int &recv_len) {
     return true;
 }
 
-bool MyRecvThread::init_for_recv_photo_segment() {
+bool ImageWorker::init_for_recv_photo_segment() {
     short ni, nj;
     nline = 0;
     // image mode
@@ -104,12 +106,15 @@ bool MyRecvThread::init_for_recv_photo_segment() {
     return true;
 }
 
-bool MyRecvThread::recv_photo_segment(Server &server, int &recv_len, Status &s) {
+bool ImageWorker::recv_photo_segment(Server &server, int &recv_len, Status &s) {
     uchar where;
     int photo_id;
+    std::cout << " ++ " << std::endl;
     if (!server.recv_into_buff(recv_len, buffer)) {
+        std::cout << " nn " << std::endl;
         return false;
     }
+    std::cout << " -- " << std::endl;
     memcpy(&nline, &buffer[14], sizeof(short));
     if (buffer[0] != 0xAA) {
         return false;
@@ -135,20 +140,20 @@ bool MyRecvThread::recv_photo_segment(Server &server, int &recv_len, Status &s) 
     return true;
 }
 
-bool MyRecvThread::start_thread() {
+bool ImageWorker::start_thread() {
     this->Create();
     this->Run();
     return true;
 }
 
-bool MyRecvThread::init() {
+bool ImageWorker::init() {
     if (output_dir.empty()) {
         return false;
     }
     return false;
 }
 
-void MyRecvThread::write_info(u_char my_buffer[], int from, int len) {
+void ImageWorker::write_info(u_char my_buffer[], int from, int len) {
     std::string info_path = output_dir + "/" + std::to_string(photo_save_id) + ".dat";
     std::ofstream of(info_path, std::ios::out | std::ios::binary | std::ios::trunc);
     of.write((char*)&photo_save_id, sizeof(photo_save_id));

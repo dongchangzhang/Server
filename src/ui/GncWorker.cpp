@@ -4,17 +4,17 @@
 //
 
 #include <utility>
-#include "MyGNCThread.h"
+#include "GncWorker.h"
 #include "../utils/utils.h"
 #include "../net/Client.h"
 
-MyGNCThread::MyGNCThread(MyFrame *_handler, std::string _ip, int _port) :
+GncWorker::GncWorker(MainFrame *_handler, std::string _ip, int _port) :
         handler(_handler), ip(std::move(_ip)), port(_port), wxThread(wxTHREAD_DETACHED) {
     memset(buffer, 0, sizeof(buffer));
 
 }
 
-void *MyGNCThread::Entry() {
+void *GncWorker::Entry() {
     int count;
     Client client(ip, port);
     GNC gnc;
@@ -48,7 +48,7 @@ void *MyGNCThread::Entry() {
     return nullptr;
 }
 
-bool MyGNCThread::start_thread() {
+bool GncWorker::start_thread() {
     this->Create();
     this->Run();
     return true;

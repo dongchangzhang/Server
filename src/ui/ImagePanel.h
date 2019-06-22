@@ -2,8 +2,8 @@
 // Created by z on 19-4-27.
 //
 
-#ifndef SERVERGUI_MYIMGPANEL_H
-#define SERVERGUI_MYIMGPANEL_H
+#ifndef SERVERGUI_IMAGEPANEL_H
+#define SERVERGUI_IMAGEPANEL_H
 
 
 #include <wx/wx.h>
@@ -12,7 +12,7 @@
 #include <opencv2/opencv.hpp>
 
 
-class MyImgPanel : public wxPanel
+class ImagePanel : public wxPanel
 {
     wxBitmap resized;
     int w, h;
@@ -29,8 +29,8 @@ public:
 
 
 public:
-    MyImgPanel(wxFrame* parent);
-    MyImgPanel(wxFrame* parent, int c);
+    ImagePanel(wxFrame* parent);
+    ImagePanel(wxFrame* parent, int c);
 
     void paintEvent(wxPaintEvent & evt);
     void paintNow();
@@ -63,7 +63,7 @@ private:
     DECLARE_EVENT_TABLE()
 };
 
-inline void MyImgPanel::yz2jk(double y, double z, int &j, int &k) {
+inline void ImagePanel::yz2jk(double y, double z, int &j, int &k) {
     j = static_cast<int>((YMAX - y) * H / (YMAX - YMIN));
     k = static_cast<int>((z - ZMIN) * W / (ZMAX - ZMIN));
 }

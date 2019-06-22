@@ -10,6 +10,17 @@
 
 cv::Mat Server::photo;
 
+static void setnonblocking(int sockfd) {
+    int flag = fcntl(sockfd, F_GETFL, 0);
+    if (flag < 0) {
+        std::cout << "fcntl F_GETFL fail" << std::endl;
+        return;
+    }
+    if (fcntl(sockfd, F_SETFL, flag | O_NONBLOCK) < 0) {
+        std::cout << "fcntl F_GETFL fail" << std::endl;
+    }
+}
+
 bool Server::init() {
     fd = socket(AF_INET, SOCK_DGRAM, 0);
     if (fd < 0) {

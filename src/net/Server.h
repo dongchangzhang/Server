@@ -18,7 +18,7 @@
 #include "../constants.h"
 #include "../data/TimeCheck.h"
 #include "../data/GNC.h"
-#include "../ui/MyFrame.h"
+#include "../ui/MainFrame.h"
 
 // As a server
 // recv photo

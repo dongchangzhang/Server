@@ -2,13 +2,13 @@
 // Created by z on 19-4-27.
 //
 
-#include "MyImgPanel.h"
+#include "ImagePanel.h"
 #include <iostream>
 #include <mutex>
 
 std::mutex mtx;
 
-BEGIN_EVENT_TABLE(MyImgPanel, wxPanel)
+BEGIN_EVENT_TABLE(ImagePanel, wxPanel)
 // some useful events
 /*
  EVT_MOTION(wxImagePanel::mouseMoved)
@@ -22,9 +22,9 @@ BEGIN_EVENT_TABLE(MyImgPanel, wxPanel)
  */
 
 // catch paint events
-                EVT_PAINT(MyImgPanel::paintEvent)
+                EVT_PAINT(ImagePanel::paintEvent)
 //Size event
-                EVT_SIZE(MyImgPanel::OnSize)
+                EVT_SIZE(ImagePanel::OnSize)
 END_EVENT_TABLE()
 
 
@@ -40,7 +40,7 @@ END_EVENT_TABLE()
  void wxImagePanel::keyReleased(wxKeyEvent& event) {}
  */
 
-MyImgPanel::MyImgPanel(wxFrame *parent) : wxPanel(parent) {
+ImagePanel::ImagePanel(wxFrame *parent) : wxPanel(parent) {
     // load the file... ideally add a check to see if loading was successful
     cv::Mat tmp(3072, 4096, CV_8UC3, cv::Scalar::all(0));
     image = wx_from_mat(tmp);
@@ -50,7 +50,7 @@ MyImgPanel::MyImgPanel(wxFrame *parent) : wxPanel(parent) {
     c1 = 4.0 / 3.0;
     c2 = 3.0 / 4.0;
 }
-MyImgPanel::MyImgPanel(wxFrame *parent, int c) : wxPanel(parent) {
+ImagePanel::ImagePanel(wxFrame *parent, int c) : wxPanel(parent) {
     // load the file... ideally add a check to see if loading was successful
     image_route = cv::Mat(2000, 2600, CV_8UC3, cv::Scalar::all(0));
     init_mars();
@@ -68,7 +68,7 @@ MyImgPanel::MyImgPanel(wxFrame *parent, int c) : wxPanel(parent) {
  * calling Refresh()/Update().
  */
 
-void MyImgPanel::paintEvent(wxPaintEvent &evt) {
+void ImagePanel::paintEvent(wxPaintEvent &evt) {
     // depending on your system you may need to look at double-buffered dcs
     wxPaintDC dc(this);
     render(dc);
@@ -82,7 +82,7 @@ void MyImgPanel::paintEvent(wxPaintEvent &evt) {
  * background, and expects you will redraw it when the window comes
  * back (by sending a paint event).
  */
-void MyImgPanel::paintNow() {
+void ImagePanel::paintNow() {
     // depending on your system you may need to look at double-buffered dcs
     wxClientDC dc(this);
     render(dc);
@@ -93,7 +93,7 @@ void MyImgPanel::paintNow() {
  * method so that it can work no matter what type of DC
  * (e.g. wxPaintDC or wxClientDC) is used.
  */
-void MyImgPanel::render(wxDC &dc) {
+void ImagePanel::render(wxDC &dc) {
     mtx.lock();
     int neww, newh;
     dc.GetSize(&neww, &newh);
@@ -118,20 +118,20 @@ void MyImgPanel::render(wxDC &dc) {
  * Here we call refresh to tell the panel to draw itself again.
  * So when the user resizes the image panel the image should be resized too.
  */
-void MyImgPanel::OnSize(wxSizeEvent &event) {
+void ImagePanel::OnSize(wxSizeEvent &event) {
     Refresh();
     //skip the event.
     event.Skip();
 }
 
-void MyImgPanel::update(cv::Mat &CVImg) {
+void ImagePanel::update(cv::Mat &CVImg) {
     c1 = double(CVImg.cols) / double(CVImg.rows);
     c2 = double(CVImg.rows) / double(CVImg.cols);
     image = wx_from_mat(CVImg);
     Refresh();
 }
 
-void MyImgPanel::update(wxString file, wxBitmapType format) {
+void ImagePanel::update(wxString file, wxBitmapType format) {
     mtx.lock();
     image.LoadFile(file, format);
     mtx.unlock();
@@ -139,7 +139,7 @@ void MyImgPanel::update(wxString file, wxBitmapType format) {
 }
 
 
-wxImage MyImgPanel::wx_from_mat(cv::Mat &img) {
+wxImage ImagePanel::wx_from_mat(cv::Mat &img) {
     int code1 = 0, code4 = 0, code = 0;
     cv::Mat im2;
 #ifdef CV_GRAY2RGB
@@ -149,7 +149,7 @@ wxImage MyImgPanel::wx_from_mat(cv::Mat &img) {
 #else
     code1 = cv::COLOR_GRAY2RGB;
     code4 = cv::COLOR_BGRA2RGB;
-    code = cv::COLOR_BGR2RGB;
+    code  = cv::COLOR_BGR2RGB;
 #endif
     if (img.channels() == 1) {
         cvtColor(img, im2, code1);
@@ -169,7 +169,7 @@ wxImage MyImgPanel::wx_from_mat(cv::Mat &img) {
 }
 
 
-void MyImgPanel::init_mars() {
+void ImagePanel::init_mars() {
     double angle = 0, dangle = 0.001;
     int j = 0, k = 0;
     double y = 0, z = 0;
@@ -192,7 +192,7 @@ void MyImgPanel::init_mars() {
     z =  5843.9 + 10473 * cos(1);
 }
 
-void MyImgPanel::draw(double y, double z) {
+void ImagePanel::draw(double y, double z) {
     int j, k;
     yz2jk(y / 1000, z / 1000, j, k);
     auto tmp = image_route.clone();

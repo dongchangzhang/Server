@@ -56,9 +56,9 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     start_addr += sizeof(quaternion);
 
     // euler
-    posture[0] = 0;
-    posture[1] = 0;
-    posture[2] = 0;
+    posture[0] = 0; // pitch
+    posture[1] = 0; // yaw
+    posture[2] = 0; // roll
     memcpy(&buffer[start_addr], &posture, sizeof(posture));
     start_addr += sizeof(posture);
 
