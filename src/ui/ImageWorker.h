@@ -36,6 +36,7 @@ public:
     void write_info(u_char my_buffer[], int from, int len);
 
     bool start_thread();
+    bool stop_thread();
 
 private:
     int base = 0;

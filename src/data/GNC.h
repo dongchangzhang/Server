@@ -29,9 +29,27 @@ struct GNC {
 
     time_t nsec_now;
     float angle = 0;
+
+    bool test_sun = false;
+
     GNC();
+    GNC(bool _test_sun);
+
+
+    inline void set_angle(double &pitch, double &yaw, double &roll) {
+        posture[0] = pitch;
+        posture[0] = yaw;
+        posture[0] = roll;
+    }
+
+    inline void set_sun(double &dx, double &dy, double &dz) {
+        sun[0] = dx;
+        sun[1] = dy;
+        sun[2] = dz;
+    }
+
     void get_gnc(unsigned char buffer[], int &gnc_len, int max_len);
-    double get_angle();
+
     void update_gnc();
 };
 

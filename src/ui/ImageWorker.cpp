@@ -160,3 +160,8 @@ void ImageWorker::write_info(u_char my_buffer[], int from, int len) {
     of.write((char*)&my_buffer[from], len);
     of.close();
 }
+
+bool ImageWorker::stop_thread() {
+    this->Delete();
+    return true;
+}

@@ -14,6 +14,11 @@ GNC::GNC() {
     loc[1] = RADIUS;
     loc[2] = RADIUS;
 }
+GNC::GNC(bool _test_sun) : test_sun(_test_sun) {
+
+}
+
+
 void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     struct tm *tm_now;
     tm_now = localtime(&nsec_now);
@@ -47,18 +52,9 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     memcpy(&buffer[start_addr], &second, sizeof(second));
     start_addr += sizeof(second);
 
-    quaternion[0] = 0;
-    quaternion[1] = 0;
-    quaternion[2] = 0;
-    quaternion[3] = 1;
-
     memcpy(&buffer[start_addr], &quaternion, sizeof(quaternion));
     start_addr += sizeof(quaternion);
 
-    // euler
-    posture[0] = 0; // pitch
-    posture[1] = 0; // yaw
-    posture[2] = 0; // roll
     memcpy(&buffer[start_addr], &posture, sizeof(posture));
     start_addr += sizeof(posture);
 
@@ -80,9 +76,6 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
 
 }
 
-double GNC::get_angle() {
-    return 0;
-}
 
 void GNC::update_gnc() {
     const int N = 360, D = 3656;
@@ -93,9 +86,10 @@ void GNC::update_gnc() {
     loc[0] =  316500 + 513000 * cos(angle);
     loc[1] =  -8004000 * sin(angle);
     loc[2] =  5843900 + 10473000 * cos(angle);
-    sun[0] = loc[0];
-    sun[1] = loc[1];
-    sun[2] = loc[2];
-
+    if (!test_sun) {
+        sun[0] = loc[0];
+        sun[1] = loc[1];
+        sun[2] = loc[2];
+    }
 }
 

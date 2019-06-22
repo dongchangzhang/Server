@@ -12,6 +12,7 @@ class ImageFrame : public wxFrame {
 public:
     ImagePanel *img;
     ImageFrame(const wxString& title, const wxPoint& pos, const wxSize& size, void* ptr);
+    ImageFrame(const wxString& title, const wxPoint& pos, const wxSize& size, void* ptr, int c);
 
     ~ImageFrame();
 private:

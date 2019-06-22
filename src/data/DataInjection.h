@@ -6,28 +6,61 @@
 #define MARSSIMULATOR_DATAINJECTION_H
 
 
+#include <cstring>
+
 class DataInjection {
-    char head1=0xeb;    // 包头标识
-    char head2=0x90;    // 包头标识
-    char command_type;    // 命令类型
-    char valid_byte_num;    // 有效的字节数目
 
     // 需要仿真： y；   无需仿真： n
-    char work_mode;    // 工作模式    y
+    char work_mode = 0x22;    // 工作模式    y
     char expo_mode;    // 曝光模式    y
     char image_mode;    // 图像模式    y
     char setting_window[9];    // 开窗设置    y
     char manual_expo[3];    // 手动曝光参数设置    y
     char auto_expo[5];    // 自动曝光参数设置    y
-    char temperature[3];    // 温度    n
-    char cmos_ele[3];    // cmos 电流    n
-    char cmos_work[3];   // cmos 工作参数读写    n
-    char output_request;    // 输出请求    n
-    char SDRAM;    // 禁用控制    n
-    char temp_change;   // 温度传感器切换    n
 
-    char checksum_high;    // 累加和 高字节
-    char checksum_low;    // 累加和 低字节
+
+public:
+    DataInjection() = default;
+
+    int get_dij_into_buffer(unsigned char buffer[]);
+
+    inline void set_work_mode(bool running) {
+        if (running) {
+            work_mode = 0x22;
+        } else {
+            work_mode = 0x11;
+        }
+    }
+
+    inline void set_image_mode(int mode) {
+        switch (mode) {
+            case 1: image_mode = 0x00; break;
+            case 2: image_mode = 0x11; break;
+            case 3: image_mode = 0x22; break;
+            case 4: image_mode = 0x33; break;
+            case 5: image_mode = 0x44; break;
+            default: image_mode = 0x00;
+        }
+    }
+
+    inline void set_window(short i, short j, short ni, short nj) {
+        if (i < 0 || j < 0 || ni < 0 || nj < 0 ) {
+            image_mode = 0x00;
+        }
+        if (i + ni >= 3072 || j + nj >= 4096) {
+            image_mode = 0x00;
+        }
+        memcpy(&setting_window[0], &i, 2);
+        memcpy(&setting_window[2], &j, 2);
+        memcpy(&setting_window[4], &ni, 2);
+        memcpy(&setting_window[6], &ni, 2);
+
+    }
+
+    inline void set_expo(short t) {
+        memcpy(&auto_expo[3], &t, 2);
+    }
+
 };
 
 

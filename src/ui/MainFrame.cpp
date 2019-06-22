@@ -45,6 +45,13 @@ void start_info_helper(MainFrame *frame) {
     wxQueueEvent(frame->GetEventHandler(), e1);
 }
 
+void dij_helper(MainFrame *frame) {
+    Client client(IP, INJECTION_POER);
+    uchar buffer[100];
+    int len = frame->dij.get_dij_into_buffer(buffer);
+    client.send((char*)buffer, len);
+}
+
 void cmd_helper(char mode) {
     Client client(IP, CMD_PORT);
     char buf[2];
@@ -75,6 +82,7 @@ void MainFrame::init_variables() {
     camera_state_sizer = new wxBoxSizer(wxHORIZONTAL);
     window_sizer = new wxBoxSizer(wxHORIZONTAL);
     expo_sizer = new wxBoxSizer(wxHORIZONTAL);
+    image_mode_sizer = new wxBoxSizer(wxHORIZONTAL);
 
     output_sizer = new wxBoxSizer(wxHORIZONTAL);
     btn_sizer = new wxBoxSizer(wxHORIZONTAL);
@@ -103,9 +111,11 @@ void MainFrame::init_variables() {
     sun_title = new wxStaticText(panel, wxID_ANY, _T("太阳方向"));
     t_sun_direct = new wxTextCtrl(panel, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
 
+    info_0 = new wxStaticText(panel, wxID_ANY, _T("* 太阳方向设置为空，则默认相机方向和太阳方向相同；也可以输入太阳方向以测试光照下成像效果，格式为 dx dy dz"));
+
     // camera
     camera_title = new wxStaticText(panel, wxID_ANY, _T("* 相机参数设置"));
-    open_win_title = new wxStaticText(panel, wxID_ANY, _T("开窗设置：起始行号 "));
+    open_win_title = new wxStaticText(panel, wxID_ANY, _T("开窗设置：起始行号"));
     j_title = new wxStaticText(panel, wxID_ANY, _T(" 起始列号 "));
     ni_title = new wxStaticText(panel, wxID_ANY, _T(" 开窗行数 "));
     nj_title = new wxStaticText(panel, wxID_ANY, _T(" 开窗列数 "));
@@ -114,16 +124,20 @@ void MainFrame::init_variables() {
     t_ni = new wxTextCtrl(panel, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
     t_nj = new wxTextCtrl(panel, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
 
-    expo_title = new wxStaticText(panel, wxID_ANY, _T("相机曝光时间 （秒）"));
+    expo_title = new wxStaticText(panel, wxID_ANY, _T("最大曝光时间（秒）"));
     t_expo = new wxTextCtrl(panel, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
+
+    image_mode_title = new wxStaticText(panel, wxID_ANY, _T("图像模式  1/2/3/4/5 "));
+    t_image_mode = new wxTextCtrl(panel, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
+
+    info_1 = new wxStaticText(panel, wxID_ANY, _T("* 图像模式：1为传送原始图像（4096x3072），2为传输2：1采样后图像，3为4：1采样，4为8:1, 5为开窗"));
+    info_2 = new wxStaticText(panel, wxID_ANY, _T("* 只有图像模式为5时开窗参数才起作用，开窗尺寸需要满足图片尺寸：行号+开窗行数 < 3072; 列号+开窗列数 < 4096, 否则不开窗!"));
 
     radio_taking = new wxRadioButton(panel, Radio_Taking, wxT("拍照模式"));
     radio_pausing = new wxRadioButton(panel, Radio_Pausing, wxT("停机模式"));
-    radio_taking->SetValue(true);
 
     // local
     gauge = new wxGauge(panel, wxID_ANY, 100, wxDefaultPosition, wxDefaultSize, wxGA_HORIZONTAL);
-    gauge->SetValue(0);
 
     output_title = new wxStaticText(panel, wxID_ANY, _T("* 选择图片保存路径"));
     dir_dialog = new wxDirDialog(panel, wxT("选择图片输出路径"));
@@ -139,7 +153,6 @@ void MainFrame::init_variables() {
     space_2 = new wxStaticLine(panel, wxID_STATIC, wxDefaultPosition, wxSize(0, 0), wxLI_HORIZONTAL);
     space_3 = new wxStaticLine(panel, wxID_STATIC, wxDefaultPosition, wxSize(0, 0), wxLI_HORIZONTAL);
     space_4 = new wxStaticLine(panel, wxID_STATIC, wxDefaultPosition, wxSize(0, 0), wxLI_HORIZONTAL);
-    space_5 = new wxStaticLine(panel, wxID_STATIC, wxDefaultPosition, wxSize(0, 0), wxLI_HORIZONTAL);
 
     line_1 = new wxStaticLine(panel, wxID_STATIC, wxDefaultPosition, wxSize(150, 1), wxLI_HORIZONTAL);
     line_2 = new wxStaticLine(panel, wxID_STATIC, wxDefaultPosition, wxSize(150, 1), wxLI_HORIZONTAL);
@@ -147,6 +160,19 @@ void MainFrame::init_variables() {
     line_4 = new wxStaticLine(panel, wxID_STATIC, wxDefaultPosition, wxSize(150, 1), wxLI_HORIZONTAL);
 
     t_output_path = new wxTextCtrl(panel, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
+
+    gauge->SetValue(0);
+    t_pitch->SetValue("0");
+    t_yaw->SetValue("0");
+    t_roll->SetValue("0");
+    t_error_pitch->SetValue("0");
+    t_error_yaw->SetValue("0");
+    t_error_roll->SetValue("0");
+    radio_taking->SetValue(true);
+
+    t_expo->SetValue("0.1");
+    t_image_mode->SetValue("1");
+    t_output_path->SetValue("./");
 }
 
 void MainFrame::add_wins_into_sizer() {
@@ -184,11 +210,15 @@ void MainFrame::add_wins_into_sizer() {
     window_sizer->Add(nj_title);
     window_sizer->Add(t_nj);
 
+    image_mode_sizer->Add(image_mode_title);
+    image_mode_sizer->Add(t_image_mode);
+
     camera_state_sizer->Add(radio_taking, 3);
     camera_state_sizer->Add(radio_pausing, 3);
 
     camera_sizer->Add(camera_state_sizer, 1, wxALL , 2);
     camera_sizer->Add(expo_sizer, 1, wxALL , 2);
+    camera_sizer->Add(image_mode_sizer, 1, wxALL , 2);
     camera_sizer->Add(window_sizer, 1, wxALL | wxALIGN_CENTER_HORIZONTAL, 2);
 
     output_sizer->Add(t_output_path, 4);
@@ -209,11 +239,14 @@ void MainFrame::add_wins_into_sizer() {
 
     sizer_all->Add(gnc_title, 0, wxALL |wxALIGN_LEFT, 10);
     sizer_all->Add(gnc_sizer, 2, wxALIGN_CENTER);
+    sizer_all->Add(info_0, 0, wxALL |wxALIGN_LEFT, 10);
 
     sizer_all->Add(line_2, 0, wxEXPAND | wxALL, 2);
 
     sizer_all->Add(camera_title, 0, wxALL |wxALIGN_LEFT, 10);
     sizer_all->Add(camera_sizer, 2, wxALIGN_CENTER);
+    sizer_all->Add(info_1, 0, wxALL |wxALIGN_LEFT, 10);
+    sizer_all->Add(info_2, 0, wxALL |wxALIGN_LEFT, 10);
 
     sizer_all->Add(line_3, 0, wxEXPAND | wxALL, 10);
 
@@ -228,28 +261,84 @@ void MainFrame::add_wins_into_sizer() {
 }
 
 void MainFrame::OnStart(wxCommandEvent &event) {
-    // send auto mode cmd to mars camera
-    wxCommandEvent tmp;
-    OnAutoMode(tmp);
 
-    // start data receive state thread
+//     start data receive state thread
     std::thread th0 = std::thread(start_info_helper, this);
     th0.detach();
 
-    // recv image and send gnc threads
-    auto *th1 = new GncWorker(this, IP, GNC_PORT);
-    auto *th2 = new ImageWorker(this, SEND_IMAGE_PORT);
-    // start threads
-    th1->start_thread();
-    th2->start_thread();
+    // gnc
+    std::string tmp(t_sun_direct->GetValue());
+    std::istringstream is(tmp);
+    if (is >> dx >> dy >> dz) {
+        gnc = GNC(true);
+        gnc.set_sun(dx, dy, dz);
+    } else {
+        gnc = GNC(false);
+    }
+    pitch = atof(t_pitch->GetValue());
+    yaw = atof(t_yaw->GetValue());
+    roll = atof(t_roll->GetValue());
 
+    gnc.set_angle(pitch, yaw, roll);
+
+    // dij
+    dij.set_work_mode(camera_running);
+    dij.set_image_mode(atoi(t_image_mode->GetValue()));
+    dij.set_window(atoi(t_start_i->GetValue()), atoi(t_start_j->GetValue()),
+            atoi(t_ni->GetValue()), atoi(t_nj->GetValue()));
+    dij.set_expo(atoi(t_expo->GetValue()));
+
+    std::thread th_dij(dij_helper, this);
+    th_dij.detach();
+
+
+    // output
+    output_path = t_output_path->GetValue();
+    if (output_path.empty()) {
+        output_path = "./";
+    }
+
+//     recv image and send gnc threads
+    if (image_worker == nullptr || gnc_worker == nullptr) {
+        auto *th1 = new GncWorker(this, IP, GNC_PORT, gnc);
+        auto *th2 = new ImageWorker(this, SEND_IMAGE_PORT, output_path);
+        // start threads
+        th1->start_thread();
+        th2->start_thread();
+        image_worker = th1;
+        gnc_worker = th2;
+    }
+
+    // disable
     btn_pause->Enable();
     btn_start->Disable();
+    t_sun_direct->Disable();
+    t_pitch->Disable();
+    t_yaw->Disable();
+    t_roll->Disable();
+    t_error_pitch->Disable();
+    t_error_yaw->Disable();
+    t_error_roll->Disable();
 
-    threadRunning = true;
-    SetStatusText(wxT("Server Started"));
+    image_frame = new ImageFrame(wxT("实时结果_" + std::to_string(show_frame_id++)),
+                                 wxDefaultPosition, wxSize(512, 384 + 24), this);
+    image_frame->SetBackgroundColour(wxColour(0, 0, 0));
+    image_frame->Show(true);
+
+    track_frame = new ImageFrame(wxT("轨道可视化_" + std::to_string(show_frame_id++)),
+                                 wxDefaultPosition, wxSize(512, 384 + 24), this, 255);
+    track_frame->SetBackgroundColour(wxColour(0, 0, 0));
+    track_frame->Show(true);
+
+    is_pause = false;
 }
 void MainFrame::OnStop(wxCommandEvent &event) {
+    if (image_worker) {
+        ((ImageWorker*)image_worker)->stop_thread();
+    }
+    if (gnc_worker) {
+        ((GncWorker*)gnc_worker)->stop_thread();
+    }
     Close(true);
 }
 void MainFrame::OnOutput(wxCommandEvent &event) {
@@ -258,25 +347,18 @@ void MainFrame::OnOutput(wxCommandEvent &event) {
     t_output_path->SetValue(output_path);
 }
 void MainFrame::OnPause(wxCommandEvent &event) {
-    if (threadRunning) {
-        SetStatusText(wxT("Server had been Started, not need to restart!"));
-        return;
-    }
-    wxCommandEvent tmp;
-    OnAutoMode(tmp);
-    btn_start->SetLabelText(_T("系统正在运行，无需重复点击"));
-    std::thread th0 = std::thread(start_info_helper, this);
-    th0.detach();
-    auto *th1 = new GncWorker(this, IP, GNC_PORT);
-    auto *th2 = new ImageWorker(this, SEND_IMAGE_PORT);
-    th1->start_thread();
-    th2->start_thread();
-    threadRunning = true;
-
+    is_pause = true;
+    // enable
     btn_pause->Disable();
     btn_start->Enable();
+    t_sun_direct->Enable();
+    t_pitch->Enable();
+    t_yaw->Enable();
+    t_roll->Enable();
+    t_error_pitch->Enable();
+    t_error_yaw->Enable();
+    t_error_roll->Enable();
 
-    SetStatusText(wxT("Server Started"));
 }
 
 void MainFrame::ThreadUpdate(wxThreadEvent &event) {
@@ -297,62 +379,30 @@ void MainFrame::photo_update() {
     gauge->SetValue(ratio * 100 > 100 ? 100 : ratio * 100);
 
     if (ratio == 0) {
-        gaugeTitle->SetLabelText(_T("正在接收图片数据..."));
+        SetStatusText(_T("正在接收图片数据..."));
         char info[128];
     } else if (ratio == 1) {
-//        this->img->update(mphoto);
-        gaugeTitle->SetLabelText(_T("图片数据接收完成!"));
+        image_frame->img->update(mphoto);
+        SetStatusText(_T("接收图片数据完成"));
     }
     Refresh();
 }
 
 void MainFrame::gnc_update() {
-//    img2->draw(yy, zz);
+    track_frame->img->draw(yy, zz);
     Refresh();
 }
 
 void MainFrame::load_data() {
     if (ratio < 1) {
-        gaugeTitle->SetLabelText(_T("相机正在载入图片数据..."));
         gauge->SetValue(ratio * 100);
+        SetStatusText(wxT("相机正在载入数据!"));
     } else {
-        gaugeTitle->SetLabelText(_T("相机载入图片数据完成"));
         gauge->SetValue(100);
+        SetStatusText(_T("相机载入图片数据完成"));
     }
 }
 
 void MainFrame::OnRecv(wxCommandEvent &event) {
-    if (autoModeFlag)
-        return;
-    char cmd = 0x00;
-    std::thread th = std::thread(cmd_helper, cmd);
-    th.detach();
-    gaugeTitle->SetLabelText(_T("正在发送指令..."));
-    gauge->SetValue(0);
 }
 
-void MainFrame::OnAutoMode(wxCommandEvent &event) {
-    std::cout << "auto mode" << std::endl;
-    btn_onece->Disable();
-    char cmd = 0x11;
-    autoModeFlag = true;
-    std::thread th = std::thread(cmd_helper, cmd);
-    th.detach();
-    std::thread th1 = std::thread(cmd_helper, cmd);
-    th1.detach();
-
-    SetStatusText(wxT("设置为自动模式，此时相机自动发送图片！"));
-}
-
-void MainFrame::OnManualMode(wxCommandEvent &event) {
-    std::cout << "manual mode" << std::endl;
-    char cmd = 0x22;
-    autoModeFlag = false;
-    btn_onece->Enable();
-    std::thread th = std::thread(cmd_helper, cmd);
-    th.detach();
-
-    std::thread th1 = std::thread(cmd_helper, cmd);
-    th1.detach();
-    SetStatusText(wxT("设置为手动模式，需要手动点击按钮才能接收图片！"));
-}
