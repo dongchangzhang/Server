@@ -200,3 +200,33 @@ void ImagePanel::draw(double y, double z) {
     image = wx_from_mat(tmp);
     Refresh();
 }
+void ImagePanel::mat2wxImage(cv::Mat &cvImg) {
+    try
+    {
+        // data dimension
+        int w = cvImg.cols;
+        int h = cvImg.rows;
+        int size = w*h*3*sizeof(unsigned char);
+
+        // allocate memory for internal wxImage data
+        unsigned char* wxData = (unsigned char*) malloc(size);
+
+        // the matrix stores BGR image for conversion
+        cv::Mat cvRGBImg = cv::Mat(h, w, CV_8UC3, wxData);
+        switch (cvImg.channels())
+        {
+            case 3: // 3-channel case: swap R&B channels
+            {
+                int mapping[] = {0,2,1,1,2,0}; // CV(BGR) to WX(RGB)
+                mixChannels(&cvImg, 1, &cvRGBImg, 1, mapping, 3);
+            } break;
+
+        }
+
+        image.Destroy(); // free existing data if there's any
+        image = wxImage(w, h, wxData);
+    }
+    catch(...)
+    {
+    }
+}

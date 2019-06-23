@@ -35,6 +35,8 @@ public:
         std::cout << "destory" << std::endl;
     }
 
+    void mat2wxImage(cv::Mat &cvImg);
+
     void paintEvent(wxPaintEvent & evt);
     void paintNow();
     void OnSize(wxSizeEvent& event);
