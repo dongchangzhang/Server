@@ -28,8 +28,16 @@ public:
     void OnStart(wxCommandEvent &event);
     void OnStop(wxCommandEvent &event);
     void OnPause(wxCommandEvent &event);
-    void OnRecv(wxCommandEvent &event);
+    void OnSend(wxCommandEvent &event);
     void OnOutput(wxCommandEvent &event);
+    void OnTaking(wxCommandEvent &event) {
+        camera_running = true;
+
+    }
+    void OnPausing(wxCommandEvent &event) {
+        camera_running = false;
+
+    }
 
     void ThreadUpdate(wxThreadEvent& event);
 
@@ -45,7 +53,7 @@ public:
         Btn_Start,
         Btn_Pause,
         Btn_Stop,
-        Btn_Recv,
+        Btn_Camera,
         Btn_Output,
         Radio_Taking,
         Radio_Pausing,
@@ -60,6 +68,7 @@ public:
     double yy, zz;
     double dx, dy, dz;
     double roll, pitch, yaw;
+    double e_roll, e_pitch, e_yaw;
 
     ImageFrame *image_frame = nullptr, *track_frame = nullptr;
 

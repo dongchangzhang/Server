@@ -5,6 +5,7 @@
 #include "ImageFrame.h"
 #include "MainFrame.h"
 
+
 ImageFrame::ImageFrame(const wxString& title, const wxPoint& pos, const wxSize& size, void *_ptr)
         : wxFrame(NULL, wxID_ANY, title, pos, size), ptr(_ptr) {
     img = new ImagePanel(this);

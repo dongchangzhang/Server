@@ -7,6 +7,7 @@
 
 
 #include <cstring>
+#include <iostream>
 
 class DataInjection {
 
@@ -24,6 +25,10 @@ public:
 
     int get_dij_into_buffer(unsigned char buffer[]);
 
+    inline char get_work_mode() {
+        return work_mode;
+    }
+
     inline void set_work_mode(bool running) {
         if (running) {
             work_mode = 0x22;
@@ -33,6 +38,7 @@ public:
     }
 
     inline void set_image_mode(int mode) {
+        std::cout << "image mode " << mode << std::endl;
         switch (mode) {
             case 1: image_mode = 0x00; break;
             case 2: image_mode = 0x11; break;
@@ -53,12 +59,13 @@ public:
         memcpy(&setting_window[0], &i, 2);
         memcpy(&setting_window[2], &j, 2);
         memcpy(&setting_window[4], &ni, 2);
-        memcpy(&setting_window[6], &ni, 2);
+        memcpy(&setting_window[6], &nj, 2);
 
     }
 
     inline void set_expo(short t) {
-        memcpy(&auto_expo[3], &t, 2);
+        std::cout << "auto_expo" << t << std::endl;
+        memcpy(&auto_expo[2], &t, 2);
     }
 
 };

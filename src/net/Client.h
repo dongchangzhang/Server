@@ -44,7 +44,6 @@ public:
 private:
     bool init();
 private:
-    GNC gnc;
     int fd, port;
     std::string ip;
     sockaddr_in server;

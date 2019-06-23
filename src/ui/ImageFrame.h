@@ -10,11 +10,14 @@
 
 class ImageFrame : public wxFrame {
 public:
+    enum {
+        OnQuit,
+    };
     ImagePanel *img;
     ImageFrame(const wxString& title, const wxPoint& pos, const wxSize& size, void* ptr);
     ImageFrame(const wxString& title, const wxPoint& pos, const wxSize& size, void* ptr, int c);
-
     ~ImageFrame();
+
 private:
     wxBoxSizer *sizer, *all_sizer;
     void *ptr = nullptr;

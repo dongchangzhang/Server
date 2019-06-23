@@ -41,9 +41,7 @@ void *ImageWorker::Entry() {
         Status s = S;
         while (s != E) {
             ++count;
-            std::cout << "+ 1" << std::endl;
             recv_photo_segment(server, recv_len, s);
-            std::cout << "- 1" << std::endl;
             if (count % (NITERS_TO_UPDATE_UI) == 0) {
                 handler->ratio = float(count / 2) / h;
                 auto *seg_sended = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
@@ -68,7 +66,6 @@ void *ImageWorker::Entry() {
 
 bool ImageWorker::recv_photo_info(Server &server, int &recv_len) {
     if (server.recv_into_buff(recv_len, buffer)) {
-        std::cout << "SERVER::Photo Getting Info ..." << std::endl;
         memcpy(&handler->nframe, &buffer[26], 1);
         if (buffer[0] != 0x55) {
             std::cout << "not an image info segment" << std::endl;
@@ -109,16 +106,14 @@ bool ImageWorker::init_for_recv_photo_segment() {
 bool ImageWorker::recv_photo_segment(Server &server, int &recv_len, Status &s) {
     uchar where;
     int photo_id;
-    std::cout << " ++ " << std::endl;
     if (!server.recv_into_buff(recv_len, buffer)) {
-        std::cout << " nn " << std::endl;
         return false;
     }
-    std::cout << " -- " << std::endl;
     memcpy(&nline, &buffer[14], sizeof(short));
     if (buffer[0] != 0xAA) {
         return false;
     }
+
     memcpy(&photo_id, &buffer[10], sizeof(char));
 
     memcpy(&nline, &buffer[12], sizeof(short));

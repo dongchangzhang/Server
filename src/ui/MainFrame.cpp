@@ -15,8 +15,10 @@ BEGIN_EVENT_TABLE(MainFrame, wxFrame)
                 EVT_BUTTON(Btn_Start, MainFrame::OnStart)
                 EVT_BUTTON(Btn_Stop, MainFrame::OnStop)
                 EVT_BUTTON(Btn_Pause, MainFrame::OnPause)
-                EVT_BUTTON(Btn_Recv, MainFrame::OnRecv)
+                EVT_BUTTON(Btn_Camera, MainFrame::OnSend)
                 EVT_BUTTON(Btn_Output, MainFrame::OnOutput)
+                EVT_RADIOBUTTON(Radio_Taking, MainFrame::OnTaking)
+                EVT_RADIOBUTTON(Radio_Pausing, MainFrame::OnPausing)
                 EVT_THREAD(kThreadUpdateId, MainFrame::ThreadUpdate)
 END_EVENT_TABLE()
 
@@ -47,7 +49,7 @@ void start_info_helper(MainFrame *frame) {
 
 void dij_helper(MainFrame *frame) {
     Client client(IP, INJECTION_POER);
-    uchar buffer[100];
+    uchar buffer[200];
     int len = frame->dij.get_dij_into_buffer(buffer);
     client.send((char*)buffer, len);
 }
@@ -146,7 +148,7 @@ void MainFrame::init_variables() {
     btn_stop = new wxButton(panel, Btn_Stop, wxT("终止"));
     btn_start = new wxButton(panel, Btn_Start, wxT("启动"));
     btn_pause = new wxButton(panel, Btn_Pause, wxT("暂停"));
-    btn_onece = new wxButton(panel, Btn_Recv, wxT("更新相机参数"));
+    btn_onece = new wxButton(panel, Btn_Camera, wxT("更新相机参数"));
 
     // space
     space_1 = new wxStaticLine(panel, wxID_STATIC, wxDefaultPosition, wxSize(0, 0), wxLI_HORIZONTAL);
@@ -170,7 +172,7 @@ void MainFrame::init_variables() {
     t_error_roll->SetValue("0");
     radio_taking->SetValue(true);
 
-    t_expo->SetValue("0.1");
+    t_expo->SetValue("150");
     t_image_mode->SetValue("1");
     t_output_path->SetValue("./");
 }
@@ -279,7 +281,12 @@ void MainFrame::OnStart(wxCommandEvent &event) {
     yaw = atof(t_yaw->GetValue());
     roll = atof(t_roll->GetValue());
 
+    e_pitch = atof(t_error_pitch->GetValue());
+    e_yaw = atof(t_error_yaw->GetValue());
+    e_roll = atof(t_error_roll->GetValue());
     gnc.set_angle(pitch, yaw, roll);
+    gnc.set_error(e_pitch, e_yaw, e_roll);
+
 
     // dij
     dij.set_work_mode(camera_running);
@@ -300,7 +307,7 @@ void MainFrame::OnStart(wxCommandEvent &event) {
 
 //     recv image and send gnc threads
     if (image_worker == nullptr || gnc_worker == nullptr) {
-        auto *th1 = new GncWorker(this, IP, GNC_PORT, gnc);
+        auto *th1 = new GncWorker(this, IP, GNC_PORT);
         auto *th2 = new ImageWorker(this, SEND_IMAGE_PORT, output_path);
         // start threads
         th1->start_thread();
@@ -320,7 +327,7 @@ void MainFrame::OnStart(wxCommandEvent &event) {
     t_error_yaw->Disable();
     t_error_roll->Disable();
 
-    image_frame = new ImageFrame(wxT("实时结果_" + std::to_string(show_frame_id++)),
+    image_frame = new ImageFrame(wxT("实时结果_" + std::to_string(show_frame_id)),
                                  wxDefaultPosition, wxSize(512, 384 + 24), this);
     image_frame->SetBackgroundColour(wxColour(0, 0, 0));
     image_frame->Show(true);
@@ -331,6 +338,7 @@ void MainFrame::OnStart(wxCommandEvent &event) {
     track_frame->Show(true);
 
     is_pause = false;
+    image_frame_destroyed = false;
 }
 void MainFrame::OnStop(wxCommandEvent &event) {
     if (image_worker) {
@@ -382,14 +390,27 @@ void MainFrame::photo_update() {
         SetStatusText(_T("正在接收图片数据..."));
         char info[128];
     } else if (ratio == 1) {
-        image_frame->img->update(mphoto);
+        try {
+            if (!image_frame_destroyed) {
+                image_frame->img->update(mphoto);
+            }
+        } catch (cv::Exception & e) {
+        } catch (...) {
+        }
+
         SetStatusText(_T("接收图片数据完成"));
     }
     Refresh();
 }
 
 void MainFrame::gnc_update() {
-    track_frame->img->draw(yy, zz);
+    try {
+        if (!image_frame_destroyed) {
+            track_frame->img->draw(yy, zz);
+        }
+    } catch (cv::Exception & e) {
+    } catch (...) {
+    }
     Refresh();
 }
 
@@ -403,6 +424,15 @@ void MainFrame::load_data() {
     }
 }
 
-void MainFrame::OnRecv(wxCommandEvent &event) {
+void MainFrame::OnSend(wxCommandEvent &event) {
+    dij.set_work_mode(camera_running);
+    dij.set_image_mode(atoi(t_image_mode->GetValue()));
+    dij.set_window(atoi(t_start_i->GetValue()), atoi(t_start_j->GetValue()),
+                   atoi(t_ni->GetValue()), atoi(t_nj->GetValue()));
+    dij.set_expo(atoi(t_expo->GetValue()));
+
+    auto th = std::thread(dij_helper, this);
+    th.detach();
+
 }
 

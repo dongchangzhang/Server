@@ -15,6 +15,10 @@ GNC::GNC() {
     loc[2] = RADIUS;
 }
 GNC::GNC(bool _test_sun) : test_sun(_test_sun) {
+    nsec_now = time(nullptr);
+    loc[0] = RADIUS;
+    loc[1] = RADIUS;
+    loc[2] = RADIUS;
 
 }
 
@@ -30,6 +34,7 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     second = tm_now->tm_sec;
 
     update_gnc();
+
 
     memset(buffer, 0, max_len);
     int start_addr = 0;
@@ -55,7 +60,17 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     memcpy(&buffer[start_addr], &quaternion, sizeof(quaternion));
     start_addr += sizeof(quaternion);
 
-    memcpy(&buffer[start_addr], &posture, sizeof(posture));
+
+    double tmp[6];    // 探测器本体系相对 自身轨道系的姿态 （俯仰、偏航、滚 动姿态角、角速度）
+    memcpy(tmp, posture, sizeof(posture));
+    srand((unsigned)time(0));
+
+    tmp[0] += e_pitch * (rand() % 100) / 100;
+    tmp[1] += e_yaw * (rand() % 100) / 100;
+    tmp[2] += e_roll * (rand() % 100) / 100;
+
+    std::cout << tmp[0] << tmp[1] << tmp[2] << std::endl;
+    memcpy(&buffer[start_addr], &tmp, sizeof(tmp));
     start_addr += sizeof(posture);
 
     memcpy(&buffer[start_addr], &dist, sizeof(dist));
@@ -67,7 +82,6 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
 
     memcpy(&buffer[start_addr], &orbit, sizeof(orbit));
     start_addr += sizeof(orbit);
-
 
     memcpy(&buffer[start_addr], &loc, sizeof(loc));
     start_addr += sizeof(loc);

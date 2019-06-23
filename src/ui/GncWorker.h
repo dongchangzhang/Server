@@ -12,13 +12,12 @@ const int millis_per_gnc = 2000;
 
 class GncWorker : public wxThread {
 public:
-    GncWorker(MainFrame *_handler, std::string _ip, int _port, GNC &_gnc);
+    GncWorker(MainFrame *_handler, std::string _ip, int _port);
     void *Entry() override;
 
     bool start_thread();
     bool stop_thread();
 private:
-    GNC gnc;
     int photo_id = 0;
     MainFrame *handler;
     std::string ip;

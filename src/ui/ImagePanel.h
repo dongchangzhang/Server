@@ -31,6 +31,9 @@ public:
 public:
     ImagePanel(wxFrame* parent);
     ImagePanel(wxFrame* parent, int c);
+    ~ImagePanel() {
+        std::cout << "destory" << std::endl;
+    }
 
     void paintEvent(wxPaintEvent & evt);
     void paintNow();
