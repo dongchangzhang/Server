@@ -59,7 +59,6 @@ void *ImageWorker::Entry() {
         th.detach();
 
         ++photo_save_id;
-        std::cout << "ok" << std::endl;
     }
     return nullptr;
 }
@@ -98,7 +97,7 @@ bool ImageWorker::init_for_recv_photo_segment() {
     photo = cv::Mat(h, w, CV_8UC3, cv::Scalar::all(0));
 
     // for another app
-    write_info(buffer, 28, 232);
+    write_info(buffer, 28, 232 + 2 * sizeof(double));
 
     return true;
 }

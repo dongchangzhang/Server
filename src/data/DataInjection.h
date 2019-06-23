@@ -38,7 +38,6 @@ public:
     }
 
     inline void set_image_mode(int mode) {
-        std::cout << "image mode " << mode << std::endl;
         switch (mode) {
             case 1: image_mode = 0x00; break;
             case 2: image_mode = 0x11; break;
@@ -64,7 +63,6 @@ public:
     }
 
     inline void set_expo(short t) {
-        std::cout << "auto_expo" << t << std::endl;
         memcpy(&auto_expo[2], &t, 2);
     }
 

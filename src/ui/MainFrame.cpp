@@ -126,7 +126,7 @@ void MainFrame::init_variables() {
     t_ni = new wxTextCtrl(panel, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
     t_nj = new wxTextCtrl(panel, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
 
-    expo_title = new wxStaticText(panel, wxID_ANY, _T("最大曝光时间（秒）"));
+    expo_title = new wxStaticText(panel, wxID_ANY, _T("最大曝光时间（ms）"));
     t_expo = new wxTextCtrl(panel, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
 
     image_mode_title = new wxStaticText(panel, wxID_ANY, _T("图像模式  1/2/3/4/5 "));
@@ -326,6 +326,7 @@ void MainFrame::OnStart(wxCommandEvent &event) {
     t_error_pitch->Disable();
     t_error_yaw->Disable();
     t_error_roll->Disable();
+    t_output_path->Disable();
 
     image_frame = new ImageFrame(wxT("实时结果_" + std::to_string(show_frame_id)),
                                  wxDefaultPosition, wxSize(512, 384 + 24), this);
@@ -366,7 +367,7 @@ void MainFrame::OnPause(wxCommandEvent &event) {
     t_error_pitch->Enable();
     t_error_yaw->Enable();
     t_error_roll->Enable();
-
+    t_output_path->Enable();
 }
 
 void MainFrame::ThreadUpdate(wxThreadEvent &event) {

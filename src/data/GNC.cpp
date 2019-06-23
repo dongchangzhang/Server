@@ -69,7 +69,6 @@ void GNC::get_gnc(unsigned char buffer[], int &gnc_len, int max_len) {
     tmp[1] += e_yaw * (rand() % 100) / 100;
     tmp[2] += e_roll * (rand() % 100) / 100;
 
-    std::cout << tmp[0] << tmp[1] << tmp[2] << std::endl;
     memcpy(&buffer[start_addr], &tmp, sizeof(tmp));
     start_addr += sizeof(posture);
 
