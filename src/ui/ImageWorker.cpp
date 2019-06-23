@@ -50,7 +50,7 @@ void *ImageWorker::Entry() {
             }
         }
         handler->ratio = 1;
-        handler->mphoto = photo;
+        handler->mphoto = photo.clone();
         auto *end = new wxThreadEvent(wxEVT_THREAD, kThreadUpdateId);
         end->SetInt(IMG_ID);
         wxQueueEvent(handler->GetEventHandler(), end);

@@ -128,7 +128,11 @@ void ImagePanel::update(cv::Mat &CVImg) {
     c1 = double(CVImg.cols) / double(CVImg.rows);
     c2 = double(CVImg.rows) / double(CVImg.cols);
     image = wx_from_mat(CVImg);
+//    cv::imwrite("tmp.png", CVImg);
+//    image.LoadFile(_T("tmp.png")png);
+//    mat2wxImage(CVImg);
     Refresh();
+
 }
 
 void ImagePanel::update(wxString file, wxBitmapType format) {
@@ -211,20 +215,29 @@ void ImagePanel::mat2wxImage(cv::Mat &cvImg) {
         // allocate memory for internal wxImage data
         unsigned char* wxData = (unsigned char*) malloc(size);
 
+        std::cout << 1 << std::endl;
         // the matrix stores BGR image for conversion
         cv::Mat cvRGBImg = cv::Mat(h, w, CV_8UC3, wxData);
+        std::cout << 2 << std::endl;
+
         switch (cvImg.channels())
         {
             case 3: // 3-channel case: swap R&B channels
             {
+                std::cout << 3 << std::endl;
                 int mapping[] = {0,2,1,1,2,0}; // CV(BGR) to WX(RGB)
+                std::cout << 4 << std::endl;
                 mixChannels(&cvImg, 1, &cvRGBImg, 1, mapping, 3);
+                std::cout << 5 << std::endl;
             } break;
 
         }
 
+        std::cout << 6 << std::endl;
         image.Destroy(); // free existing data if there's any
+        std::cout << 7 << std::endl;
         image = wxImage(w, h, wxData);
+        std::cout << 8 << std::endl;
     }
     catch(...)
     {
