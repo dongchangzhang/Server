@@ -22,6 +22,6 @@ int DataInjection::get_dij_into_buffer(unsigned char *buffer) {
     start_addr += sizeof(manual_expo);
 
     memcpy(&buffer[start_addr], auto_expo, sizeof(auto_expo));
-    start_addr += sizeof(manual_expo);
+    start_addr += sizeof(auto_expo);
     return start_addr;
 }
