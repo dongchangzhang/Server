@@ -79,25 +79,30 @@ bool ImageWorker::init_for_recv_photo_segment() {
     nline = 0;
     // image mode
     memcpy(&mode, &buffer[4], 1);
-    if (mode != 0x44) {
-        get_height_width(mode, h, w);
-        copy_len = w * 3 / 2;
-    } else if (mode == 0x44) {
-        // open window
-        memcpy(&ni, &buffer[9], 2);
-        memcpy(&nj, &buffer[11], 2);
-        h = ni;
-        w = nj;
-    } else {
-        std::cout << "Image Mode Set Error, Need 0x00, 0x11, 0x22, 0x33 or 0x44!" << std::endl;
-        return false;
+    switch (mode) {
+        case 0x00:
+        case 0x11:
+        case 0x22:
+        case 0x33:
+        case 0x44:
+            memcpy(&ni, &buffer[9], 2);
+            memcpy(&nj, &buffer[11], 2);
+            h = ni;
+            w = nj;
+            copy_len = w * 3 / 2;
+            break;
+        default:
+            std::cout << "Image Mode Set Error, Need 0x00, 0x11, 0x22, 0x33 or 0x44!" << std::endl;
+            return false;
     }
+    std::cout << h << " - h - w - " << w << std::endl;
+
     memcpy(&photo_id, &buffer[26], 2);
     // get data
     photo = cv::Mat(h, w, CV_8UC3, cv::Scalar::all(0));
 
     // for another app
-    write_info(buffer, 28, 232 + 2 * sizeof(double));
+    write_info(buffer, 28, 232 + 3 * sizeof(double));
 
     return true;
 }
