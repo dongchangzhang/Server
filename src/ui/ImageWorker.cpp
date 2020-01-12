@@ -71,6 +71,23 @@ bool ImageWorker::recv_photo_info(Server &server, int &recv_len) {
             return false;
         }
     }
+
+    /*
+    std::cout << (buffer[0] == 0x55) << std::endl;
+    std::cout << (buffer[1] == 28) << std::endl;
+    std::cout << (buffer[2] == 0x22 || buffer[2] == 0x11 || buffer[2] == 0x00) << std::endl;
+    short tmp;
+    std::cout << "open window" << std::endl;
+    memcpy(&tmp, &buffer[5], 2);
+    std::cout << tmp << std::endl;
+    memcpy(&tmp, &buffer[7], 2);
+    std::cout << tmp << std::endl;
+    memcpy(&tmp, &buffer[9], 2);
+    std::cout << tmp << std::endl;
+    memcpy(&tmp, &buffer[11], 2);
+    std::cout << tmp << std::endl;
+    std::cout << int(buffer[26]) << std::endl;
+    */
     return true;
 }
 
@@ -79,23 +96,26 @@ bool ImageWorker::init_for_recv_photo_segment() {
     nline = 0;
     // image mode
     memcpy(&mode, &buffer[4], 1);
+    memcpy(&ni, &buffer[9], 2);
+    memcpy(&nj, &buffer[11], 2);
+    h = ni;
+    w = nj;
+
+
     switch (mode) {
         case 0x00:
+            copy_len = w * 3 / 2;
+            break;
         case 0x11:
         case 0x22:
         case 0x33:
         case 0x44:
-            memcpy(&ni, &buffer[9], 2);
-            memcpy(&nj, &buffer[11], 2);
-            h = ni;
-            w = nj;
-            copy_len = w * 3 / 2;
+            copy_len = w * 3;
             break;
         default:
             std::cout << "Image Mode Set Error, Need 0x00, 0x11, 0x22, 0x33 or 0x44!" << std::endl;
             return false;
     }
-    std::cout << h << " - h - w - " << w << std::endl;
 
     memcpy(&photo_id, &buffer[26], 2);
     // get data
@@ -120,7 +140,12 @@ bool ImageWorker::recv_photo_segment(Server &server, int &recv_len, Status &s) {
 
     memcpy(&photo_id, &buffer[10], sizeof(char));
 
-    memcpy(&nline, &buffer[12], sizeof(short));
+    memcpy(&nline, &buffer[14], sizeof(short));
+
+   // std::cout << "nline: " << nline << std::endl;
+    //short tmp;
+    //memcpy(&tmp, &buffer[1], 2);
+    //std::cout << copy_len << " " << tmp << std::endl;
     if (mode == 0x00) { /* full image */
         memcpy(&where, &buffer[16], 1);
         if (where == 0x55) {

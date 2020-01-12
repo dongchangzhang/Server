@@ -6,7 +6,7 @@
 
 bool App::OnInit() {
     wxInitAllImageHandlers();
-    frame = new MainFrame(wxT("中分辨率相机测试平台!"), wxPoint(50, 50), wxSize(800, 660));
+    frame = new MainFrame(wxT("中分辨率相机测试平台!"), wxPoint(50, 50), wxSize(1250, 960));
     frame->Show(true);
     return true;
 }

@@ -59,6 +59,8 @@ struct GNC {
     void get_gnc(unsigned char buffer[], int &gnc_len, int max_len);
 
     void update_gnc();
+    void update_gnc_orb();
+    void calOrbG(double orbInfo[6], double kplInfo[6]);
 };
 
 
