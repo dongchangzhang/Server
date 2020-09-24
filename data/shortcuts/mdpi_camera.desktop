@@ -1,0 +1,10 @@
+[Desktop Entry]
+Exec=/usr/local/bin/mdpi_camera
+Name=Mars Simulator
+Name[zh_CN]=火星中分辨率仿真模拟器
+StartupNotify=false
+Terminal=false
+Type=Application
+Icon=mars_mdpi_camera
+InitialPreference=3
+StartupWMClass=mars_simulator

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Exec=/usr/local/bin/Combination
+Name=Mars Simulator
+Name[zh_CN]=图像拼接程序
+StartupNotify=false
+Terminal=false
+Type=Application
+Icon=combination
+InitialPreference=3
+StartupWMClass=mars_combination
